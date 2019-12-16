@@ -1,4 +1,4 @@
-#Runner's blog - personal project
+# Runner's blog - personal project
 ### Stack:
 * Wordpress
 * Timber
