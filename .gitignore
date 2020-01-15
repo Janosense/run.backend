@@ -3,3 +3,5 @@
 wp-config.php
 wp-content/plugins/hello.php
 wp-content/uploads
+
+wp-content/themes/run/vendor/
