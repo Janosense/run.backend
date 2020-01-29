@@ -1,0 +1,188 @@
+{% extends "templates/layouts/base.twig" %}
+
+{% block head %}
+    <title>Журнал бегуна - Обо мне</title>
+{% endblock %}
+
+{% block content %}
+    <main>
+
+        <section class="about">
+            <div class="wrapper about__wrapper">
+                <div class="about__layout">
+                    <div class="about__layout-inner">
+                        <header class="about__header">
+                            <h1 class="heading about__heading">О блоге</h1>
+                            <p class="about__caption">..об авторе и немного статистики</p>
+                        </header>
+                        <div class="about__content">
+                            <p>
+                                Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+                                стандартной
+                                "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую
+                                коллекцию
+                                размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно
+                                пережил
+                                без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время
+                            </p>
+                            <p>In facilisis scelerisque augue, sed lacinia leo luctus vel. Etiam vestibulum tristique mi, ac venenatis
+                                velit
+                                varius eu. Donec non massa id mi tincidunt pharetra. Fusce justo urna, ullamcorper ut hendrerit at
+                                tincidunt pharetra. F tincidunt pharetra. F, tincidunt eget leo. Vestibulum in nisi turpis.
+                                Mauris sed velit ut sapii tincidunti tincidunt bulum commodo a a
+                                felis. Vivamus accumsan porttitor fringilla.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about__statistics statistics">
+                        <div class="statistics__header">
+                            <h3 class="statistics__heading">Статистика</h3>
+                        </div>
+                        <div class="statistics__content">
+                            <div class="statistics__row statistics__row--total-distance">
+                                <div class="statistics__row-title">пробежал</div>
+                                <div><span class="statistics__total-distance">1 286,9</span>км</div>
+                            </div>
+                            <div class="statistics__row">
+                                <div class="statistics__row-title">лучшее время</div>
+                            </div>
+                            <div class="statistics__row">
+                                <span class="statistics__distance">1 км</span> <span class="statistics__distance-value">4:00</span>
+                            </div>
+                            <div class="statistics__row">
+                                <span class="statistics__distance">1 миля</span> <span class="statistics__distance-value">6:43</span>
+                            </div>
+                            <div class="statistics__row">
+                                <span class="statistics__distance">5 км</span> <span class="statistics__distance-value">22:34</span>
+                            </div>
+                            <div class="statistics__row">
+                                <span class="statistics__distance">10 км</span> <span class="statistics__distance-value">46:07</span>
+                            </div>
+                            <div class="statistics__row">
+                                <span class="statistics__distance">полумарафон</span> <span class="statistics__distance-value"><a
+                                            href="https://my5.raceresult.com/138795/15705/Certificate%2021km" target="_blank">1:41:56,4</a></span>
+                            </div>
+                            <div class="statistics__row statistics__row--marathon">
+                                <span class="statistics__distance">марафон</span> <span class="statistics__distance-value">-</span>
+                            </div>
+                            <div class="statistics__row">
+                                <div class="statistics__row-title">забегов</div>
+                                <span class="statistics__big-number">134</span>
+                            </div>
+                            <div class="statistics__row">
+                                <div class="statistics__row-title">стартов</div>
+                                <span class="statistics__big-number">20</span>
+                            </div>
+                        </div>
+                        <span class="statistics__date">ведется с 5.05.2019</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ABOUT end -->
+
+        <!-- GOALS start-->
+        <div class="goals">
+            <div class="wrapper goals__wrapper">
+                <h2 class="goals__heading">мои беговые цели и планы</h2>
+
+                <div class="track goals__track">
+                    <ul class="track__list">
+                        <li class="track__item">
+                            <div class="goal">
+                                <h3 class="goal__title">Цель не установлена</h3>
+                                <span class="goal__number">1</span>
+                                <p class="goal__description">Я бы хотел вписать сюда IROMAN, но трезво оцениваю свои возможности как
+                                    физические так и финансовые. По это недостижимая цель, но я как вы понимаете на нее "заглядываюсь"</p>
+                            </div>
+                        </li>
+                        <li class="track__item">
+                            <div class="goal">
+                                <h3 class="goal__title">Пробежать трейловую "ультра" дистанцию</h3>
+                                <span class="goal__number">2</span>
+                                <p class="goal__description">На сегодня эта цель манит меня больше всего.
+                                    Я получаю кайф от бега по лесам и горам, я получаю кайф от своих новых рекордов на длительность. Я
+                                    восхищаюсь людбми когда вижу как они преодолевают 40 60 80км по местам где и ходить сложно. Это
+                                    круто!</p>
+                            </div>
+                        </li>
+                        <li class="track__item">
+                            <div class="goal">
+                                <h3 class="goal__title">Пробежать марфон меньше чем за 3 часа</h3>
+                                <span class="goal__number">3</span>
+                                <p class="goal__description">Не могу объяснить эту цель.<br>Я порсто хочу это сделать, и рано или поздно
+                                    этот день настанет.</p>
+                            </div>
+                        </li>
+                        <li class="track__item">
+                            <div class="goal">
+                                <h3 class="goal__title">Пробежать Race Nation в категории Elite</h3>
+                                <span class="goal__number">4</span>
+                                <p class="goal__description">
+                                    Есть опасения по поводу этой цели. Иногда мне кажется что все смогу, а иногда, особоенно во время
+                                    забега, приходят мысли о том что я вообще "тут" делаю.
+                                    Но первый забег в RN мне показала что возможно все, и подготовить себя можно также ко всему. Главное
+                                    стараться.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="track__item">
+                            <div class="goal">
+                                <h3 class="goal__title">Пробежать<br>марафон</h3>
+                                <span class="goal__number">5</span>
+                                <p class="goal__description">
+                                    Думаю это логичная цель, исходя из того что я делаю.<br>
+                                    По плану на весну 2020, хочу осуществить на какой-то из Европейских дистанций
+                                </p>
+                            </div>
+                        </li>
+                        <li class="track__item track__item--active">
+                            <div class="goal">
+                                <h3 class="goal__title">Пробежать<br>полумарафон</h3>
+                                <span class="goal__number">6</span>
+                                <p class="goal__description">
+                                    Моя первая половника получалсь трейловой. Подвернулся забег
+                                    <strong>"Multiki Races Trail - 21km"</strong> в Киеве (Голосеевский лес) - я решил рискнуть. Было
+                                    тяжело, но в итоге все получилось!
+                                    Первый шосейный полумарафон я пробежал в рамках <strong>II Петропавловского полумарафона
+                                        "Чайка"</strong>. Результат - <span>1:47:41</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="track__item track__item--active">
+                            <div class="goal">
+                                <h3 class="goal__title">Пробежать<br> Race Nation</h3>
+                                <span class="goal__number">7</span>
+                                <p class="goal__description">
+                                    Первое участие в <strong>Race Nation</strong> мне запомнится надолго. Было сложно и больно.
+                                    Но именно этот забег и подготовка к нему прокачали меня лучше всего за всю жизнь. Забег состоялся 9
+                                    мая 2019 года в Киеве (Пирогово)
+                                </p>
+                            </div>
+                        </li>
+                        <li class="track__item track__item--active">
+                            <div class="goal">
+                                <h3 class="goal__title">Принять участие в официальном старте</h3>
+                                <span class="goal__number">8</span>
+                                <p class="goal__description">
+                                    Первым официальным стартом для меня стала дистанция 10км на мероприятии <strong>"Nova Poshta Half
+                                        Marathon"</strong> в
+                                    Киев 7 апреля 2019 года. Результат - <span>51:27,7</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="goals__text">
+                    <p>
+                        ...и еще куча других менее глобальных целей, задач и просто "хотелок".<br>
+                        Есть забеги в которых я бы хотел поучаствовать, но самоцели готовится к ним у меня нет.<br>Например Bison
+                        Race в Беларуси, любой ночной забег, эстафета, свимран и т.д.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- GOALS end-->
+    </main>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "templates/layouts/base.twig" %}
+
+{% block head %}
+    <title>Журнал бегуна - Календарь</title>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="calendar">
+            <div class="wrapper calendar__wrapper">
+                <header class="calendar__header">
+                    <h1 class="heading calendar__heading">Мои календарь</h1>
+                    <p class="calendar__caption">
+                        Тут собраны результаты всех официальных забегов и тренировок (с фикцацией результата), в которых я принимал участие.
+                        Результаты я резделил на группы <a href="#">Есть слот</a>, <a href="#">Запланировано</a>
+                    </p>
+                </header>
+                <div class="calendar__group">
+                    <h1 class="calendar__group-title">Есть слот</h1>
+                    <ul class="calendar__list">
+                        <li class="calendar__item calendar-event calendar-event--header">
+                            <span class="calendar-event__date">Дата / тип</span>
+                            <h3 class="calendar-event__title">
+                                Название (организатор)
+                            </h3>
+                            <div class="calendar-event__distance">Дистанция</div>
+                            <div class="calendar-event__place">Место проведения</div>
+                            <span class="calendar-event__slot">Старт. номер</span>
+                        </li>
+                        <li class="calendar__item calendar-event">
+                            <span class="calendar-event__type">Шоссе</span>
+                            <span class="calendar-event__date">04.04.2020</span>
+                            <h3 class="calendar-event__title">
+                                <a href="#">Новая Почта Киевский полумарафон</a> <span>(Run Ukraine)</span>
+                            </h3>
+                            <div class="calendar-event__distance"><span>21,095</span>км</div>
+                            <div class="calendar-event__place">Киев, Украина</div>
+                            <span class="calendar-event__slot">10199</span>
+                        </li>
+                        <li class="calendar__item calendar-event">
+                            <span class="calendar-event__type">Трейл</span>
+                            <span class="calendar-event__date">03.05.2020</span>
+                            <h3 class="calendar-event__title">
+                                <a href="#">Ice Trail</a> <span>(UTL)</span>
+                            </h3>
+                            <div class="calendar-event__distance"><span>32</span>км</div>
+                            <div class="calendar-event__place">Буковель, Украина</div>
+                            <span class="calendar-event__slot">10199</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="calendar__group">
+                    <h2 class="calendar__group-title">Запланировано</h2>
+                    <ul class="calendar__list calendar__list--plan">
+                        <li class="calendar__item calendar-event calendar-event--header">
+                            <span class="calendar-event__date">Дата / тип</span>
+                            <h3 class="calendar-event__title">
+                                Название (организатор)
+                            </h3>
+                            <div class="calendar-event__distance">Дистанция</div>
+                            <div class="calendar-event__place">Место проведения</div>
+                        </li>
+                        <li class="calendar__item calendar-event">
+                            <span class="calendar-event__type">Шоссе</span>
+                            <span class="calendar-event__date">04.04.2020</span>
+                            <h3 class="calendar-event__title">
+                                <a href="#">Новая Почта Киевский полумарафон</a> <span>(Run Ukraine)</span>
+                            </h3>
+                            <div class="calendar-event__distance"><span>21,095</span>км</div>
+                            <div class="calendar-event__place">Киев, Украина</div>
+                        </li>
+                        <li class="calendar__item calendar-event">
+                            <span class="calendar-event__type">Трейл</span>
+                            <span class="calendar-event__date">03.05.2020</span>
+                            <h3 class="calendar-event__title">
+                                <a href="#">Ice Trail</a> <span>(UTL)</span>
+                            </h3>
+                            <div class="calendar-event__distance"><span>32</span>км</div>
+                            <div class="calendar-event__place">Буковель, Украина</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

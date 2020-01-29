@@ -1,6 +1,9 @@
 <?php
 
 use WPEmerge\Facades\WPEmerge;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+use Twig\TwigFilter;
 
 /**
  * Constant definitions.
@@ -35,10 +38,25 @@ if ( file_exists( APP_VENDOR_DIR . 'autoload.php' ) ) {
 /**
  * Bootstrap WP Emerge.
  */
-add_action( 'after_setup_theme', function() {
-	WPEmerge::bootstrap( [
-		'routes' => [
-			'web' => APP_APP_ROUTES_DIR . 'web.php',
-		],
-	] );
+add_action( 'after_setup_theme', function () {
+	WPEmerge::bootstrap( require APP_APP_DIR . 'config.php' );
+
+	$myfilter = new TwigFilter( 'myfilter', function( $string ) {
+		return call_user_func( $string );
+	} );
+
+// WPEmerge::resolve() used for brevity's sake - use a Service Provider instead.
+	$twig = WPEmerge::resolve( WPEMERGETWIG_VIEW_TWIG_VIEW_ENGINE_KEY );
+	$twig->environment()->addFilter( $myfilter );
 } );
+
+
+//class AppExtension extends AbstractExtension
+//{
+//	public function getFunctions()
+//	{
+//		return [
+//			new TwigFunction('function', array(&$this, 'exec_function')),
+//		];
+//	}
+//}

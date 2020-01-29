@@ -1,6 +1,7 @@
 {
     "require": {
-        "htmlburger/wpemerge": "^0.15.0"
+        "htmlburger/wpemerge": "^0.15.0",
+        "htmlburger/wpemerge-twig": "^0.15.0"
     },
     "autoload": {
         "psr-4": {

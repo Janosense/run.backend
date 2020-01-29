@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block head %}
+        <title>Блог бегуна</title>
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="/wp-content/themes/run/dist/styles/main.css" media="all"/>
+
+</head>
+<body class="body">
+<div class="layout">
+    {% include "templates/partials/header.twig" %}
+    {% include "templates/partials/main-nav-toggle.twig" %}
+    {% include "templates/partials/main-nav.twig" %}
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+{% include "templates/partials/footer.twig" %}
+
+<script src="/wp-content/themes/run/dist/scripts/main.js"></script>
+{% block footer %}
+{% endblock %}
+</body>
+</html>

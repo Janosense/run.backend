@@ -1,0 +1,22 @@
+{% extends "templates/layouts/base.twig" %}
+
+{% block head %}
+    <title>Журнал бегуна - Главная</title>
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper front-page-wrapper">
+        <main class="main">
+            <div class="main__layout">
+                {% include "templates/partials/front-page/last-results.twig" %}
+                {% include "templates/partials/front-page/starts.twig" %}
+            </div>
+            {% include "templates/partials/front-page/training.twig" %}
+        </main>
+        <aside class="aside">
+            {% include "templates/partials/front-page/statistics.twig" %}
+            {% include "templates/partials/front-page/sneakers.twig" %}
+        </aside>
+    </div>
+    {% include "templates/partials/front-page/posts-preview.twig" %}
+{% endblock %}
