@@ -1,27 +1,16 @@
 <nav class="main-nav">
-    <div class="wrapper main-nav__wrapper">
-        <ul class="main-nav__list">
-            <li class="main-nav__item">
-                <a href="/" class="main-nav__link main-nav__link--active">Главная</a>
-            </li>
-            <li class="main-nav__item">
-                <a href="/calendar" class="main-nav__link">Календарь</a>
-            </li>
-            <li class="main-nav__item">
-                <a href="/results.html" class="main-nav__link">Результаты</a>
-            </li>
-            <li class="main-nav__item">
-                <a href="/history.html" class="main-nav__link">История</a>
-            </li>
-            <li class="main-nav__item">
-                <a href="/numbers.html" class="main-nav__link">Номера</a>
-            </li>
-            <li class="main-nav__item">
-                <a href="/articles.html" class="main-nav__link">Записи</a>
-            </li>
-            <li class="main-nav__item">
-                <a href="/about.html" class="main-nav__link">Обо мне</a>
-            </li>
-        </ul>
-    </div>
+	<div class="wrapper main-nav__wrapper">
+		<ul class="main-nav__list">
+			{% for route in global.routes.web %}
+				{% if route.condition == 'url' %}
+					<li class="main-nav__item">
+						<a href="{{ route.url }}"
+						   class="main-nav__link {% if route.is_active %}main-nav__link--active{% endif %}">
+							{{ route.menu_title }}
+						</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
 </nav>

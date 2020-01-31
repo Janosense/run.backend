@@ -1,0 +1,48 @@
+.sneakers {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sneakers__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sneakers__brand {
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.sneakers__model {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px dotted #000000;
+  }
+}
+
+.sneakers__distance {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+
+  span {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+  }
+}

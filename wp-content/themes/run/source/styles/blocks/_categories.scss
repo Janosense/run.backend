@@ -1,0 +1,23 @@
+.categories {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.categories__item {
+  margin-right: 8px;
+}
+
+.categories__link {
+  display: block;
+  padding: 4px 8px 3px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #000000;
+}

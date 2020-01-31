@@ -1,0 +1,29 @@
+.similar-posts__heading {
+  margin: 0 0 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.similar-posts__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.similar-posts__item {
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.similar-posts__link {
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px dotted #000;
+
+}

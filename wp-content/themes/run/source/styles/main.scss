@@ -1,0 +1,58 @@
+@import "variables";
+@import "fonts";
+
+@import "blocks/body";
+@import "blocks/wrapper";
+@import "blocks/front-page-wrapper";
+@import "blocks/heading";
+@import "blocks/header";
+@import "blocks/main-nav";
+@import "blocks/main-nav-toggle";
+@import "blocks/indicators";
+@import "blocks/breadcrumbs";
+@import "blocks/article";
+@import "blocks/article-wrapper";
+@import "blocks/categories";
+@import "blocks/aside";
+@import "blocks/statistics";
+@import "blocks/starts";
+@import "blocks/last-results";
+@import "blocks/sneakers";
+@import "blocks/main";
+@import "blocks/posts-preview";
+@import "blocks/training";
+@import "blocks/tags";
+@import "blocks/similar-posts";
+@import "blocks/footer";
+@import "blocks/socials";
+@import "blocks/about";
+@import "blocks/goals";
+@import "blocks/goal";
+@import "blocks/track";
+@import "blocks/history";
+@import "blocks/time-line";
+@import "blocks/event";
+@import "blocks/results";
+@import "blocks/results-table";
+@import "blocks/numbers";
+@import "blocks/calendar";
+@import "blocks/calendar-event";
+
+
+.layout {
+  position: relative;
+  z-index: 10;
+  padding-top: 60px;
+  margin-bottom: 50px;
+  background-color: #fff;
+
+  @media (min-width: 767px) {
+    padding-top: 0;
+  }
+
+  @media (min-width: 1023px) {
+    margin-bottom: 82px;
+  }
+}
+
+

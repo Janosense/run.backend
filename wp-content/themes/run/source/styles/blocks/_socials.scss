@@ -1,0 +1,44 @@
+.socials__list {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.socials__item {
+  margin-right: 28px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.socials__link {
+  display: block;
+  width: 28px;
+  height: 28px;
+  text-decoration: none;
+
+  &--strava {
+    width: 26px;
+    height: 26px;
+  }
+
+  &--fb {
+    width: 10px;
+    height: 22px;
+  }
+
+  &--instagram {
+    width: 21px;
+    height: 21px;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+

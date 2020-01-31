@@ -1,0 +1,42 @@
+.tags {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.tags__heading {
+  position: relative;
+  top: 1px;
+  margin: 0 12px 0 0;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.tags__list {
+  list-style-type: none;
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  padding: 0
+}
+
+.tags__item {
+  margin-right: 16px;
+  margin-bottom: 4px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.tags__link {
+  position: relative;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px dotted #000;
+}

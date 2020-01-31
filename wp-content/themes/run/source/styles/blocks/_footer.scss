@@ -1,0 +1,27 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  color: #fff;
+  background-color: #000;
+
+  @media (min-width: 1023px) {
+    padding: 28px 0;
+  }
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+}

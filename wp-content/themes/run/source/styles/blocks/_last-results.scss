@@ -1,0 +1,123 @@
+.last-results {
+  width: 100%;
+  position: relative;
+  margin-bottom: 32px;
+  padding: 40px 32px 60px;
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+
+  @media (min-width: 1023px) {
+    margin-bottom: 56px;
+  }
+
+  @media (min-width: 1919px) {
+    padding: 40px 40px 60px;
+  }
+}
+
+.last-results__heading {
+  margin: 0 0 32px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: right;
+  color: #000000;
+}
+
+.last-results__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.last-results__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.last-results__event {
+  width: 48%;
+
+  &--race-nation {
+    width: 60%;
+  }
+}
+
+.last-results__event-date {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.last-results__event-title {
+  display: block;
+  margin-bottom: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+
+  span {
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
+.last-results__event-distance {
+  font-size: 16px;
+  font-weight: 300;
+
+  span {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+  }
+}
+
+.last-results__result {
+  text-align: right;
+}
+
+.last-results__info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.last-results__time {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  opacity: 0.23;
+}
+
+.last-results__personal-best {
+  display: block;
+  margin-right: 8px;
+  padding: 4px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #fff;
+  background-color: #000000;
+}
+
+.last-results__diff {
+  font-size: 14px;
+}
+
+.last-results__place {
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+}
+

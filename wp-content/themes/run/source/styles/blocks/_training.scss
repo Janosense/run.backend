@@ -1,0 +1,152 @@
+.training {
+  flex-shrink: 0;
+  margin-bottom: 32px;
+  padding: 0 32px;
+  box-sizing: border-box;
+
+  @media (min-width: 767px) {
+    width: 52%;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1919px) {
+    padding: 0 40px;
+  }
+}
+
+.training__header {
+  margin-bottom: 28px;
+}
+
+.training__header-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &:first-child {
+    margin-bottom: 4px;
+  }
+}
+
+.training__count {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1;
+
+  span {
+    display: block;
+    margin-right: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+  }
+}
+
+.training__heading {
+  margin: 0;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.training__strava-logo {
+  display: block;
+  width: 100px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.training__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.training__item {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+  @media (min-width: 1023px) {
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.training__item-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.training__title {
+  display: inline-block;
+  max-width: calc(100% - 60px);
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px dotted #000;
+}
+
+.training__date {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.training__info {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+
+.training__info-value {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.training__info-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  color: #646464;
+}
+
+.training__info-km {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.training__sneakers {
+  margin: 0;
+  padding-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.training__description {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+}

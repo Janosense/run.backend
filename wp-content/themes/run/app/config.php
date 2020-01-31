@@ -9,6 +9,7 @@
 
 return [
 	'providers' => [
+		\App\View\ViewGlobalContextServiceProvider::class,
 		\WPEmergeTwig\View\ServiceProvider::class,
 	],
 	'routes'    => [
