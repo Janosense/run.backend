@@ -20,7 +20,7 @@
 					<td colspan="9" class="results-table__year">{{ year }}</td>
 				</tr>
 				{% for result in results %}
-					<tr {% if result.is_pb == 'yes' %}class="results-table__pb"{% endif %}>
+					<tr {% if result.is_pb %}class="results-table__pb"{% endif %}>
 						<td class="results-table__row-number">{{ loop.revindex }}</td>
 						<td>{{ result.event_date }}</td>
 						<td class="results-table__place">

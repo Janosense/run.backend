@@ -26,4 +26,4 @@ add_action( 'carbon_fields_register_fields', 'app_bootstrap_carbon_fields_regist
 /**
  * Custom actions
  */
-add_action( 'publish_result', [ ResultsController::class, 'set_personal_best_result' ], 10, 2 );
+add_action( 'carbon_fields_post_meta_container_saved', [ ResultsController::class, 'set_personal_best_result' ], 10, 2 );

@@ -3,6 +3,8 @@
 
 namespace App\Controllers\Web;
 
+use Carbon_Fields\Container\Post_Meta_Container;
+
 
 class ResultsController {
 	/**
@@ -189,8 +191,58 @@ class ResultsController {
 
 	/**
 	 *
+	 * Fire on result post object added/updated
+	 *
+	 * @param int $post_id
+	 * @param Post_Meta_Container $container
 	 */
-	public static function set_personal_best_result( $post_id, $post ) {
-		//...
+	public static function set_personal_best_result( $post_id, $container ) {
+		if ( $container->id == 'carbon_fields_container_result_data' ) {
+			$pb_result_id                   = $post_id;
+			$current_result_type            = carbon_get_post_meta( $post_id, 'crb_result_type' );
+			$current_result_time            = carbon_get_post_meta( $post_id, 'crb_result_time' );
+			$current_result_time_in_seconds = self::convert_time_to_seconds( $current_result_time );
+			$results                        = get_posts( [
+				'numberposts' => - 1,
+				'post_type'   => 'result',
+				'meta_query'  => [
+					[
+						'key'   => '_crb_result_type',
+						'value' => $current_result_type,
+					]
+				]
+			] );
+
+			foreach ( $results as $result ) {
+				update_post_meta( $result->ID, '_crb_result_is_pb', 0 );
+				$result_time            = carbon_get_post_meta( $result->ID, 'crb_result_time' );
+				$result_time_in_seconds = self::convert_time_to_seconds( $result_time );
+
+				if ( $result_time_in_seconds < $current_result_time_in_seconds ) {
+					$pb_result_id = $result->ID;
+				}
+			}
+
+			update_post_meta( $pb_result_id, '_crb_result_is_pb', 1 );
+		}
+	}
+
+	/**
+	 * @param string $time
+	 *
+	 * @return int|\WP_Error
+	 */
+	private static function convert_time_to_seconds( $time ) {
+		$seconds       = 0;
+		$time_exploded = explode( ':', $time );
+		if ( count( $time_exploded ) != 3 ) {
+			return new \WP_Error();
+		}
+
+		$seconds += (int) $time_exploded[0] * 60 * 60;
+		$seconds += (int) $time_exploded[1] * 60;
+		$seconds += (float) $time_exploded[2];
+
+		return $seconds;
 	}
 }
