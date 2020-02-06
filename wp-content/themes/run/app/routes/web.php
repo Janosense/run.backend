@@ -10,7 +10,7 @@
 
 use WPEmerge\Facades\Route;
 
-$routes = require APP_APP_DIR . 'routes.php';
+$routes = require APP_APP_SETUP_DIR . 'routes.php';
 
 foreach ( $routes['web'] as $route ) {
 	if ( ! isset( $route['condition'] ) && empty( $route['condition'] ) ) {

@@ -12,7 +12,6 @@ class FrontPageController {
 	 * @return \WPEmerge\View\ViewInterface
 	 */
 	public function index( $request, $view ) {
-		return \WPEmerge\view( 'templates/front-page.twig' )
-			->with( ['current_rout' => $request->server()['REQUEST_URI']] );
+		return \WPEmerge\view( 'templates/front-page.twig' );
 	}
 }

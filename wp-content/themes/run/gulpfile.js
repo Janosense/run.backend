@@ -22,7 +22,7 @@ const isTest = process.env.NODE_ENV === 'test';
 const isDev = !isProd && !isTest;
 
 function styles() {
-  return src('source/styles/*.scss')
+  return src('theme/source/styles/*.scss')
     .pipe($.plumber())
     .pipe($.if(!isProd, $.sourcemaps.init()))
     .pipe($.sass.sync({
@@ -34,7 +34,7 @@ function styles() {
       autoprefixer()
     ]))
     .pipe($.if(!isProd, $.sourcemaps.write()))
-    .pipe(dest('dist/styles'))
+    .pipe(dest('theme/dist/styles'))
     .pipe(server.reload({stream: true}));
 }
 
@@ -57,7 +57,7 @@ if (isProd) {
 }
 
 function scripts() {
-  return src('source/scripts/*.js')
+  return src('theme/source/scripts/*.js')
     .pipe($.plumber())
     .pipe($.if(!isProd, $.sourcemaps.init()))
     .pipe($.betterRollup({
@@ -65,19 +65,19 @@ function scripts() {
       },
       'iife'))
     .pipe($.if(!isProd, $.sourcemaps.write('.')))
-    .pipe(dest('dist/scripts'))
+    .pipe(dest('theme/dist/scripts'))
     .pipe(server.reload({stream: true}));
 }
 
 function images() {
-  return src('source/images/**/*', {since: lastRun(images)})
+  return src('theme/source/images/**/*', {since: lastRun(images)})
     .pipe($.if(isProd, $.imagemin()))
-    .pipe(dest('dist/images'));
+    .pipe(dest('theme/dist/images'));
 }
 
 function fonts() {
-  return src('source/fonts/**/*.{eot,svg,ttf,woff,woff2}')
-    .pipe(dest('dist/fonts'));
+  return src('theme/source/fonts/**/*.{eot,svg,ttf,woff,woff2}')
+    .pipe(dest('theme/dist/fonts'));
 }
 
 function clean() {
@@ -85,7 +85,7 @@ function clean() {
 }
 
 function measureSize() {
-  return src('dist/**/*')
+  return src('theme/dist/**/*')
     .pipe($.size({title: 'build', gzip: true}));
 }
 
@@ -97,13 +97,13 @@ function startAppServer() {
 
   watch([
     'templates/**/*.twig',
-    'source/images/**/*',
-    'source/fonts/**/*'
+    'theme/source/images/**/*',
+    'theme/source/fonts/**/*'
   ]).on('change', server.reload);
 
-  watch('source/styles/**/*.scss', styles);
-  watch('source/scripts/**/*.js', scripts);
-  watch('source/fonts/**/*', fonts);
+  watch('theme/source/styles/**/*.scss', styles);
+  watch('theme/source/scripts/**/*.js', scripts);
+  watch('theme/source/fonts/**/*', fonts);
 }
 
 const build = series(

@@ -16,7 +16,7 @@ class ViewGlobalContextServiceProvider implements ServiceProviderInterface {
 	 * {@inheritDoc}
 	 */
 	public function bootstrap( $container ) {
-		$routes = require APP_APP_DIR . 'routes.php';
+		$routes = require APP_APP_SETUP_DIR . 'routes.php';
 		View::addGlobals( [
 			'routes' => $routes,
 		] );
