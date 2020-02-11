@@ -21,9 +21,7 @@
 				</header>
 
 				{% for type in results %}
-					{% include "templates/partials/results/results-group.twig" with {
-						type: type
-					} %}
+					{% include "templates/partials/results/results-group.twig" with { type: type } %}
 				{% endfor %}
 
 			</div>

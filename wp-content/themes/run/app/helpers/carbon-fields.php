@@ -11,4 +11,5 @@ function app_bootstrap_carbon_fields() {
  */
 function app_bootstrap_carbon_fields_register_fields() {
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'post-type-result.php';
+	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'post-type-event.php';
 }

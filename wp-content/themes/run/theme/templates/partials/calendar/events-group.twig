@@ -1,0 +1,26 @@
+<div class="calendar__group">
+	<h1 class="calendar__group-title">{{ state.title }}</h1>
+	<ul class="calendar__list">
+		<li class="calendar__item calendar-event calendar-event--header">
+			<span class="calendar-event__date">Дата / тип</span>
+			<h3 class="calendar-event__title">
+				Название (организатор)
+			</h3>
+			<div class="calendar-event__distance">Дистанция</div>
+			<div class="calendar-event__place">Место проведения</div>
+			<span class="calendar-event__slot">Старт. номер</span>
+		</li>
+		{% for event in state.events %}
+		<li class="calendar__item calendar-event">
+			<span class="calendar-event__type">{{ event.type }}</span>
+			<span class="calendar-event__date">{{ event.date }}</span>
+			<h3 class="calendar-event__title">
+				<a href="{{ event.url }}" title="Официальная страница мероприятия">{{ event.title }}</a> <span>({{ event.organizer }})</span>
+			</h3>
+			<div class="calendar-event__distance">{{ event.distance }}</div>
+			<div class="calendar-event__place">{{ event.place }}</div>
+			<span class="calendar-event__slot">{{ event.bib }}</span>
+		</li>
+		{% endfor %}
+	</ul>
+</div>

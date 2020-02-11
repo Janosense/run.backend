@@ -14,6 +14,7 @@ class ResultsController {
 	 * @return \WPEmerge\View\ViewInterface
 	 */
 	public function index( $request, $view ) {
+		$data    = [];
 		$results = $this->get_results();
 		if ( ! empty( $results ) ) {
 			$data = $this->prepare_results_data( $results );
@@ -66,10 +67,10 @@ class ResultsController {
 			];
 		}
 
-		$sorted_data   = $this->sort_results( $data );
-		$prepared_data = $this->prepare_group_data( $sorted_data );
+		$data = $this->sort_results( $data );
+		$data = $this->prepare_group_data( $data );
 
-		return $prepared_data;
+		return $data;
 	}
 
 	/**
