@@ -3,7 +3,6 @@ import IMask from 'imask';
 const init_result_time_field_mask = () => {
   document.addEventListener('DOMContentLoaded', (evt) => {
     const container = document.querySelector('.carbon_fields_container_result_data');
-    console.log(container);
     if (container) {
       const element = container.querySelector('input[name="carbon_fields_compact_input[_crb_result_time]"]');
       IMask(element, {

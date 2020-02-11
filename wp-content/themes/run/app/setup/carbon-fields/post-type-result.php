@@ -16,8 +16,9 @@ $fields       = [
 	Field::make( 'text', 'crb_result_time_diff', __( 'Difference with PB', 'run' ) )->set_width( 33 ),
 	Field::make( 'select', 'crb_result_type', __( 'Result type' ) )
 	     ->set_options( $result_types )
-	     ->set_width( 50 ),
-	Field::make( 'text', 'crb_result_event_place', __( 'Place of event', 'run' ) )->set_width( 50 ),
+	     ->set_width( 33 ),
+	Field::make( 'text', 'crb_result_event_place', __( 'Place of event', 'run' ) )->set_width( 33 ),
+	Field::make( 'text', 'crb_result_event_organizer', __( 'Organizer', 'run' ) )->set_width( 33 ),
 	Field::make( 'text', 'crb_result_place_overall', __( 'Place overall', 'run' ) )->set_width( 33 ),
 	Field::make( 'text', 'crb_result_place_gender', __( 'Place gender', 'run' ) )->set_width( 33 ),
 	Field::make( 'text', 'crb_result_place_age', __( 'Place age', 'run' ) )->set_width( 33 ),

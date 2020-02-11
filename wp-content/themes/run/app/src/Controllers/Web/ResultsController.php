@@ -57,6 +57,7 @@ class ResultsController {
 				'diff'          => $meta_fields['_crb_result_time_diff'][0],
 				'type'          => $meta_fields['_crb_result_type'][0],
 				'event_place'   => $meta_fields['_crb_result_event_place'][0],
+				'organizer'     => $meta_fields['_crb_result_event_organizer'][0],
 				'place_overall' => $meta_fields['_crb_result_place_overall'][0],
 				'place_gender'  => $meta_fields['_crb_result_place_gender'][0],
 				'place_age'     => $meta_fields['_crb_result_place_age'][0],

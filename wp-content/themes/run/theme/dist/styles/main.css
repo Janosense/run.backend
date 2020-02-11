@@ -3162,7 +3162,7 @@
   border-right: none;
 }
 
-.results-table td.results-table__result, .results-table td.results-table__place {
+.results-table td.results-table__event {
   text-align: left;
 }
 
@@ -3177,9 +3177,13 @@
   background-color: #f1f1f1;
 }
 
-.results-table__place span {
+.results-table__place {
   display: block;
   font-weight: 300;
+  font-size: 14px;
+}
+
+.results-table__organizer {
   font-size: 14px;
 }
 

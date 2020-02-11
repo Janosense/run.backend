@@ -53,8 +53,7 @@
       border-right: none;
     }
 
-    &.results-table__result,
-    &.results-table__place {
+    &.results-table__event {
       text-align: left;
     }
   }
@@ -72,12 +71,15 @@
 }
 
 .results-table__place {
-  span {
-    display: block;
-    font-weight: 300;
-    font-size: 14px;
-  }
+  display: block;
+  font-weight: 300;
+  font-size: 14px;
 }
+
+.results-table__organizer {
+  font-size: 14px;
+}
+
 
 .results-table__result {
 

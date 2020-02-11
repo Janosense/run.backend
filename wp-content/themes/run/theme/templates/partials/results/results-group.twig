@@ -3,17 +3,18 @@
 
 	<div class="results__statistics">
 		<p>Всего забегов: <span>{{ type.count }}</span></p>
-		<p>Лучший результат: <span>{{ type.pb.time }}</span></p>
+		<p>Лучший результат: <span>{{ type.pb.time }}</span> | {{ type.pb.event_title }} - {{ type.pb.event_date }}</p>
 	</div>
 	<div class="results__table-holder">
 		<table class="results-table">
 			<tr>
 				<th>п/п</th>
 				<th>дата</th>
-				<th>мероприятие</th>
-				<th>время<br> <span>разница с ЛР</span></th>
+				<th>результат<br> <span>разница с ЛР</span></th>
 				<th>темп</th>
+				<th>мероприятие</th>
 				<th colspan="3">место<br> <span>абс / муж / возр</span></th>
+				<th>организатор</th>
 			</tr>
 			{% for year, results in type.years %}
 				<tr>
@@ -23,15 +24,16 @@
 					<tr {% if result.is_pb %}class="results-table__pb"{% endif %}>
 						<td class="results-table__row-number">{{ loop.revindex }}</td>
 						<td>{{ result.event_date }}</td>
-						<td class="results-table__place">
-							{{ result.title }}<br>
-							<span>{{ result.event_place }}</span>
-						</td>
 						<td class="results-table__result">{{ result.time }}<span>{{ result.diff }}</span></td>
 						<td class="results-table__pace">{{ result.pace }}</td>
+						<td class="results-table__event">
+							{{ result.title }}
+							<span class="results-table__place">{{ result.event_place }}</span>
+						</td>
 						<td>{{ result.place_overall }}</td>
 						<td>{{ result.place_gender }}</td>
 						<td>{{ result.place_age }}</td>
+						<td class="results-table__organizer">{{ result.organizer }}</td>
 					</tr>
 				{% endfor %}
 			{% endfor %}
