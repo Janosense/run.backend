@@ -1,0 +1,5 @@
+<select name="result_type">
+	{% for key, type in types %}
+		<option value="{{ key }}" {% if key == selected %}selected{% endif %}>{{ type }}</option>
+	{% endfor %}
+</select>
