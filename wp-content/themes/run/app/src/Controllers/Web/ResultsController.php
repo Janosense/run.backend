@@ -30,12 +30,10 @@ class ResultsController {
 	 * @return int[]|\WP_Post[]
 	 */
 	private function get_results() {
-		$results = get_posts( [
+		return get_posts( [
 			'numberposts' => - 1,
 			'post_type'   => 'result'
 		] );
-
-		return $results;
 	}
 
 	/**
@@ -200,32 +198,34 @@ class ResultsController {
 	 */
 	public static function set_personal_best_result( $post_id, $container ) {
 		if ( $container->id == 'carbon_fields_container_result_data' ) {
-			$pb_result_id                   = $post_id;
-			$current_result_type            = carbon_get_post_meta( $post_id, 'crb_result_type' );
-			$current_result_time            = carbon_get_post_meta( $post_id, 'crb_result_time' );
-			$current_result_time_in_seconds = self::convert_time_to_seconds( $current_result_time );
-			$results                        = get_posts( [
-				'numberposts' => - 1,
-				'post_type'   => 'result',
-				'meta_query'  => [
-					[
-						'key'   => '_crb_result_type',
-						'value' => $current_result_type,
+			$pb_result_id        = $post_id;
+			$current_result_type = carbon_get_post_meta( $post_id, 'crb_result_type' );
+			if ( $current_result_type != 'ocr' && $current_result_type != 'trail' ) {
+				$current_result_time            = carbon_get_post_meta( $post_id, 'crb_result_time' );
+				$current_result_time_in_seconds = self::convert_time_to_seconds( $current_result_time );
+				$results                        = get_posts( [
+					'numberposts' => - 1,
+					'post_type'   => 'result',
+					'meta_query'  => [
+						[
+							'key'   => '_crb_result_type',
+							'value' => $current_result_type,
+						]
 					]
-				]
-			] );
+				] );
 
-			foreach ( $results as $result ) {
-				update_post_meta( $result->ID, '_crb_result_is_pb', 0 );
-				$result_time            = carbon_get_post_meta( $result->ID, 'crb_result_time' );
-				$result_time_in_seconds = self::convert_time_to_seconds( $result_time );
+				foreach ( $results as $result ) {
+					update_post_meta( $result->ID, '_crb_result_is_pb', 0 );
+					$result_time            = carbon_get_post_meta( $result->ID, 'crb_result_time' );
+					$result_time_in_seconds = self::convert_time_to_seconds( $result_time );
 
-				if ( $result_time_in_seconds < $current_result_time_in_seconds ) {
-					$pb_result_id = $result->ID;
+					if ( $result_time_in_seconds < $current_result_time_in_seconds ) {
+						$pb_result_id = $result->ID;
+					}
 				}
-			}
 
-			update_post_meta( $pb_result_id, '_crb_result_is_pb', 1 );
+				update_post_meta( $pb_result_id, '_crb_result_is_pb', 1 );
+			}
 		}
 	}
 

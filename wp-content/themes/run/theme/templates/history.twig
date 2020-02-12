@@ -1,75 +1,63 @@
 {% extends "templates/layouts/base.twig" %}
 
 {% block head %}
-    <title>Журнал бегуна - История</title>
+	<title>Журнал бегуна - История</title>
 {% endblock %}
 
 {% block content %}
-    <main>
-        <div class="history">
-            <div class="wrapper history__wrapper">
-
-                <ul class="history__years">
-                    <li class="history__years-item">
-                        <button class="history__year history__year--active" type="button" data-year="2019">2019</button>
-                    </li>
-                    <li class="history__years-item">
-                        <button class="history__year" type="button" data-year="2020">2020</button>
-                    </li>
-                </ul>
-
-                <div class="time-line">
-                    <span class="time-line__designation time-line__designation--left">OCR, трейлы</span>
-                    <span class="time-line__designation time-line__designation--right">Шоссе</span>
-                    <ul class="time-line__list">
-                        <li class="event event--right time-line__item">
-                            <span class="event__pb">PB</span>
-                            <div class="event__header">
-                                <span class="event__date">12.10.2019</span>
-                                <span class="event__place">Киев, Украина</span>
-                            </div>
-                            <h3 class="event__title">Wizz Air Kyiv City Marathon</h3>
-                            <div class="event__distance">21,085<span>км</span></div>
-                            <div class="event__description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua. Ut enim ad minim veniam.
-                            </div>
-                            <div class="event__result">
-                                <span class="event__result-time">1:41:57,4</span> <span class="event__result-pace">4:47 / km</span>
-                                <table class="event__result-places">
-                                    <tr>
-                                        <td>aбс.:</td>
-                                        <td>300 / 2344</td>
-                                    </tr>
-                                    <tr>
-                                        <td>муж.:</td>
-                                        <td>100 / 1020</td>
-                                    </tr>
-                                    <tr>
-                                        <td>в. 30 - 38:</td>
-                                        <td> 20 / 134</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </li>
-                        <li class="event event--left time-line__item">
-                            <div class="event__header">
-                                <span class="event__date">19.10.2019</span>
-                                <span class="event__place">Буковель, Украина</span>
-                            </div>
-                            <h3 class="event__title">Race Nation Bukovel</h3>
-                            <div class="event__distance">Team Standart <span>10km+ / 25obs.+</span></div>
-                            <div class="event__description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua. Ut enim ad minim veniam.
-                            </div>
-                            <div class="event__result">
-                                <span class="event__result-time">7 / 13</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </main>
+	<main>
+		<div class="history">
+			<div class="wrapper history__wrapper">
+				<div class="time-line">
+					<span class="time-line__designation time-line__designation--left">OCR, трейлы</span>
+					<span class="time-line__designation time-line__designation--right">Шоссе</span>
+					<ul class="time-line__list">
+						{% for year, results  in data %}
+							<li class="time-line__year">{{ year }}</li>
+							{% for result in results %}
+								<li class="event event--{% if result.type == 'ocr' or result.type == 'trail' %}left{% else %}right{% endif %} time-line__item">
+									{% if result.is_pb == 1 %}
+										<span class="event__pb">PB</span>
+									{% endif %}
+									<div class="event__header">
+										<span class="event__date">{{ result.event_date }}</span>
+										<span class="event__place">{{ result.event_place }}</span>
+									</div>
+									<h3 class="event__title">{{ result.title }}</h3>
+									<div class="event__distance">{{ result.distance }}<span>км</span></div>
+									<div class="event__description">
+										{{ result.description }}
+									</div>
+									<div class="event__result">
+										<span class="event__result-time">{{ result.time }}</span> <span
+											class="event__result-pace">{{ result.pace }} / km</span>
+										<table class="event__result-places">
+											{% if result.place_overall is not empty %}
+												<tr>
+													<td>aбс.:</td>
+													<td>{{ result.place_overall }}</td>
+												</tr>
+											{% endif %}
+											{% if result.place_gender is not empty %}
+												<tr>
+													<td>муж.:</td>
+													<td>{{ result.place_gender }}</td>
+												</tr>
+											{% endif %}
+											{% if result.place_age is not empty %}
+												<tr>
+													<td>в. 30 - 38:</td>
+													<td>{{ result.place_age }}</td>
+												</tr>
+											{% endif %}
+										</table>
+									</div>
+								</li>
+							{% endfor %}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</main>
 {% endblock %}
