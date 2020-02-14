@@ -25,7 +25,6 @@ class ArticlesController {
 		}
 
 		return \WPEmerge\redirect()->to( '/articles/' );
-
 	}
 
 	/**

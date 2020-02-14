@@ -882,6 +882,10 @@
   }
 }
 
+.article__content p:first-child {
+  margin-top: 0;
+}
+
 .article__content p:last-child {
   margin-bottom: 0;
 }
@@ -1036,7 +1040,7 @@
 
 .statistics {
   position: relative;
-  padding: 32px 32px 60px;
+  padding: 32px 32px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #fff;
@@ -1045,13 +1049,17 @@
 
 @media (min-width: 1919px) {
   .statistics {
-    padding: 40px 40px 60px;
+    padding: 40px;
   }
 }
 
 .statistics__header {
   margin-bottom: 32px;
   text-align: right;
+}
+
+.statistics__content {
+  margin-bottom: 24px;
 }
 
 .statistics__heading {
@@ -1133,11 +1141,10 @@
 }
 
 .statistics__date {
-  position: absolute;
-  right: 32px;
-  bottom: 20px;
+  display: block;
   font-size: 14px;
   font-weight: 600;
+  text-align: right;
 }
 
 .starts {
@@ -1158,6 +1165,18 @@
 @media (min-width: 1919px) {
   .starts {
     padding: 0 40px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .starts--inner {
+    padding-bottom: 32px;
+  }
+}
+
+@media (min-width: 1919px) {
+  .starts--inner {
+    padding-bottom: 40px;
   }
 }
 

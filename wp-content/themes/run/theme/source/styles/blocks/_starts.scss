@@ -12,6 +12,16 @@
   @media (min-width: 1919px) {
     padding: 0 40px 0;
   }
+
+  &--inner {
+    @media (min-width: 1024px) {
+      padding-bottom: 32px;
+    }
+
+    @media (min-width: 1919px) {
+      padding-bottom: 40px;
+    }
+  }
 }
 
 .starts__heading {

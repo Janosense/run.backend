@@ -72,7 +72,7 @@ return [
 		],
 		[
 			'condition'      => 'url',
-			'url'            => '/articles/{slug}',
+			'url'            => '/articles/{post_slug}',
 			'handle'         => PostController::class . '@index',
 			'include_in_nav' => false,
 		],

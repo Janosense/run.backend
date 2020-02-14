@@ -1,18 +1,22 @@
 .statistics {
   position: relative;
-  padding: 32px 32px 60px;
+  padding: 32px 32px;
   box-sizing: border-box;
   color: #fff;
   background-color: #000;
 
   @media (min-width: 1919px) {
-    padding: 40px 40px 60px;
+    padding: 40px;
   }
 }
 
 .statistics__header {
   margin-bottom: 32px;
   text-align: right;
+}
+
+.statistics__content {
+  margin-bottom: 24px;
 }
 
 .statistics__heading {
@@ -44,7 +48,6 @@
   width: 127px;
   box-sizing: border-box;
   font-size: 14px;
-  //font-weight: 600;
   text-align: right;
 }
 
@@ -88,9 +91,9 @@
 }
 
 .statistics__date {
-  position: absolute;
-  right: 32px;
-  bottom: 20px;
+  display: block;
   font-size: 14px;
   font-weight: 600;
+  text-align: right;
+
 }
