@@ -1,0 +1,11 @@
+{% if pagination is not empty %}
+	<div class="pagination">
+		<ul class="pagination__list">
+			{% for link in pagination %}
+				<li class="pagination__item">
+					{{ link | raw }}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endif %}

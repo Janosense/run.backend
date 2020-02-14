@@ -1,0 +1,18 @@
+<li class="posts-preview__item posts-preview__item--{{ loop.index }}" id="post-{{ id }}">
+	<span class="posts-preview__date2">{{ article.date }}</span>
+	<h3 class="posts-preview__title"><a href="{{ article.permalink }}">{{ article.title }}</a>
+	</h3>
+	<p class="posts-preview__excerpt">
+		{{ article.excerpt }}
+	</p>
+	{% if article.categories is not empty %}
+		<ul class="posts-preview__categories">
+			{% for category in article.categories %}
+				<li class="posts-preview__categories-item">
+					<a href="{{ category.permalink }}"
+					   class="posts-preview__categories-link">{{ category.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+</li>

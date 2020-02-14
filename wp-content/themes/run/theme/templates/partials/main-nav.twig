@@ -2,7 +2,7 @@
 	<div class="wrapper main-nav__wrapper">
 		<ul class="main-nav__list">
 			{% for route in global.routes.web %}
-				{% if route.condition == 'url' %}
+				{% if route.include_in_nav %}
 					<li class="main-nav__item">
 						<a href="{{ route.url }}"
 						   class="main-nav__link {% if route.is_active %}main-nav__link--active{% endif %}">

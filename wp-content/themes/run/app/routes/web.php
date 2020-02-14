@@ -19,7 +19,11 @@ foreach ( $routes['web'] as $route ) {
 
 	switch ( $route['condition'] ) {
 		case 'url':
-			Route::get()->url( $route['url'] )->handle( $route['handle'] );
+			if ( isset( $route['match'] ) ) {
+				Route::get()->url( $route['url'], $route['match'] )->handle( $route['handle'] );
+			} else {
+				Route::get()->url( $route['url'] )->handle( $route['handle'] );
+			}
 			break;
 		case 'where':
 			Route::get()->where( $route['field'], $route['value'] )->handle( $route['handle'] );
