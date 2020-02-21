@@ -58,7 +58,7 @@ class ArticlesController {
 	 *
 	 * @return array
 	 */
-	private function prepare_articles_data( $articles ) {
+	public function prepare_articles_data( $articles ) {
 		$data = [];
 		foreach ( $articles as $article ) {
 			$date            = date( 'd.m.Y', strtotime( $article->post_date ) );
