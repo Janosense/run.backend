@@ -26,6 +26,7 @@ add_action( 'carbon_fields_register_fields', 'app_bootstrap_carbon_fields_regist
 /**
  * Admin panel actions
  */
+add_action( 'init', 'app_switch_locale_for_admin_panel' );
 add_filter( 'manage_result_posts_columns', 'app_add_custom_columns_for_result_post_type', 4 );
 add_action( 'manage_result_posts_custom_column', 'app_fill_custom_columns_for_result_post_type', 5, 2 );
 add_action( 'restrict_manage_posts', 'app_add_filter_by_type_for_result_post_type', 10, 1 );

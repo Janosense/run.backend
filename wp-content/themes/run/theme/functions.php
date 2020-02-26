@@ -56,5 +56,3 @@ require_once APP_APP_DIR . 'helpers.php';
  * Register hooks.
  */
 require_once APP_APP_DIR . 'hooks.php';
-
-
