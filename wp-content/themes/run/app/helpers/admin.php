@@ -77,5 +77,7 @@ function app_add_filter_by_type_handler_for_result_post_type( $query ) {
  *
  */
 function app_switch_locale_for_admin_panel() {
-	switch_to_locale( 'en_US' );
+	if ( is_admin() ) {
+		switch_to_locale( 'en_US' );
+	}
 }
