@@ -145,8 +145,8 @@ class ResultsController {
 	public static function get_result_types() {
 		return [
 			'marathon'      => __( 'Marathon', 'run' ),
-			'half-marathon' => __( 'Half-Marathon', 'run' ),
-			'10'            => __( '10km', 'run' ),
+			'half_marathon' => __( 'Half marathon', 'run' ),
+			'10'            => __( '10 km', 'run' ),
 			'trail'         => __( 'Trail', 'run' ),
 			'ocr'           => __( 'OCR', 'run' ),
 			'other'         => __( 'Other', 'run' ),
@@ -200,8 +200,10 @@ class ResultsController {
 		if ( $container->id == 'carbon_fields_container_result_data' ) {
 			$pb_result_id        = $post_id;
 			$current_result_type = carbon_get_post_meta( $post_id, 'crb_result_type' );
+
 			if ( $current_result_type != 'ocr' && $current_result_type != 'trail' ) {
 				$current_result_time            = carbon_get_post_meta( $post_id, 'crb_result_time' );
+				$pb_result_time                 = $current_result_time;
 				$current_result_time_in_seconds = self::convert_time_to_seconds( $current_result_time );
 				$results                        = get_posts( [
 					'numberposts' => - 1,
@@ -220,11 +222,13 @@ class ResultsController {
 					$result_time_in_seconds = self::convert_time_to_seconds( $result_time );
 
 					if ( $result_time_in_seconds < $current_result_time_in_seconds ) {
-						$pb_result_id = $result->ID;
+						$pb_result_id   = $result->ID;
+						$pb_result_time = $result_time;
 					}
 				}
 
 				update_post_meta( $pb_result_id, '_crb_result_is_pb', 1 );
+				update_option( '_crb_pb_' . $current_result_type, str_replace("00:", "", $pb_result_time) );
 			}
 		}
 	}

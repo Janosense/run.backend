@@ -6,7 +6,7 @@ use Carbon_Fields\Field;
 
 $result_types = ResultsController::get_result_types();
 $fields       = [
-	Field::make( 'hidden', 'crb_result_is_pb', __( 'Result is Personal Best?' ) ),
+	Field::make( 'hidden', 'crb_result_is_pb', __( 'Result is Personal Best?', 'run' ) ),
 	Field::make( 'text', 'crb_result_distance', __( 'Distance', 'run' ) )->set_width( 50 ),
 	Field::make( 'date', 'crb_result_event_date', __( 'Date', 'run' ) )->set_input_format( 'd.m.Y', 'd.m.Y' )
 	     ->set_width( 50 ),

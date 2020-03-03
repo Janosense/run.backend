@@ -15,13 +15,15 @@ class FrontPageController {
 	public function index( $request, $view ) {
 		$articles_data = [];
 		$articles      = $this->get_articles();
+
 		if ( ! empty( $articles ) ) {
 			$articles_controller = new ArticlesController();
 			$articles_data       = $articles_controller->prepare_articles_data( $articles );
 		}
 
 		return \WPEmerge\view( 'templates/front-page.twig' )->with( [
-			'articles' => $articles_data,
+			'articles'   => $articles_data,
+			'pb_results' => StatisticsController::get_personal_best_results(),
 		] );
 	}
 
@@ -34,10 +36,4 @@ class FrontPageController {
 			'post_type'   => 'post',
 		] );
 	}
-
-//	private function prepare_articles_data( $articles ) {
-//		$data = [];
-//
-//		return $data;
-//	}
 }
