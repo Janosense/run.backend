@@ -30,6 +30,8 @@ function app_strava_set_tokens() {
 	if ( ! get_option( 'strava_public_access_token' ) ) {
 		add_option( 'strava_public_access_token', '8db7383e76ab314770fd520f3debb1e8b47f7ffb' );
 	}
+
+	wp_unschedule_hook( 'cron_four_times_daily_event' );
 }
 
 
