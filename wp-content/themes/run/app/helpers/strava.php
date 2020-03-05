@@ -31,7 +31,10 @@ function app_strava_set_tokens() {
 		add_option( 'strava_public_access_token', '8db7383e76ab314770fd520f3debb1e8b47f7ffb' );
 	}
 
-	wp_unschedule_hook( 'cron_four_times_daily_event' );
+	// Private access token expired at
+	if ( ! get_option( 'strava_private_access_token_expires_at' ) ) {
+		add_option( 'strava_private_access_token_expires_at', '1583470086' );
+	}
 }
 
 
@@ -61,6 +64,15 @@ function app_strava_refresh_tokens() {
 
 		if ( isset( $response_body->refresh_token ) ) {
 			update_option( 'strava_private_refresh_token', $response_body->refresh_token );
+		}
+
+		if ( isset( $response_body->expires_at ) ) {
+			update_option( 'strava_private_access_token_expires_at', $response_body->expires_at );
+		}
+
+		if ( ! wp_next_scheduled( 'cron_strava_refresh_tokens_event' ) ) {
+			$timestamp = (int) get_option( 'strava_private_access_token_expires_at' ) - 200;
+			wp_schedule_single_event( $timestamp, 'cron_strava_refresh_tokens_event' );
 		}
 	}
 }

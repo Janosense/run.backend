@@ -50,5 +50,5 @@ add_action( 'init', 'app_strava_set_tokens' );
  * Cron
  */
 add_filter( 'cron_schedules', 'app_cron_add_four_times_daily_schedule' );
-//add_action( 'wp', 'app_activate_cron_strava_refresh_tokens' );
-//add_action( 'cron_four_times_daily_event', 'app_strava_refresh_tokens' );
+add_action( 'wp', 'app_first_activate_cron_strava_refresh_tokens' );
+add_action( 'cron_strava_refresh_tokens_event', 'app_strava_refresh_tokens' );
