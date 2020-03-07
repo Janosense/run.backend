@@ -55,7 +55,6 @@ add_filter( 'cron_schedules', 'app_cron_add_four_times_daily_schedule' );
 add_action( 'wp', 'app_activate_cron_twelve_times_daily_event' );
 add_action( 'wp', 'app_activate_cron_four_times_daily_event' );
 add_action( 'cron_twelve_times_daily_event', 'app_strava_refresh_tokens' );
-
 add_action( 'cron_four_times_daily_event', [
 	StatisticsController::class,
 	'update_statistics',
