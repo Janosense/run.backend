@@ -41,7 +41,7 @@ function app_strava_refresh_tokens() {
 			'client_id'     => get_option( 'strava_client_id' ),
 			'client_secret' => get_option( 'strava_client_secret' ),
 			'grant_type'    => 'refresh_token',
-			'refresh_token' => get_option( 'strava_private_refresh_token' ),
+			'refresh_token' => get_option( 'strava_refresh_token' ),
 		],
 		'cookies'     => []
 	];
