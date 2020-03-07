@@ -1080,6 +1080,7 @@
 
 .statistics__total-distance {
   display: inline-block;
+  margin-left: auto;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 32px;
@@ -1122,17 +1123,31 @@
   margin-bottom: 2px;
 }
 
-.statistics__row--total-distance {
-  margin-bottom: 16px;
+.statistics__row--distance {
+  width: 76%;
+  margin-left: auto;
 }
 
 .statistics__row--marathon {
   margin-bottom: 16px;
 }
 
+.statistics__row--count {
+  padding-top: 16px;
+}
+
+.statistics__row--pb {
+  padding-top: 16px;
+}
+
 .statistics__row-title {
   font-size: 20px;
   font-weight: 600;
+}
+
+.statistics__row-subtitle {
+  margin-right: 8px;
+  font-size: 16px;
 }
 
 .statistics__big-number {

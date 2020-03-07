@@ -1,8 +1,8 @@
-{% if shoes is not empty %}
+{% if statistics.shoes is not empty %}
 <div class="aside__section">
     <h3 class="aside__section-heading">Мои кроссовки</h3>
     <ul class="sneakers">
-		{% for pair in shoes %}
+		{% for pair in statistics.shoes %}
 			<li class="sneakers__item {% if not pair.used %}sneakers__item--old{% endif %}">
 				<div class="sneakers__title">
 					<span class="sneakers__brand">{{ pair.brand }}</span>

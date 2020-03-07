@@ -8,8 +8,21 @@ class StatisticsController {
 	/**
 	 *
 	 */
+	public static function get_statistics() {
+		return [
+			'pb_results'    => StatisticsController::get_personal_best_results(),
+			'shoes'         => StatisticsController::get_shoes(),
+			'athlete_stats' => StatisticsController::get_athlete_stats(),
+			'total_starts'  => wp_count_posts( 'result' )->publish
+		];
+	}
+
+	/**
+	 *
+	 */
 	public static function update_statistics() {
 		self::update_shoes_data();
+		self::update_athlete_stats_data();
 	}
 
 	/**
@@ -114,5 +127,44 @@ class StatisticsController {
 		}
 
 		return [];
+	}
+
+	/**
+	 *
+	 */
+	public static function update_athlete_stats_data() {
+		$statistics_data = StravaController::get_athlete_stats_data();
+
+		if ( ! empty( $statistics_data ) ) {
+			update_option( 'athlete_stats_recent', $statistics_data['recent_run_totals'] );
+			update_option( 'athlete_stats_year', $statistics_data['ytd_run_totals'] );
+			update_option( 'athlete_stats_all', $statistics_data['all_run_totals'] );
+		}
+
+	}
+
+	/**
+	 * @param string $interval = '' | 'recent' | 'year' | 'all'
+	 *
+	 * @return array|mixed|void
+	 */
+	public static function get_athlete_stats( $interval = '' ) {
+		switch ( $interval ) {
+			case 'recent':
+				return get_option( 'athlete_stats_recent' );
+				break;
+			case 'year' :
+				return get_option( 'athlete_stats_year' );
+				break;
+			case 'all' :
+				return get_option( 'athlete_stats_all' );
+				break;
+			default:
+				return [
+					'recent' => get_option( 'athlete_stats_recent' ),
+					'year'   => get_option( 'athlete_stats_year' ),
+					'all'    => get_option( 'athlete_stats_all' ),
+				];
+		}
 	}
 }

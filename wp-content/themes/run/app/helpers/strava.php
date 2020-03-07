@@ -26,7 +26,10 @@ function app_strava_set_tokens() {
 		add_option( 'strava_access_token_expires_at', '1583470086' );
 	}
 
-//	app_strava_refresh_tokens();
+	// Athlete ID
+	if ( ! get_option( 'strava_athlete_id' ) ) {
+		add_option( 'strava_athlete_id', '34095188' );
+	}
 }
 
 /**

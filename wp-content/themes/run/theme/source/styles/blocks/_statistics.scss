@@ -37,6 +37,7 @@
 
 .statistics__total-distance {
   display: inline-block;
+  margin-left: auto;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 32px;
@@ -71,18 +72,32 @@
   align-items: baseline;
   margin-bottom: 2px;
 
-  &--total-distance {
-    margin-bottom: 16px;
+  &--distance {
+    width: 76%;
+    margin-left: auto;
   }
 
   &--marathon {
     margin-bottom: 16px;
+  }
+
+  &--count {
+    padding-top: 16px;
+  }
+
+  &--pb {
+    padding-top: 16px;
   }
 }
 
 .statistics__row-title {
   font-size: 20px;
   font-weight: 600;
+}
+
+.statistics__row-subtitle {
+  margin-right: 8px;
+  font-size: 16px;
 }
 
 .statistics__big-number {
