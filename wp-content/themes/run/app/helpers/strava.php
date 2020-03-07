@@ -47,18 +47,18 @@ function app_strava_refresh_tokens() {
 	$response = wp_remote_post( $url, $args );
 
 	if ( ! is_wp_error( $response ) && $response['response']['code'] == 200 ) {
-		$response_body = json_decode( $response['body'] );
+		$response_body = json_decode( $response['body'], true );
 
-		if ( isset( $response_body->access_token ) ) {
-			update_option( 'strava_access_token', $response_body->access_token );
+		if ( isset( $response_body['access_token'] ) ) {
+			update_option( 'strava_access_token', $response_body['access_token'] );
 		}
 
-		if ( isset( $response_body->refresh_token ) ) {
-			update_option( 'strava_refresh_token', $response_body->refresh_token );
+		if ( isset( $response_body['refresh_token'] ) ) {
+			update_option( 'strava_refresh_token', $response_body['refresh_token'] );
 		}
 
-		if ( isset( $response_body->expires_at ) ) {
-			update_option( 'strava_access_token_expires_at', $response_body->expires_at );
+		if ( isset( $response_body['expires_at'] ) ) {
+			update_option( 'strava_access_token_expires_at', $response_body['expires_at'] );
 		}
 	} else {
 		if ( ! wp_next_scheduled( 'cron_strava_refresh_tokens_event' ) ) {

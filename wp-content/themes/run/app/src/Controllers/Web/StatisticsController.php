@@ -3,6 +3,8 @@
 
 namespace App\Controllers\Web;
 
+use App\Controllers\Web\StravaController;
+
 
 class StatisticsController {
 
