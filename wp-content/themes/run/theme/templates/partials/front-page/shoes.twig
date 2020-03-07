@@ -1,0 +1,16 @@
+{% if shoes is not empty %}
+<div class="aside__section">
+    <h3 class="aside__section-heading">Мои кроссовки</h3>
+    <ul class="sneakers">
+		{% for pair in shoes %}
+			<li class="sneakers__item {% if not pair.used %}sneakers__item--old{% endif %}">
+				<div class="sneakers__title">
+					<span class="sneakers__brand">{{ pair.brand }}</span>
+					<span class="sneakers__model">{{ pair.model }}</span>
+				</div>
+				<div class="sneakers__distance">{{ pair.distance }}<span>км</span></div>
+			</li>
+		{% endfor %}
+    </ul>
+</div>
+{% endif %}

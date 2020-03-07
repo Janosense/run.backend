@@ -24,6 +24,7 @@ class FrontPageController {
 		return \WPEmerge\view( 'templates/front-page.twig' )->with( [
 			'articles'   => $articles_data,
 			'pb_results' => StatisticsController::get_personal_best_results(),
+			'shoes'      => StatisticsController::get_shoes(),
 		] );
 	}
 

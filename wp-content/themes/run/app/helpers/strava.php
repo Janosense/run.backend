@@ -18,7 +18,7 @@ function app_strava_set_tokens() {
 
 	// Private access token
 	if ( ! get_option( 'strava_access_token' ) ) {
-		add_option( 'strava_access_token', 'a683762ca742cc6dc065887681d80d525ee8d834' );
+		add_option( 'strava_access_token', 'e97b1796f47bb45b7ab951b86e968ec1124c5678' );
 	}
 
 	// Private access token expired at
@@ -27,7 +27,9 @@ function app_strava_set_tokens() {
 	}
 }
 
-
+/**
+ *
+ */
 function app_strava_refresh_tokens() {
 	$url  = 'https://www.strava.com/oauth/token';
 	$args = [

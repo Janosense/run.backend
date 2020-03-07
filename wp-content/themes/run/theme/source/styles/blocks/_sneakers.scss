@@ -13,6 +13,21 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  &--old {
+
+    .sneakers__brand {
+      opacity: 0.5;
+    }
+
+    .sneakers__model {
+      opacity: 0.3;
+    }
+
+    .sneakers__distance {
+      opacity: 0.14;
+    }
+  }
 }
 
 .sneakers__brand {
@@ -23,7 +38,7 @@
 
 .sneakers__model {
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 800;
   line-height: 1;
 

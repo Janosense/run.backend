@@ -11,7 +11,10 @@ class StravaController {
 		'athlete' => 'athlete',
 	];
 
-	static public function get_shoes() {
+	/**
+	 * @return array
+	 */
+	static public function get_shoes_data() {
 		$url          = self::$api_base . self::$api_endpoints['athlete'];
 		$access_token = get_option( 'strava_access_token' );
 		$args         = [
@@ -28,10 +31,11 @@ class StravaController {
 		if ( ! is_wp_error( $response ) && $response['response']['code'] == 200 ) {
 			$response_body = json_decode( $response['body'], true );
 			if ( isset( $response_body['shoes'] ) && ! empty( $response_body['shoes'] ) ) {
-				foreach ( $response_body['shoes'] as $shoe ) {
+				foreach ( $response_body['shoes'] as $pair ) {
 					$shoes[] = [
-						'name'     => $shoe['name'],
-						'distance' => $shoe['distance'],
+						'id'       => $pair['id'],
+						'name'     => $pair['name'],
+						'distance' => $pair['distance'],
 					];
 				}
 			}

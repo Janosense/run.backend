@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\Web\ResultsController;
+use App\Controllers\Web\StatisticsController;
 
 /**
  * Assets
@@ -37,7 +38,7 @@ add_action( 'pre_get_posts', 'app_add_filter_by_type_handler_for_result_post_typ
  */
 add_action( 'carbon_fields_post_meta_container_saved', [
 	ResultsController::class,
-	'set_personal_best_result'
+	'set_personal_best_result',
 ], 10, 2 );
 
 /**
@@ -50,6 +51,12 @@ add_action( 'init', 'app_strava_set_tokens' );
  * Cron
  */
 add_filter( 'cron_schedules', 'app_cron_add_every_two_hours_daily_schedule' );
-add_action( 'wp', 'app_activate_cron_strava_refresh_tokens' );
+add_filter( 'cron_schedules', 'app_cron_add_four_times_daily_schedule' );
+add_action( 'wp', 'app_activate_cron_twelve_times_daily_event' );
+add_action( 'wp', 'app_activate_cron_four_times_daily_event' );
 add_action( 'cron_twelve_times_daily_event', 'app_strava_refresh_tokens' );
+add_action( 'cron_four_times_daily_event', [
+	StatisticsController::class,
+	'update_statistics',
+] );
 add_action( 'cron_strava_refresh_tokens_event', 'app_strava_refresh_tokens' );
