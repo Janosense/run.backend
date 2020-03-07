@@ -92,7 +92,7 @@ class StatisticsController {
 		return [
 			'HOKA ONE ONE',
 			'New Balance',
-			'Asics',
+			'ASICS',
 			'Saucony',
 		];
 	}
