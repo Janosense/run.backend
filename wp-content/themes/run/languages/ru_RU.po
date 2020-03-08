@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-03-07 23:59+0200\n"
-"PO-Revision-Date: 2020-03-08 18:12+0200\n"
+"PO-Revision-Date: 2020-03-08 21:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -115,11 +115,11 @@ msgstr ""
 
 #: app/setup/carbon-fields/post-type-result.php:25
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 #: app/setup/carbon-fields/post-type-result.php:26
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 #: app/setup/carbon-fields/post-type-result.php:27
 msgid "Optional, for OCR events"
@@ -135,11 +135,11 @@ msgstr ""
 
 #: app/setup/carbon-fields/theme-option-shoes.php:7
 msgid "My shoes"
-msgstr ""
+msgstr "Мои кроссовки"
 
 #: app/setup/carbon-fields/theme-option-shoes.php:11
 msgid "Shoes"
-msgstr ""
+msgstr "Кроссовки"
 
 #: app/setup/carbon-fields/theme-option-shoes.php:18
 msgid "Shoes id"
@@ -196,7 +196,7 @@ msgstr ""
 
 #: app/setup/post-types/event.php:18
 msgid "Events"
-msgstr ""
+msgstr "Мероприятия"
 
 #: app/setup/post-types/event.php:19
 msgid "All Events"
@@ -213,7 +213,7 @@ msgstr ""
 #: app/setup/post-types/result.php:5 app/setup/post-types/result.php:7
 #: app/setup/post-types/result.php:8 app/setup/post-types/result.php:30
 msgid "Result"
-msgstr ""
+msgstr "Результат"
 
 #: app/setup/post-types/result.php:9
 msgid "Add Result"
@@ -241,11 +241,11 @@ msgstr ""
 
 #: app/setup/post-types/result.php:18 app/setup/routes.php:33
 msgid "Results"
-msgstr ""
+msgstr "Результаты"
 
 #: app/setup/post-types/result.php:19
 msgid "All Results"
-msgstr "ВСе результаты"
+msgstr "Все результаты"
 
 #: app/setup/post-types/result.php:29
 msgid "Results list"
@@ -314,7 +314,7 @@ msgstr "Типы результата"
 #: app/src/Controllers/Web/ArticlesController.php:48
 #, php-format
 msgid "Category: %s"
-msgstr "Категория:"
+msgstr "Категория: %s"
 
 #: app/src/Controllers/Web/ArticlesController.php:143
 msgid "Previous"
@@ -344,7 +344,7 @@ msgstr "Запланировано"
 
 #: app/src/Controllers/Web/CalendarController.php:130
 msgid "Registered"
-msgstr "Зарегистриован "
+msgstr "Зарегистрирован"
 
 #: app/src/Controllers/Web/ResultsController.php:147
 #: app/src/Controllers/Web/StatisticsController.php:55
