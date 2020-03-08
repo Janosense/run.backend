@@ -1,39 +1,378 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-31 01:05+0200\n"
-"PO-Revision-Date: 2020-01-31 01:10+0200\n"
+"POT-Creation-Date: 2020-03-07 23:59+0200\n"
+"PO-Revision-Date: 2020-03-08 18:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
-"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: app/routes.php:24
+#: app/helpers/admin.php:13 app/setup/carbon-fields/post-type-result.php:17
+#: app/setup/taxonomies/result-type.php:6
+#: app/setup/taxonomies/result-type.php:8
+#: app/setup/taxonomies/result-type.php:9
+msgid "Result type"
+msgstr "Тип результата"
+
+#: app/helpers/admin.php:14
+msgid "Is personal best?"
+msgstr "Это лучший результат?"
+
+#: app/helpers/admin.php:43
+msgid "All result types"
+msgstr "Все типы результатов"
+
+#: app/helpers/cron.php:10
+msgid "Four times a day"
+msgstr "Четыре раза в день"
+
+#: app/helpers/cron.php:24
+msgid "Twelve times a day"
+msgstr "Двенадцать раз в день"
+
+#: app/setup/carbon-fields/post-type-event.php:10
+msgid "Event state"
+msgstr ""
+
+#: app/setup/carbon-fields/post-type-event.php:11
+#: app/setup/carbon-fields/post-type-result.php:11
+msgid "Date"
+msgstr "Дата"
+
+#: app/setup/carbon-fields/post-type-event.php:12
+msgid "Type"
+msgstr "Тип"
+
+#: app/setup/carbon-fields/post-type-event.php:13
+#: app/setup/carbon-fields/post-type-result.php:21
+msgid "Organizer"
+msgstr "Организатор"
+
+#: app/setup/carbon-fields/post-type-event.php:14
+#: app/setup/carbon-fields/post-type-result.php:10
+#: app/setup/carbon-fields/theme-option-shoes.php:21
+msgid "Distance"
+msgstr "Дистанция"
+
+#: app/setup/carbon-fields/post-type-event.php:15
+msgid "Place"
+msgstr "Место"
+
+#: app/setup/carbon-fields/post-type-event.php:16
+msgid "Race number"
+msgstr "Стартовый номер"
+
+#: app/setup/carbon-fields/post-type-event.php:17
+msgid "Event official page"
+msgstr "Официальная страница мероприятия"
+
+#: app/setup/carbon-fields/post-type-event.php:21
+msgid "Event data"
+msgstr "Дата мероприятия"
+
+#: app/setup/carbon-fields/post-type-result.php:9
+msgid "Result is Personal Best?"
+msgstr "Это лучший результат?"
+
+#: app/setup/carbon-fields/post-type-result.php:13
+msgid "Result time"
+msgstr "Время"
+
+#: app/setup/carbon-fields/post-type-result.php:15
+msgid "Average pace"
+msgstr "Средний темп"
+
+#: app/setup/carbon-fields/post-type-result.php:16
+msgid "Difference with PB"
+msgstr "Разница с лучшим результатом"
+
+#: app/setup/carbon-fields/post-type-result.php:20
+msgid "Place of event"
+msgstr "Место проведения мероприятия"
+
+#: app/setup/carbon-fields/post-type-result.php:22
+msgid "Place overall"
+msgstr ""
+
+#: app/setup/carbon-fields/post-type-result.php:23
+msgid "Place gender"
+msgstr ""
+
+#: app/setup/carbon-fields/post-type-result.php:24
+msgid "Place age"
+msgstr ""
+
+#: app/setup/carbon-fields/post-type-result.php:25
+msgid "Description"
+msgstr ""
+
+#: app/setup/carbon-fields/post-type-result.php:26
+msgid "Category"
+msgstr ""
+
+#: app/setup/carbon-fields/post-type-result.php:27
+msgid "Optional, for OCR events"
+msgstr ""
+
+#: app/setup/carbon-fields/post-type-result.php:30
+msgid "Result data"
+msgstr ""
+
+#: app/setup/carbon-fields/theme-option-personal-best.php:14
+msgid "Personal Best"
+msgstr ""
+
+#: app/setup/carbon-fields/theme-option-shoes.php:7
+msgid "My shoes"
+msgstr ""
+
+#: app/setup/carbon-fields/theme-option-shoes.php:11
+msgid "Shoes"
+msgstr ""
+
+#: app/setup/carbon-fields/theme-option-shoes.php:18
+msgid "Shoes id"
+msgstr ""
+
+#: app/setup/carbon-fields/theme-option-shoes.php:19
+msgid "Brand"
+msgstr ""
+
+#: app/setup/carbon-fields/theme-option-shoes.php:20
+msgid "Model"
+msgstr ""
+
+#: app/setup/carbon-fields/theme-option-shoes.php:22
+msgid "Are used?"
+msgstr ""
+
+#: app/setup/carbon-fields/theme-option-shoes.php:24
+msgid "not used"
+msgstr ""
+
+#: app/setup/carbon-fields/theme-option-shoes.php:25
+msgid "used"
+msgstr ""
+
+#: app/setup/post-types/event.php:5 app/setup/post-types/event.php:7
+#: app/setup/post-types/event.php:8 app/setup/post-types/event.php:30
+msgid "Event"
+msgstr ""
+
+#: app/setup/post-types/event.php:9
+msgid "Add Event"
+msgstr ""
+
+#: app/setup/post-types/event.php:10
+msgid "Add Event "
+msgstr ""
+
+#: app/setup/post-types/event.php:11
+msgid "Edit Event"
+msgstr ""
+
+#: app/setup/post-types/event.php:12
+msgid "New Event"
+msgstr ""
+
+#: app/setup/post-types/event.php:13
+msgid "View Event"
+msgstr ""
+
+#: app/setup/post-types/event.php:14
+msgid "Search Events"
+msgstr ""
+
+#: app/setup/post-types/event.php:18
+msgid "Events"
+msgstr ""
+
+#: app/setup/post-types/event.php:19
+msgid "All Events"
+msgstr ""
+
+#: app/setup/post-types/event.php:29
+msgid "Events list"
+msgstr ""
+
+#: app/setup/post-types/event.php:31
+msgid "View Events"
+msgstr ""
+
+#: app/setup/post-types/result.php:5 app/setup/post-types/result.php:7
+#: app/setup/post-types/result.php:8 app/setup/post-types/result.php:30
+msgid "Result"
+msgstr ""
+
+#: app/setup/post-types/result.php:9
+msgid "Add Result"
+msgstr ""
+
+#: app/setup/post-types/result.php:10
+msgid "Add Result "
+msgstr ""
+
+#: app/setup/post-types/result.php:11
+msgid "Edit Result"
+msgstr ""
+
+#: app/setup/post-types/result.php:12
+msgid "New Result"
+msgstr ""
+
+#: app/setup/post-types/result.php:13
+msgid "View Result"
+msgstr ""
+
+#: app/setup/post-types/result.php:14
+msgid "Search Results"
+msgstr ""
+
+#: app/setup/post-types/result.php:18 app/setup/routes.php:33
+msgid "Results"
+msgstr ""
+
+#: app/setup/post-types/result.php:19
+msgid "All Results"
+msgstr "ВСе результаты"
+
+#: app/setup/post-types/result.php:29
+msgid "Results list"
+msgstr "Список результатов"
+
+#: app/setup/post-types/result.php:31
+msgid "View Results"
+msgstr "Посмотреть результаты"
+
+#: app/setup/routes.php:17
 msgid "Home"
 msgstr "Главная"
 
-#: app/routes.php:30
+#: app/setup/routes.php:25
 msgid "Calendar"
 msgstr "Календарь"
 
-#: app/routes.php:36
-msgid "Results"
-msgstr "Результаты"
-
-#: app/routes.php:42
+#: app/setup/routes.php:41
 msgid "History"
 msgstr "История"
 
-#: app/routes.php:48
+#: app/setup/routes.php:49 app/src/Controllers/Web/ArticlesController.php:22
 msgid "Posts"
 msgstr "Записи"
 
-#: app/routes.php:54
+#: app/setup/routes.php:83
 msgid "About me"
 msgstr "Обо мне"
+
+#: app/setup/taxonomies/result-type.php:10
+msgid "Search Result types"
+msgstr ""
+
+#: app/setup/taxonomies/result-type.php:11
+msgid "All Result types"
+msgstr "Все типы результатов"
+
+#: app/setup/taxonomies/result-type.php:12
+msgid "View Result type"
+msgstr "Посмотреть тип результата"
+
+#: app/setup/taxonomies/result-type.php:13
+msgid "Parent Result type"
+msgstr "Родительский тип результата"
+
+#: app/setup/taxonomies/result-type.php:15
+msgid "Edit Result type"
+msgstr "Редактировать тип результата"
+
+#: app/setup/taxonomies/result-type.php:16
+msgid "Update Result type"
+msgstr "Обновить тип результата"
+
+#: app/setup/taxonomies/result-type.php:17
+msgid "Add new Result type"
+msgstr "Добавить новый тип результата"
+
+#: app/setup/taxonomies/result-type.php:18
+msgid "New Result type name"
+msgstr "Имя нового типа результата"
+
+#: app/setup/taxonomies/result-type.php:19
+msgid "Result types"
+msgstr "Типы результата"
+
+#: app/src/Controllers/Web/ArticlesController.php:48
+#, php-format
+msgid "Category: %s"
+msgstr "Категория:"
+
+#: app/src/Controllers/Web/ArticlesController.php:143
+msgid "Previous"
+msgstr "Предыдущий"
+
+#: app/src/Controllers/Web/ArticlesController.php:144
+msgid "Next"
+msgstr "Следующий"
+
+#: app/src/Controllers/Web/CalendarController.php:118
+msgid "Road"
+msgstr "Шоссе"
+
+#: app/src/Controllers/Web/CalendarController.php:119
+#: app/src/Controllers/Web/ResultsController.php:150
+msgid "Trail"
+msgstr "Трейл"
+
+#: app/src/Controllers/Web/CalendarController.php:120
+#: app/src/Controllers/Web/ResultsController.php:151
+msgid "OCR"
+msgstr "OCR"
+
+#: app/src/Controllers/Web/CalendarController.php:129
+msgid "Scheduled"
+msgstr "Запланировано"
+
+#: app/src/Controllers/Web/CalendarController.php:130
+msgid "Registered"
+msgstr "Зарегистриован "
+
+#: app/src/Controllers/Web/ResultsController.php:147
+#: app/src/Controllers/Web/StatisticsController.php:55
+msgid "Marathon"
+msgstr "Марафон"
+
+#: app/src/Controllers/Web/ResultsController.php:148
+#: app/src/Controllers/Web/StatisticsController.php:54
+msgid "Half marathon"
+msgstr "Полумарафон"
+
+#: app/src/Controllers/Web/ResultsController.php:149
+#: app/src/Controllers/Web/StatisticsController.php:53
+msgid "10 km"
+msgstr "10 км"
+
+#: app/src/Controllers/Web/ResultsController.php:152
+msgid "Other"
+msgstr "Другое"
+
+#: app/src/Controllers/Web/StatisticsController.php:50
+msgid "1 km"
+msgstr "1 км"
+
+#: app/src/Controllers/Web/StatisticsController.php:51
+msgid "1 mile"
+msgstr "1 миля"
+
+#: app/src/Controllers/Web/StatisticsController.php:52
+msgid "5 km"
+msgstr "5 км"
