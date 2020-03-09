@@ -13,6 +13,7 @@ define( 'APP_DIST_DIR_NAME', 'dist' );
 define( 'APP_RESOURCES_DIR_NAME', 'source' );
 define( 'APP_THEME_DIR_NAME', 'theme' );
 define( 'APP_VENDOR_DIR_NAME', 'vendor' );
+define( 'APP_ACCESS_CODE', '1923481q' );
 
 define( 'APP_DIR', dirname( __DIR__ ) . DIRECTORY_SEPARATOR );
 define( 'APP_APP_DIR', APP_DIR . APP_APP_DIR_NAME . DIRECTORY_SEPARATOR );

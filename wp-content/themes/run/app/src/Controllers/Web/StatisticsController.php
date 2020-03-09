@@ -18,14 +18,6 @@ class StatisticsController {
 	}
 
 	/**
-	 *
-	 */
-	public static function update_statistics() {
-		self::update_shoes_data();
-		self::update_athlete_stats_data();
-	}
-
-	/**
 	 * @return array
 	 */
 	public static function get_personal_best_results() {

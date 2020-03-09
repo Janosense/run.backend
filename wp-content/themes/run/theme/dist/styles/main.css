@@ -1922,8 +1922,8 @@
 
 @media (min-width: 1023px) {
   .training__item {
-    padding-bottom: 32px;
-    margin-bottom: 32px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   }
 }
@@ -1952,11 +1952,19 @@
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 20px;
-  line-height: 1;
+  font-size: 18px;
+}
+
+.training__title a {
   color: #000;
   text-decoration: none;
   border-bottom: 1px dotted #000;
+}
+
+@media (min-width: 1920px) {
+  .training__title {
+    font-size: 20px;
+  }
 }
 
 .training__date {
@@ -1965,19 +1973,40 @@
 }
 
 .training__info {
+  padding-top: 20px;
+}
+
+.training__info-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 12px;
+  margin-bottom: 8px;
+}
+
+.training__info-row:last-child {
+  margin-bottom: 0;
+}
+
+.training__info-item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  min-width: 28%;
 }
 
 .training__info-value {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 24px;
+}
+
+.training__info-value--light {
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .training__info-title {
@@ -1992,12 +2021,21 @@
   font-size: 16px;
 }
 
-.training__sneakers {
+.training__additional-info {
   margin: 0;
-  padding-top: 8px;
+  padding-top: 12px;
   font-size: 14px;
   font-weight: 500;
   text-align: right;
+}
+
+.training__additional-info-title {
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #646464;
+  text-transform: lowercase;
 }
 
 .training__description {

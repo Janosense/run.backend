@@ -9,7 +9,11 @@
  */
 
 use WPEmerge\Facades\Route;
+use App\Controllers\Web\StravaController;
 
+/**
+ * Main routes
+ */
 $routes = require APP_APP_SETUP_DIR . 'routes.php';
 
 foreach ( $routes['web'] as $route ) {
@@ -30,6 +34,13 @@ foreach ( $routes['web'] as $route ) {
 			break;
 	}
 }
+
+/**
+ * Auxiliary routes
+ */
+
+// Route for manual strava statistics update
+Route::get()->url( '/update_strava_data/' )->handle( StravaController::class . '@manual_update_data' );
 
 
 

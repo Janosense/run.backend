@@ -1,7 +1,7 @@
 <?php
 
 use App\Controllers\Web\ResultsController;
-use App\Controllers\Web\StatisticsController;
+use App\Controllers\Web\StravaController;
 
 /**
  * Assets
@@ -56,7 +56,8 @@ add_action( 'wp', 'app_activate_cron_twelve_times_daily_event' );
 add_action( 'wp', 'app_activate_cron_four_times_daily_event' );
 add_action( 'cron_twelve_times_daily_event', 'app_strava_refresh_tokens' );
 add_action( 'cron_four_times_daily_event', [
-	StatisticsController::class,
-	'update_statistics',
+	StravaController::class,
+	'update_data',
 ] );
+
 add_action( 'cron_strava_refresh_tokens_event', 'app_strava_refresh_tokens' );
