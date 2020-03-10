@@ -3765,6 +3765,48 @@
   opacity: 1;
 }
 
+.accessories {
+  position: relative;
+  padding: 32px 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f1f1f1;
+}
+
+@media (min-width: 1919px) {
+  .accessories {
+    padding: 40px;
+  }
+}
+
+.accessories__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.accessories__item {
+  margin-bottom: 24px;
+  text-align: right;
+}
+
+.accessories__item:last-child {
+  margin-bottom: 0;
+}
+
+.accessories__type {
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.accessories__name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
+
 .layout {
   position: relative;
   z-index: 10;

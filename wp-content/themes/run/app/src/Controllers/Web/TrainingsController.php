@@ -19,7 +19,7 @@ class TrainingsController {
 	 *
 	 */
 	public static function update_activities_list_data() {
-		$activities_list_data = StravaController::get_activities_list_data( 10 );
+		$activities_list_data = StravaController::get_activities_list_data( 6 );
 		if ( ! empty( $activities_list_data ) && ! is_wp_error( $activities_list_data ) ) {
 			$data = self::prepare_activities_list_data( $activities_list_data );
 			update_option( 'strava_activities_list', $data );

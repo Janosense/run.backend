@@ -7,11 +7,6 @@
                 <img src="/wp-content/themes/run/theme/dist/images/strava-logo.svg" alt="Strava">
             </a>
         </div>
-{#        <div class="training__header-layout">#}
-{#			<p class="training__count">за последние 4 недели</p>#}
-{#            <p class="training__count"><span>{{ statistics.athlete_stats.recent.count }}</span> тренировки(ок)</p>#}
-{#            <p class="training__count"><span>{{ statistics.athlete_stats.recent.distance }}</span>км пробежал</p>#}
-{#        </div>#}
     </header>
 
     <ul class="training__list">
@@ -21,9 +16,6 @@
                 <h3 class="training__title"><a href="https://www.strava.com/activities/{{ activity.id }}/overview" target="_blank">{{ activity.name }}</a></h3>
                 <span class="training__date">{{ activity.date }}</span>
             </div>
-{#            <p class="training__description">#}
-{#				{{ activity.description }}#}
-{#            </p>#}
             <div class="training__info">
 				<div class="training__info-row">
 					<div class="training__info-item">
@@ -54,89 +46,9 @@
 					</div>
 				</div>
             </div>
-{#            <p class="training__additional-info"><span class="training__additional-info-title">ср. ЧСС: </span>{{ activity.average_heartrate }}</p>#}
-{#            <p class="training__additional-info"><span class="training__additional-info-title">Каллории: </span>{{ activity.calories }}</p>#}
-{#            <p class="training__additional-info"><span class="training__additional-info-title">Каденс: </span>{{ activity.average_cadence }}</p>#}
             <p class="training__additional-info"><span class="training__additional-info-title">Кроссовки: </span>{{ activity.shoes }}</p>
         </li>
 		{% endfor %}
-{#        <li class="training__item">#}
-{#            <div class="training__item-header">#}
-{#                <a href="" class="training__title">Eveningn run</a>#}
-{#                <span class="training__date">20.10.2019</span>#}
-{#            </div>#}
-{#            <div class="training__info">#}
-{#                <div class="training__distance">#}
-{#                    <span class="training__info-value">31,11</span><span class="training__info-km">км</span>#}
-{#                    <span class="training__info-title">Дистанция</span>#}
-{#                </div>#}
-{#                <div class="training__time">#}
-{#                    <span class="training__info-value">2:50:14</span>#}
-{#                    <span class="training__info-title">Время</span>#}
-{#                </div>#}
-{#                <div class="training__pace">#}
-{#                    <span class="training__info-value">5:28</span><span class="training__info-km">/км</span>#}
-{#                    <span class="training__info-title">Темп</span>#}
-{#                </div>#}
-{#            </div>#}
-{#        </li>#}
-{#        <li class="training__item">#}
-{#            <div class="training__item-header">#}
-{#                <a href="" class="training__title">Intervals 8 x 40"/2'</a>#}
-{#                <span class="training__date">16.10.2019</span>#}
-{#            </div>#}
-{#            <div class="training__info">#}
-{#                <div class="training__distance">#}
-{#                    <span class="training__info-title">Дистанция</span>#}
-{#                    <span class="training__info-value">31,11</span><span class="training__info-km">км</span>#}
-{#                </div>#}
-{#                <div class="training__time">#}
-{#                    <span class="training__info-title">Время</span>#}
-{#                    <span class="training__info-value">2:50:14</span>#}
-{#                </div>#}
-{#                <div class="training__pace">#}
-{#                    <span class="training__info-title">Темп</span>#}
-{#                    <span class="training__info-value">5:28</span><span class="training__info-km">/км</span>#}
-{#                </div>#}
-{#            </div>#}
-{#        </li>#}
-{#        <li class="training__item">#}
-{#            <a href="" class="training__title">Eveningn run</a>#}
-{#            <div class="training__info">#}
-{#                <div class="training__distance">#}
-{#                    <span class="training__info-title">Дистанция</span>#}
-{#                    <span class="training__info-value">9,0</span><span class="training__info-km">км</span>#}
-{#                </div>#}
-{#                <div class="training__time">#}
-{#                    <span class="training__info-title">Время</span>#}
-{#                    <span class="training__info-value">2:50:14</span>#}
-{#                </div>#}
-{#                <div class="training__pace">#}
-{#                    <span class="training__info-title">Темп</span>#}
-{#                    <span class="training__info-value">5:28</span><span class="training__info-km">/км</span>#}
-{#                </div>#}
-{#            </div>#}
-{#        </li>#}
-{#        <li class="training__item">#}
-{#            <div class="training__item-header">#}
-{#                <a href="" class="training__title">Eveningn run</a>#}
-{#                <span class="training__date">20.10.2019</span>#}
-{#            </div>#}
-{#            <div class="training__info">#}
-{#                <div class="training__distance">#}
-{#                    <span class="training__info-value">31,11</span><span class="training__info-km">км</span>#}
-{#                    <span class="training__info-title">Дистанция</span>#}
-{#                </div>#}
-{#                <div class="training__time">#}
-{#                    <span class="training__info-value">2:50:14</span>#}
-{#                    <span class="training__info-title">Время</span>#}
-{#                </div>#}
-{#                <div class="training__pace">#}
-{#                    <span class="training__info-value">5:28</span><span class="training__info-km">/км</span>#}
-{#                    <span class="training__info-title">Темп</span>#}
-{#                </div>#}
-{#            </div>#}
-{#        </li>#}
     </ul>
 </section>
 {% endif %}

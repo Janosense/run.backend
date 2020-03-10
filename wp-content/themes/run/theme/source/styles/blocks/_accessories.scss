@@ -1,0 +1,38 @@
+.accessories {
+  position: relative;
+  padding: 32px 32px;
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+
+  @media (min-width: 1919px) {
+    padding: 40px;
+  }
+}
+
+.accessories__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.accessories__item {
+  margin-bottom: 24px;
+  text-align: right;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.accessories__type {
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.accessories__name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
