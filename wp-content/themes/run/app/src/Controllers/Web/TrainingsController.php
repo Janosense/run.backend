@@ -39,17 +39,17 @@ class TrainingsController {
 			foreach ( $data as $activity ) {
 				$activity_data = StravaController::get_activity_data( $activity['id'] );
 
+				$date        = date_format( date_create( $activity_data['start_date'] ), 'd.m.Y' );
+				$moving_time = gmdate( "H:i:s", $activity_data['moving_time'] );
+
 				if ( $activity_data['type'] == 'Run' ) {
-					$moving_time = gmdate( "H:i:s", $activity_data['moving_time'] );
-					$pace        = gmdate( "i:s", $activity_data['moving_time'] / ( $activity_data['distance'] / 1000 ) );
-					$distance    = round( $activity_data['distance'] / 1000, 2 );
-					$date        = date_format( date_create( $activity_data['start_date'] ), 'd.m.Y' );
+					$pace     = gmdate( "i:s", $activity_data['moving_time'] / ( $activity_data['distance'] / 1000 ) );
+					$distance = round( $activity_data['distance'] / 1000, 2 );
 
 					$prepared_data[] = [
 						'id'                   => $activity['id'],
 						'name'                 => $activity_data['name'],
 						'date'                 => $date,
-						'description'          => $activity_data['description'],
 						'distance'             => $distance,
 						'calories'             => $activity_data['calories'],
 						'average_heartrate'    => $activity_data['average_heartrate'],
@@ -57,7 +57,18 @@ class TrainingsController {
 						'total_elevation_gain' => $activity_data['total_elevation_gain'],
 						'moving_time'          => $moving_time,
 						'pace'                 => $pace,
-						'shoes'                => $activity_data['gear']['name']
+						'shoes'                => $activity_data['gear']['name'],
+						'type'                 => $activity_data['type'],
+					];
+				} else {
+					$prepared_data[] = [
+						'id'                => $activity['id'],
+						'name'              => $activity_data['name'],
+						'date'              => $date,
+						'calories'          => $activity_data['calories'],
+						'average_heartrate' => $activity_data['average_heartrate'],
+						'moving_time'       => $moving_time,
+						'type'              => $activity_data['type'],
 					];
 				}
 			}
