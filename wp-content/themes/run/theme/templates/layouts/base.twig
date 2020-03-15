@@ -7,7 +7,7 @@
     {% block head %}
         <title>Блог бегуна</title>
     {% endblock %}
-    <link rel="stylesheet" type="text/css" href="/wp-content/themes/run/theme/dist/styles/main.css?ver=1.0.1" media="all"/>
+    <link rel="stylesheet" type="text/css" href="/wp-content/themes/run/theme/dist/styles/main.css?ver={{ global.theme_version }}" media="all"/>
 
 </head>
 <body class="body">
@@ -22,7 +22,7 @@
 </div>
 {% include "templates/partials/footer.twig" %}
 
-<script src="/wp-content/themes/run/theme/dist/scripts/main.js?ver=1.0.1"></script>
+<script src="/wp-content/themes/run/theme/dist/scripts/main.js?ver={{ global.theme_version }}"></script>
 {% block footer %}
 {% endblock %}
 </body>
