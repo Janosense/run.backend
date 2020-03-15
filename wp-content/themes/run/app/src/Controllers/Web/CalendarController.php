@@ -35,11 +35,13 @@ class CalendarController {
 		$event_types = self::get_event_types();
 		foreach ( $events as $event ) {
 			$meta_fields = get_post_meta( $event->ID );
-			$data[]      = [
+			$date        = date_format( date_create( $meta_fields['_crb_event_date'][0] ), 'd.m.Y' );
+
+			$data[] = [
 				'ID'        => $event->ID,
 				'title'     => $event->post_title,
 				'state'     => $meta_fields['_crb_event_state'][0],
-				'date'      => $meta_fields['_crb_event_date'][0],
+				'date'      => $date,
 				'type'      => $event_types[ $meta_fields['_crb_event_type'][0] ],
 				'organizer' => $meta_fields['_crb_event_organizer'][0],
 				'distance'  => $meta_fields['_crb_event_distance'][0],
@@ -67,6 +69,7 @@ class CalendarController {
 		foreach ( $data as $state => $events ) {
 			$prepared_data[ $state ] = [
 				'title'  => $event_states[ $state ],
+				'type'   => $state,
 				'events' => $events,
 			];
 		}
