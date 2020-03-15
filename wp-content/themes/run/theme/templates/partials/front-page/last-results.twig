@@ -1,48 +1,35 @@
-<section class="last-results last-results--main">
-    <h3 class="last-results__heading">Последние результаты</h3>
-    <div class="last-results__content">
-        <ul class="last-results__list">
-            <li class="last-results__item">
-                <div class="last-results__event last-results__event--race-nation">
-                    <span class="last-results__event-date">10.10.2019</span>
-                    <div class="last-results__event-title">Race Nation Bukovel <br> <span>(Team Standart)</span></div>
-                    <div class="last-results__event-distance"><span>10</span>км+/<span>25</span>obs.+</div>
-                </div>
-                <div class="last-results__result">
-                    <span class="last-results__time">7/13</span>
-                    <div class="last-results__info">
-                        <span class="last-results__diff">11:12:30</span>
-                    </div>
-                </div>
-            </li>
-            <li class="last-results__item">
-                <div class="last-results__event">
-                    <span class="last-results__event-date">10.10.2019</span>
-                    <span class="last-results__event-title">Wizz Air Kyiv city Marathon</span>
-                    <div class="last-results__event-distance"><span>21.085</span>км</div>
-                </div>
-                <div class="last-results__result">
-                    <span class="last-results__place">345/2332 (абс)</span>
-                    <span class="last-results__time">1:41:56,4</span>
-                    <div class="last-results__info">
-                        <span class="last-results__personal-best">ЛР</span>
-                        <span class="last-results__diff">-01:00</span>
-                    </div>
-                </div>
-            </li>
-            <li class="last-results__item">
-                <div class="last-results__event last-results__event--race-nation">
-                    <span class="last-results__event-date">10.10.2019</span>
-                    <div class="last-results__event-title">Race Nation Bukovel <br> <span>(Team Standart)</span></div>
-                    <div class="last-results__event-distance"><span>10</span>км+/<span>25</span>obs.+</div>
-                </div>
-                <div class="last-results__result">
-                    <span class="last-results__time">7/13</span>
-                    <div class="last-results__info">
-                        <span class="last-results__diff">11:12:30</span>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</section>
+{% if last_results is defined and last_results is not empty %}
+	<section class="last-results last-results--main">
+		<h3 class="last-results__heading">Последние результаты</h3>
+		<div class="last-results__content">
+			<ul class="last-results__list">
+				{% for result in last_results %}
+					<li class="last-results__item">
+						<div class="last-results__event last-results__event--race-nation">
+							<span class="last-results__event-date">{{ result.event_date }}</span>
+							<div class="last-results__event-title">{{ result.title }}
+								{% if result.category is not empty %}
+									<br> <span>({{ result.category }})</span>
+								{% endif %}
+							</div>
+							<div class="last-results__event-distance"><span>{{ result.distance }}</span> км</div>
+						</div>
+						<div class="last-results__result">
+							{% if result.place_overall is not empty %}
+								<span class="last-results__place">{{ result.place_overall }} (абс)</span>
+							{% endif %}
+							<span class="last-results__time">{{ result.time }}</span>
+							{% if result.is_pb %}
+								<div class="last-results__info">
+									<span class="last-results__personal-best">ЛР</span>
+									<span class="last-results__diff">{{ result.diff }}</span>
+								</div>
+							{% endif %}
+						</div>
+					</li>
+				{% endfor %}
+				<li class="last-results__item">
+			</ul>
+		</div>
+	</section>
+{% endif %}

@@ -17,7 +17,7 @@ class ResultsController {
 		$data    = [];
 		$results = $this->get_results();
 		if ( ! empty( $results ) ) {
-			$data = $this->prepare_results_data( $results );
+			$data = $this->prepare_results_data( $results, true );
 		}
 
 		return \WPEmerge\view( 'templates/results.twig' )
@@ -27,31 +27,38 @@ class ResultsController {
 	}
 
 	/**
+	 * @param int $items_count
+	 *
 	 * @return int[]|\WP_Post[]
+	 *
 	 */
-	private function get_results() {
+	private function get_results( $items_count = - 1 ) {
 		return get_posts( [
-			'numberposts' => - 1,
+			'numberposts' => $items_count,
 			'post_type'   => 'result'
 		] );
 	}
 
 	/**
 	 * @param \WP_Post[] $results
+	 * @param boolean $sort
 	 *
 	 * @return array
 	 */
-	private function prepare_results_data( $results ) {
+	private function prepare_results_data( $results, $sort = true ) {
 		$data = [];
 		foreach ( $results as $result ) {
 			$meta_fields = get_post_meta( $result->ID );
-			$data[]      = [
+			$time        = str_replace( "00:", "", $meta_fields['_crb_result_time'][0] );
+			$event_date  = date_format( date_create( $meta_fields['_crb_result_event_date'][0] ), 'd.m.Y' );
+
+			$data[] = [
 				'ID'            => $result->ID,
 				'title'         => $result->post_title,
 				'is_pb'         => $meta_fields['_crb_result_is_pb'][0],
 				'distance'      => $meta_fields['_crb_result_distance'][0],
-				'event_date'    => $meta_fields['_crb_result_event_date'][0],
-				'time'          => $meta_fields['_crb_result_time'][0],
+				'event_date'    => $event_date,
+				'time'          => $time,
 				'pace'          => $meta_fields['_crb_result_pace'][0],
 				'diff'          => $meta_fields['_crb_result_time_diff'][0],
 				'type'          => $meta_fields['_crb_result_type'][0],
@@ -65,8 +72,10 @@ class ResultsController {
 			];
 		}
 
-		$data = $this->sort_results( $data );
-		$data = $this->prepare_group_data( $data );
+		if ( $sort == true ) {
+			$data = $this->sort_results( $data );
+			$data = $this->prepare_group_data( $data );
+		}
 
 		return $data;
 	}
@@ -111,6 +120,11 @@ class ResultsController {
 				$date                           = getdate( $timestamp );
 				$sorted_type[ $date['year'] ][] = $result;
 			}
+
+			uksort( $sorted_type, function ( $key_1, $key_2 ) {
+				return $key_2 <=> $key_1;
+			} );
+
 			$data[ $type ] = $sorted_type;
 		}
 
@@ -228,7 +242,7 @@ class ResultsController {
 				}
 
 				update_post_meta( $pb_result_id, '_crb_result_is_pb', 1 );
-				update_option( '_crb_pb_' . $current_result_type, str_replace("00:", "", $pb_result_time) );
+				update_option( '_crb_pb_' . $current_result_type, str_replace( "00:", "", $pb_result_time ) );
 			}
 		}
 	}
@@ -250,5 +264,35 @@ class ResultsController {
 		$seconds += (float) $time_exploded[2];
 
 		return $seconds;
+	}
+
+	/**
+	 * @param int $items_count
+	 *
+	 * @return array
+	 */
+	public function get_last_results( $items_count = 5 ) {
+		$data    = [];
+		$results = $this->get_results();
+
+		if ( ! empty( $results ) ) {
+			$data = $this->prepare_results_data( $results, false );
+			$data = $this->sort_results_by_event_date( $data );
+		}
+
+		return array_slice( $data, 0, $items_count );
+	}
+
+	/**
+	 * @param array $results
+	 *
+	 * @return array
+	 */
+	private function sort_results_by_event_date( $results ) {
+		usort( $results, function ( $result_1, $result_2 ) {
+			return ( strtotime( $result_2['event_date'] ) <=> strtotime( $result_1['event_date'] ) );
+		} );
+
+		return $results;
 	}
 }

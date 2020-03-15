@@ -37,13 +37,16 @@ class HistoryController {
 		$data = [];
 		foreach ( $results as $result ) {
 			$meta_fields = get_post_meta( $result->ID );
-			$data[]      = [
+			$event_date  = date_format( date_create( $meta_fields['_crb_result_event_date'][0] ), 'd.m.Y' );
+			$time        = str_replace( "00:", "", $meta_fields['_crb_result_time'][0] );
+
+			$data[] = [
 				'ID'            => $result->ID,
 				'title'         => $result->post_title,
 				'is_pb'         => $meta_fields['_crb_result_is_pb'][0],
 				'distance'      => $meta_fields['_crb_result_distance'][0],
-				'event_date'    => $meta_fields['_crb_result_event_date'][0],
-				'time'          => $meta_fields['_crb_result_time'][0],
+				'event_date'    => $event_date,
+				'time'          => $time,
 				'pace'          => $meta_fields['_crb_result_pace'][0],
 				'diff'          => $meta_fields['_crb_result_time_diff'][0],
 				'type'          => $meta_fields['_crb_result_type'][0],

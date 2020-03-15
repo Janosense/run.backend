@@ -3,8 +3,6 @@
 
 namespace App\Controllers\Web;
 
-use App\Controllers\Web\TrainingsController;
-
 class FrontPageController {
 
 	/**
@@ -22,10 +20,13 @@ class FrontPageController {
 			$articles_data       = $articles_controller->prepare_articles_data( $articles );
 		}
 
+		$results = new ResultsController();
+
 		return \WPEmerge\view( 'templates/front-page.twig' )->with( [
-			'articles'   => $articles_data,
-			'statistics' => StatisticsController::get_statistics(),
-			'activities' => TrainingsController::get_activities_list(),
+			'articles'     => $articles_data,
+			'statistics'   => StatisticsController::get_statistics(),
+			'activities'   => TrainingsController::get_activities_list(),
+			'last_results' => $results->get_last_results(5),
 		] );
 	}
 

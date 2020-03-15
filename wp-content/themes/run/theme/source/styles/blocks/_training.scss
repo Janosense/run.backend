@@ -1,12 +1,12 @@
 .training {
   flex-shrink: 0;
   margin-bottom: 32px;
-  padding: 0 32px;
   box-sizing: border-box;
 
   @media (min-width: 767px) {
     width: 52%;
     margin-bottom: 0;
+    padding: 0 32px;
   }
 
   @media (min-width: 1919px) {
@@ -97,7 +97,7 @@
 
 .training__title {
   display: inline-block;
-  max-width: calc(100% - 60px);
+  max-width: calc(100% - 72px);
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -142,11 +142,19 @@
 .training__info-value {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 20px;
 
   &--light {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+
+    &--light {
+      font-size: 20px;
+    }
   }
 }
 
@@ -160,6 +168,10 @@
 .training__info-km {
   font-weight: 300;
   font-size: 16px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .training__additional-info {

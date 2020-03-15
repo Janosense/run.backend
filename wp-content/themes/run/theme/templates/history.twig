@@ -24,13 +24,15 @@
 										<span class="event__place">{{ result.event_place }}</span>
 									</div>
 									<h3 class="event__title">{{ result.title }}</h3>
-									<div class="event__distance">{{ result.distance }}<span>км</span></div>
+									<div class="event__distance">{{ result.distance }} <span>км</span></div>
 									<div class="event__description">
 										{{ result.description }}
 									</div>
 									<div class="event__result">
-										<span class="event__result-time">{{ result.time }}</span> <span
-											class="event__result-pace">{{ result.pace }} / km</span>
+										<span class="event__result-time">{{ result.time }}</span>
+										{% if result.pace is not empty %}
+											<span class="event__result-pace">{{ result.pace }}/км</span>
+										{% endif %}
 										<table class="event__result-places">
 											{% if result.place_overall is not empty %}
 												<tr>
