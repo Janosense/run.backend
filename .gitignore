@@ -2,8 +2,9 @@
 
 wp-config.php
 wp-content/plugins/hello.php
-wp-content/uploads
+wp-content/uploads/
 
 wp-content/themes/run/vendor/
 wp-content/themes/run/node_modules/
+wp-content/themes/run/theme/cache/
 wp-content/themes/wpemerge-starter-theme/
