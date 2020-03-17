@@ -66,12 +66,23 @@ class CalendarController {
 	private function prepare_states_data( $data ) {
 		$prepared_data = [];
 		$event_states  = self::get_event_states();
+
+		foreach ( $event_states as $event_state_key => $event_state_title ) {
+			$prepared_data[ $event_state_key ] = [];
+		}
+
 		foreach ( $data as $state => $events ) {
 			$prepared_data[ $state ] = [
 				'title'  => $event_states[ $state ],
 				'type'   => $state,
 				'events' => $events,
 			];
+		}
+
+		foreach ( $prepared_data as $state => $data ) {
+			if ( empty( $data ) ) {
+				unset( $prepared_data[ $state ] );
+			}
 		}
 
 		return $prepared_data;
@@ -129,8 +140,8 @@ class CalendarController {
 	 */
 	public static function get_event_states() {
 		return [
-			'scheduled'  => __( 'Scheduled', 'run' ),
 			'registered' => __( 'Registered', 'run' ),
+			'scheduled'  => __( 'Scheduled', 'run' ),
 		];
 	}
 

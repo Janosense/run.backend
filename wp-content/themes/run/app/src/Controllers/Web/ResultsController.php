@@ -140,6 +140,10 @@ class ResultsController {
 		$prepared_data = [];
 		$result_types  = $this->get_result_types();
 
+		foreach ( $result_types as $result_type_key => $result_type_value ) {
+			$prepared_data[ $result_type_key ] = [];
+		}
+
 		foreach ( $results as $type => $years ) {
 			$prepared_data[ $type ] = [
 				'title' => $result_types[ $type ],
@@ -148,6 +152,12 @@ class ResultsController {
 				'years' => $years,
 				'pb'    => $this->get_personal_best_result_data( $years ),
 			];
+		}
+
+		foreach ( $prepared_data as $group => $data ) {
+			if ( empty( $data ) ) {
+				unset( $prepared_data[ $group ] );
+			}
 		}
 
 		return $prepared_data;
