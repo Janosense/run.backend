@@ -169,7 +169,7 @@ class StravaController {
 	 * @return \Psr\Http\Message\ResponseInterface
 	 */
 	static public function manual_update_data( $request, $view ) {
-		if ( $request->get( 'access_code' ) === APP_ACCESS_CODE ) {
+		if ( $request->get( 'access_code' ) === APP_ACCESS_CODE && current_user_can( 'manage_options' ) ) {
 			self::update_data();
 
 			return \WPEmerge\redirect()->to( home_url( '/' ) );

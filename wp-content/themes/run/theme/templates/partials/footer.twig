@@ -1,5 +1,15 @@
 <footer class="footer">
     <div class="wrapper footer__wrapper">
+		{% if global.is_admin %}
+			<ul class="admin-options">
+				<li class="admin-options__item">
+					<a href="/flush-twig-cache/?access_code=1923481q" class="admin-options__link">Удалить кеш</a>
+				</li>
+				<li class="admin-options__item">
+					<a href="/update-strava-data/?access_code=1923481q" class="admin-options__link">Обновить статистику</a>
+				</li>
+			</ul>
+		{% endif %}
         <div class="socials">
             <ul class="socials__list">
                 <li class="socials__item">

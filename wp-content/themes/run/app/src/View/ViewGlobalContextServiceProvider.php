@@ -18,10 +18,12 @@ class ViewGlobalContextServiceProvider implements ServiceProviderInterface {
 	public function bootstrap( $container ) {
 		$routes        = require APP_APP_SETUP_DIR . 'routes.php';
 		$theme_version = wp_get_theme()->get( 'Version' );
+		$is_admin      = current_user_can( 'manage_options' );
 
 		View::addGlobals( [
 			'routes'        => $routes,
 			'theme_version' => $theme_version,
+			'is_admin'      => $is_admin,
 		] );
 	}
 }

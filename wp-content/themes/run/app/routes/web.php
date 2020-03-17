@@ -8,8 +8,9 @@
  * @throws \WPEmerge\Exceptions\Exception
  */
 
-use WPEmerge\Facades\Route;
+use App\Controllers\Web\FrontPageController;
 use App\Controllers\Web\StravaController;
+use WPEmerge\Facades\Route;
 
 /**
  * Main routes
@@ -40,7 +41,10 @@ foreach ( $routes['web'] as $route ) {
  */
 
 // Route for manual strava statistics update
-Route::get()->url( '/update_strava_data/' )->handle( StravaController::class . '@manual_update_data' );
+Route::get()->url( '/update-strava-data/' )->handle( StravaController::class . '@manual_update_data' );
+
+// Route for flush twig cache
+Route::get()->url( '/flush-twig-cache/' )->handle( FrontPageController::class . '@flush_twig_cache' );
 
 
 
