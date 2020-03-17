@@ -1217,9 +1217,13 @@
 
 .starts__list {
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 32px;
   padding: 0;
   text-align: right;
+}
+
+.starts__list:last-child {
+  margin-bottom: 0;
 }
 
 .starts__item {
