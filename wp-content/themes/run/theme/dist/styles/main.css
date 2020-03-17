@@ -1253,6 +1253,11 @@
   font-weight: 300;
 }
 
+.starts__link-holder {
+  width: 70%;
+  margin-left: auto;
+}
+
 .starts__link {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;

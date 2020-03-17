@@ -9,7 +9,9 @@
 						<span class="starts__date">{{ event.date }}</span>
 						<div class="starts__header">
 							<span class="starts__place">{{ event.place }}</span></div>
-						<a href="{{ event.url }}" class="starts__link" target="_blank">{{ event.title }}</a>
+						<div class="starts__link-holder">
+							<a href="{{ event.url }}" class="starts__link" target="_blank">{{ event.title }}</a>
+						</div>
 						<div class="starts__event-distance"><span>{{ event.distance }}</span> км</div>
 					</li>
 				{% endfor %}
