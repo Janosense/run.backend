@@ -21,12 +21,14 @@ class FrontPageController {
 		}
 
 		$results = new ResultsController();
+		$events  = new CalendarController();
 
 		return \WPEmerge\view( 'templates/front-page.twig' )->with( [
 			'articles'     => $articles_data,
 			'statistics'   => StatisticsController::get_statistics(),
 			'activities'   => TrainingsController::get_activities_list(),
-			'last_results' => $results->get_last_results(5),
+			'last_results' => $results->get_last_results( 5 ),
+			'last_events'  => $events->get_upcoming_events( 3 ),
 		] );
 	}
 

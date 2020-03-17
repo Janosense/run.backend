@@ -1,26 +1,19 @@
-<section class="starts">
-    <h3 class="starts__heading">Ближайшие старты</h3>
-    <ul class="starts__list">
-        <li class="starts__item">
-            <span class="starts__date">02.11</span>
-            <div class="starts__header">
-                <span class="starts__place">Киев, Пуща Водица</span></div>
-            <a href="" class="starts__link" target="_blank">Каланча трейл</a>
-            <div class="starts__event-distance"><span>21</span>км</div>
-        </li>
-        <li class="starts__item">
-            <span class="starts__date">10.11</span>
-            <div class="starts__header">
-                <span class="starts__place">Киев, Дарница</span></div>
-            <a href="" class="starts__link" target="_blank">Осенний кубок "Днепровская десятка"</a>
-            <div class="starts__event-distance"><span>10.8</span>км</div>
-        </li>
-        <li class="starts__item">
-            <span class="starts__date">02.11</span>
-            <div class="starts__header">
-                <span class="starts__place">Киев, Пуща Водица</span></div>
-            <a href="" class="starts__link" target="_blank">Каланча трейл</a>
-            <div class="starts__event-distance"><span>21</span>км</div>
-        </li>
-    </ul>
-</section>
+{% if last_events is defined and last_events is not empty %}
+	<section class="starts">
+		<h3 class="starts__heading">Ближайшие старты</h3>
+		{% for state in last_events %}
+			<h3 class="starts__list-title">{{ state.title }}:</h3>
+			<ul class="starts__list">
+				{% for event in state.events %}
+					<li class="starts__item">
+						<span class="starts__date">{{ event.date }}</span>
+						<div class="starts__header">
+							<span class="starts__place">{{ event.place }}</span></div>
+						<a href="" class="starts__link" target="_blank">{{ event.title }}</a>
+						<div class="starts__event-distance"><span>{{ event.distance }}</span> км</div>
+					</li>
+				{% endfor %}
+			</ul>
+		{% endfor %}
+	</section>
+{% endif %}

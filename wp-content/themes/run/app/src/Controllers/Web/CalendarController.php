@@ -79,7 +79,7 @@ class CalendarController {
 
 	private function get_events() {
 		return get_posts( [
-			'numberposts' => '-1',
+			'numberposts' => - 1,
 			'post_type'   => 'event',
 		] );
 	}
@@ -132,5 +132,40 @@ class CalendarController {
 			'scheduled'  => __( 'Scheduled', 'run' ),
 			'registered' => __( 'Registered', 'run' ),
 		];
+	}
+
+	/**
+	 * @param int $items_count
+	 *
+	 * @return array
+	 */
+	public function get_upcoming_events( $items_count ) {
+		$data   = [];
+		$events = $this->get_events();
+
+		if ( ! empty( $events ) ) {
+			$data = $this->prepare_events_data( $events );
+			$data = $this->prepare_upcoming_events_data( $data, $items_count );
+		}
+
+		return $data;
+	}
+
+	/**
+	 * @param array $data
+	 * @param int $items_count
+	 *
+	 * @return array
+	 */
+	private function prepare_upcoming_events_data( $data, $items_count ) {
+		foreach ( $data as $state => $state_data ) {
+			$data[ $state ]['events'] = array_slice( $state_data['events'], 0, $items_count );
+
+			foreach ( $state_data['events'] as $key => $event ) {
+				$data[ $state ]['events'][ $key ]['date'] = substr( $event['date'], 0, - 5 );
+			}
+		}
+
+		return $data;
 	}
 }
