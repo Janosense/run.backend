@@ -18,7 +18,8 @@ class PostController {
 			$data = $this->prepare_post_data( $post );
 
 			return \WPEmerge\view( 'templates/post.twig' )->with( [
-				'post' => $data,
+				'post'       => $data,
+				'statistics' => StatisticsController::get_statistics(),
 			] );
 		}
 

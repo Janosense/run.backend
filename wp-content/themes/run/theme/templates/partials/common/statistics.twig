@@ -1,0 +1,40 @@
+{% if statistics is defined and statistics is not empty %}
+	<div class="aside__section statistics">
+		<div class="statistics__header">
+			<h3 class="statistics__heading">Статистика</h3>
+		</div>
+		<div class="statistics__content">
+			<div class="statistics__row">
+				<div class="statistics__row-title">пробежал</div>
+			</div>
+			<div class="statistics__row statistics__row--distance">
+				<span class="statistics__row-subtitle">всего</span>
+				<span class="statistics__total-distance">{{ statistics.athlete_stats.all.distance }}</span> км
+			</div>
+			<div class="statistics__row statistics__row--distance">
+				<span class="statistics__row-subtitle">в 2020 году</span>
+				<span class="statistics__total-distance">{{ statistics.athlete_stats.year.distance }}</span> км
+			</div>
+			{% if statistics.pb_results is not empty %}
+				<div class="statistics__row statistics__row--pb">
+					<div class="statistics__row-title">лучшее время</div>
+				</div>
+				{% for result in statistics.pb_results %}
+					<div class="statistics__row">
+						<span class="statistics__distance">{{ result.title }}</span>
+						<span class="statistics__distance-value">{{ result.value }}</span>
+					</div>
+				{% endfor %}
+			{% endif %}
+			<div class="statistics__row statistics__row--count">
+				<div class="statistics__row-title">забегов</div>
+				<span class="statistics__big-number">{{ statistics.athlete_stats.all.count }}</span>
+			</div>
+			<div class="statistics__row">
+				<div class="statistics__row-title">стартов</div>
+				<span class="statistics__big-number">{{ statistics.total_starts }}</span>
+			</div>
+		</div>
+		<span class="statistics__date">ведется с 5.05.2019</span>
+	</div>
+{% endif %}

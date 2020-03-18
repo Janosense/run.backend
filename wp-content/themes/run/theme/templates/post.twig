@@ -28,6 +28,9 @@
 			{% endif %}
         </article>
 
-		{% include 'templates/partials/post/aside.twig' %}
+		<aside class="aside">
+			{% include "templates/partials/common/statistics.twig" %}
+			{% include "templates/partials/common/shoes.twig" %}
+		</aside>
     </div>
 {% endblock %}
