@@ -12,7 +12,7 @@
                 <div class="about__layout">
                     <div class="about__layout-inner">
                         <header class="about__header">
-                            <h1 class="heading about__heading">О блоге</h1>
+                            <h1 class="heading about__heading">Обо мне</h1>
                             <p class="about__caption">..об авторе и немного статистики</p>
                         </header>
                         <div class="about__content">
@@ -34,48 +34,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="about__statistics statistics">
-                        <div class="statistics__header">
-                            <h3 class="statistics__heading">Статистика</h3>
-                        </div>
-                        <div class="statistics__content">
-                            <div class="statistics__row statistics__row--total-distance">
-                                <div class="statistics__row-title">пробежал</div>
-                                <div><span class="statistics__total-distance">1 286,9</span>км</div>
-                            </div>
-                            <div class="statistics__row">
-                                <div class="statistics__row-title">лучшее время</div>
-                            </div>
-                            <div class="statistics__row">
-                                <span class="statistics__distance">1 км</span> <span class="statistics__distance-value">4:00</span>
-                            </div>
-                            <div class="statistics__row">
-                                <span class="statistics__distance">1 миля</span> <span class="statistics__distance-value">6:43</span>
-                            </div>
-                            <div class="statistics__row">
-                                <span class="statistics__distance">5 км</span> <span class="statistics__distance-value">22:34</span>
-                            </div>
-                            <div class="statistics__row">
-                                <span class="statistics__distance">10 км</span> <span class="statistics__distance-value">46:07</span>
-                            </div>
-                            <div class="statistics__row">
-                                <span class="statistics__distance">полумарафон</span> <span class="statistics__distance-value"><a
-                                            href="https://my5.raceresult.com/138795/15705/Certificate%2021km" target="_blank">1:41:56,4</a></span>
-                            </div>
-                            <div class="statistics__row statistics__row--marathon">
-                                <span class="statistics__distance">марафон</span> <span class="statistics__distance-value">-</span>
-                            </div>
-                            <div class="statistics__row">
-                                <div class="statistics__row-title">забегов</div>
-                                <span class="statistics__big-number">134</span>
-                            </div>
-                            <div class="statistics__row">
-                                <div class="statistics__row-title">стартов</div>
-                                <span class="statistics__big-number">20</span>
-                            </div>
-                        </div>
-                        <span class="statistics__date">ведется с 5.05.2019</span>
-                    </div>
+
+					{% include "templates/partials/common/statistics.twig" %}
+
                 </div>
             </div>
         </section>
