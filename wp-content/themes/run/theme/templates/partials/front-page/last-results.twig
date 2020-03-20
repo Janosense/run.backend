@@ -15,7 +15,7 @@
 							<div class="last-results__event-distance"><span>{{ result.distance }}</span> км</div>
 						</div>
 						<div class="last-results__result">
-							{% if result.place_overall is not empty %}
+							{% if result.place_overall is not empty and result.place_overall != '--/--' %}
 								<span class="last-results__place">{{ result.place_overall }} (абс)</span>
 							{% endif %}
 							<span class="last-results__time">{{ result.time }}</span>
