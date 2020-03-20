@@ -52,6 +52,10 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  &--scheduled {
+    opacity: 0.5;
+  }
 }
 
 .starts__item {

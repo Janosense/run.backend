@@ -1261,6 +1261,10 @@
   margin-bottom: 0;
 }
 
+.starts__list--scheduled {
+  opacity: 0.5;
+}
+
 .starts__item {
   position: relative;
   margin-bottom: 24px;

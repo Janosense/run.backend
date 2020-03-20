@@ -3,7 +3,7 @@
 		<h3 class="starts__heading">Ближайшие старты</h3>
 		{% for state in last_events %}
 			<h3 class="starts__list-title">{{ state.title }}:</h3>
-			<ul class="starts__list">
+			<ul class="starts__list starts__list--{{ state.type }}">
 				{% for event in state.events %}
 					<li class="starts__item">
 						<span class="starts__date">{{ event.date }}</span>
