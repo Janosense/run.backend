@@ -882,12 +882,47 @@
   }
 }
 
+.article__content h2 {
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+.article__content h2:first-child {
+  margin-top: 0;
+}
+
 .article__content p:first-child {
   margin-top: 0;
 }
 
 .article__content p:last-child {
   margin-bottom: 0;
+}
+
+.article__content a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted #000;
+}
+
+.article__content figure {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.article__content figure img {
+  display: block;
+  max-width: 100%;
+}
+
+.article__content figure figcaption {
+  margin-top: 12px;
+  text-align: right;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 .article-wrapper {
