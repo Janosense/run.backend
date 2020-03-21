@@ -24,7 +24,7 @@
 			</tr>
 			{% for year, results in type.years %}
 				<tr>
-					<td colspan="9" class="results-table__year">{{ year }}</td>
+					<td colspan="10" class="results-table__year">{{ year }}</td>
 				</tr>
 				{% for result in results %}
 					<tr {% if result.is_pb %}class="results-table__pb"{% endif %}>
