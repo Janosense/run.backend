@@ -10,6 +10,12 @@
 			<tr>
 				<th>п/п</th>
 				<th>дата</th>
+				{% if type.key == 'trail'  %}
+					<th>дистанция</th>
+				{% endif %}
+				{% if type.key == 'ocr'  %}
+					<th>категория</th>
+				{% endif %}
 				<th>результат<br> <span>разница с ЛР</span></th>
 				<th>темп</th>
 				<th>мероприятие</th>
@@ -24,6 +30,12 @@
 					<tr {% if result.is_pb %}class="results-table__pb"{% endif %}>
 						<td class="results-table__row-number">{{ loop.revindex }}</td>
 						<td>{{ result.event_date }}</td>
+						{% if type.key == 'trail'  %}
+							<td class="results-table__distance">{{ result.distance }}</td>
+						{% endif %}
+						{% if type.key == 'ocr'  %}
+							<td class="results-table__category">{{ result.category }}</td>
+						{% endif %}
 						<td class="results-table__result">{{ result.time }}<span>{{ result.diff }}</span></td>
 						<td class="results-table__pace">{{ result.pace }}</td>
 						<td class="results-table__event">
