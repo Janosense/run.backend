@@ -23,10 +23,10 @@ Container::make( 'post_meta', 'goals', __( 'My goals', 'run' ) )
 			                   'completed' => __( 'Completed', 'run' ),
 		                   ] )
 	              ] )
-	              ->set_header_template( '
-					    <% if (crb_goal_title) { %>
-					        <%- crb_goal_title %>
-					    <% } %>'
+	              ->set_header_template(
+						'<% if (crb_goal_title) { %>
+							<%- crb_goal_title %>
+						<% } %>'
 	              ),
          ] );
 
