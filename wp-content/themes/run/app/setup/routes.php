@@ -6,6 +6,7 @@ use App\Controllers\Web\CalendarController;
 use App\Controllers\Web\FrontPageController;
 use App\Controllers\Web\HistoryController;
 use App\Controllers\Web\PostController;
+use App\Controllers\Web\PageController;
 use App\Controllers\Web\ResultsController;
 
 return [
@@ -83,6 +84,12 @@ return [
 			'menu_title'     => __( 'About me', 'run' ),
 			'include_in_nav' => true,
 			'is_active'      => $_SERVER['REQUEST_URI'] === '/about/' ? true : false,
+		],
+		[
+			'condition'      => 'url',
+			'url'            => '/{page_slug}',
+			'handle'         => PageController::class . '@index',
+			'include_in_nav' => false,
 		],
 	],
 ];

@@ -1,7 +1,8 @@
 # Runner's blog - personal project
 ### Stack:
 * Wordpress
-* Timber
+* WP Emerge Framework
 * Carbon fields
-* SCSS
+* Twig
+* Scss
 * ES6

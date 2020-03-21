@@ -90,10 +90,10 @@ function measureSize() {
 }
 
 function startAppServer() {
-  // server.init({
-  //   proxy: 'http://dev.run.local/',
-  //   notify: false,
-  // });
+  server.init({
+    proxy: 'http://dev.run.local/',
+    notify: false,
+  });
 
   watch([
     'templates/**/*.twig',

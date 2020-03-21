@@ -13,8 +13,9 @@ class PostController {
 	 * @return \Psr\Http\Message\ResponseInterface|\WPEmerge\View\ViewInterface
 	 */
 	public function index( $request, $view, $post_slug ) {
-		$post = $this->get_post( $post_slug );
-		if ( ! empty( $post ) ) {
+		global $post;
+
+		if ( ! empty( $post ) && $post_slug == $post->post_name ) {
 			$data = $this->prepare_post_data( $post );
 
 			return \WPEmerge\view( 'templates/post.twig' )->with( [

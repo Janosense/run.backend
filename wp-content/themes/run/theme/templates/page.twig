@@ -1,0 +1,19 @@
+{% extends "templates/layouts/base.twig" %}
+
+{% block head %}
+	<title>Журнал бегуна - {{ post.title }}</title>
+{% endblock %}
+
+{% block content %}
+	<div class="wrapper article-wrapper">
+		<article class="article article--page">
+			<header class="article__header">
+				<span class="article__date">{{ post.date }}</span>
+				<h1 class="heading article__heading">{{ post.title }}</h1>
+			</header>
+			<div class="article__content">
+				{{ post.content | raw }}
+			</div>
+		</article>
+	</div>
+{% endblock %}

@@ -13,6 +13,16 @@ use App\Controllers\Web\StravaController;
 use WPEmerge\Facades\Route;
 
 /**
+ * Auxiliary routes
+ */
+
+// Route for manual strava statistics update
+Route::get()->url( '/update-strava-data/' )->handle( StravaController::class . '@manual_update_data' );
+
+// Route for flush twig cache
+Route::get()->url( '/flush-twig-cache/' )->handle( FrontPageController::class . '@flush_twig_cache' );
+
+/**
  * Main routes
  */
 $routes = require APP_APP_SETUP_DIR . 'routes.php';
@@ -35,16 +45,6 @@ foreach ( $routes['web'] as $route ) {
 			break;
 	}
 }
-
-/**
- * Auxiliary routes
- */
-
-// Route for manual strava statistics update
-Route::get()->url( '/update-strava-data/' )->handle( StravaController::class . '@manual_update_data' );
-
-// Route for flush twig cache
-Route::get()->url( '/flush-twig-cache/' )->handle( FrontPageController::class . '@flush_twig_cache' );
 
 
 
