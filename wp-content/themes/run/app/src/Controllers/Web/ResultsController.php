@@ -122,8 +122,14 @@ class ResultsController {
 			}
 
 			uksort( $sorted_type, function ( $key_1, $key_2 ) {
-				return $key_2 <=> $key_1;
+				return (int) $key_2 <=> (int) $key_1;
 			} );
+
+			foreach ( $sorted_type as $year => $year_results ) {
+				uasort( $sorted_type[ $year ], function ( $result_2, $result_1 ) {
+					return strtotime( $result_1['event_date'] ) <=> strtotime( $result_2['event_date'] );
+				} );
+			}
 
 			$data[ $type ] = $sorted_type;
 		}
