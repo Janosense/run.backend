@@ -65,7 +65,7 @@
       }
 
       .event__result-time {
-        margin-left: 12px;
+        margin-right: 12px;
       }
 
       .event__result-places {
@@ -155,6 +155,7 @@
   span {
     position: relative;
     top: -1px;
+    margin-left: 4px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
     font-size: 18px;
