@@ -114,6 +114,15 @@
   }
 }
 
+.desktop .training__title a {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
 .training__date {
   font-size: 14px;
   font-weight: 300;

@@ -157,6 +157,15 @@
   }
 }
 
+.desktop .posts-preview__title a {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
 .posts-preview__cover {
   position: relative;
   display: block;
@@ -280,4 +289,13 @@
   text-transform: uppercase;
   color: #ffffff;
   background-color: #000000;
+}
+
+.desktop .posts-preview__categories-link {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }

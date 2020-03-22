@@ -98,6 +98,15 @@
   border-bottom: 1px dotted #000;
 }
 
+.desktop .starts__link {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
 .starts__organizer {
   display: block;
   padding-top: 4px;

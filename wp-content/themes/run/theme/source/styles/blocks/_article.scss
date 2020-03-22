@@ -102,3 +102,12 @@
     }
   }
 }
+
+.desktop .article__content a {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
