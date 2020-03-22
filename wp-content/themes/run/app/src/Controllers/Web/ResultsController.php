@@ -231,7 +231,7 @@ class ResultsController {
 			$pb_result_id        = $post_id;
 			$current_result_type = carbon_get_post_meta( $post_id, 'crb_result_type' );
 
-			if ( $current_result_type != 'ocr' && $current_result_type != 'trail' ) {
+			if ( $current_result_type != 'ocr' && $current_result_type != 'trail' && $current_result_type != 'other' ) {
 				$pb_result_time            = carbon_get_post_meta( $post_id, 'crb_result_time' );
 				$pb_result_time_in_seconds = self::convert_time_to_seconds( $pb_result_time );
 				$results                   = get_posts( [
