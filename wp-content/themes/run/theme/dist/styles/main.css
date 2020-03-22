@@ -2931,7 +2931,7 @@
 @media (min-width: 767px) {
   .event__pb {
     position: absolute;
-    top: 160px;
+    top: 200px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2953,7 +2953,7 @@
 
 @media (min-width: 1439px) {
   .event__pb {
-    top: 120px;
+    top: 160px;
   }
 }
 
