@@ -20,7 +20,7 @@
 					<th>категория</th>
 				{% endif %}
 				<th>результат
-					{% if type.key != 'trail' and type.key != 'ocr' and type.key != 'ocr' %}
+					{% if type.key != 'trail' and type.key != 'ocr' and type.key != 'other' %}
 						<br> <span>разница с ЛР</span>
 					{% endif %}
 				</th>
@@ -46,7 +46,7 @@
 							<td class="results-table__category">{{ result.category }}</td>
 						{% endif %}
 						<td class="results-table__result">{{ result.time }}
-							{% if type.key != 'trail' and type.key != 'ocr' and type.key != 'ocr' %}
+							{% if type.key != 'trail' and type.key != 'ocr' and type.key != 'other' %}
 								<span>{{ result.diff }}</span>
 							{% endif %}
 						</td>
