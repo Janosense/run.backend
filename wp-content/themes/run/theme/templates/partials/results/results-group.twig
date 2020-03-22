@@ -3,8 +3,9 @@
 
 	<div class="results__statistics">
 		<p>Всего забегов: <span>{{ type.count }}</span></p>
-		{% if type.key != 'trail' and type.key != 'ocr' %}
-			<p>Лучший результат: <span>{{ type.pb.time }}</span> | {{ type.pb.event_title }} - {{ type.pb.event_date }}
+		{% if type.key != 'trail' and type.key != 'ocr' and type.key != 'other' %}
+			<p>
+				Лучший результат: <span>{{ type.pb.time }}</span> | {{ type.pb.event_title }} - {{ type.pb.event_date }}
 			</p>
 		{% endif %}
 	</div>
