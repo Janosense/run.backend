@@ -3929,6 +3929,18 @@
   background-color: #f1f1f1;
 }
 
+@media (min-width: 767px) {
+  .accessories {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .accessories {
+    display: block;
+  }
+}
+
 @media (min-width: 1919px) {
   .accessories {
     padding: 40px;
