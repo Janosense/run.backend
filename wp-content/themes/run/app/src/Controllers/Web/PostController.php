@@ -16,11 +16,12 @@ class PostController {
 		global $post;
 
 		if ( ! empty( $post ) && $post_slug == $post->post_name ) {
-			$data = $this->prepare_post_data( $post );
+			$data             = $this->prepare_post_data( $post );
 
 			return \WPEmerge\view( 'templates/post.twig' )->with( [
-				'post'       => $data,
-				'statistics' => StatisticsController::get_statistics(),
+				'post'             => $data,
+				'statistics'       => StatisticsController::get_statistics(),
+				'meta_description' => carbon_get_post_meta( $post->ID, 'crb_meta_description' ),
 			] );
 		}
 

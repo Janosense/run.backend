@@ -20,7 +20,8 @@ class PageController {
 			$data = $this->prepare_page_data( $post );
 
 			return \WPEmerge\view( 'templates/page.twig' )->with( [
-				'post'       => $data,
+				'post'             => $data,
+				'meta_description' => carbon_get_post_meta( $post->ID, 'crb_meta_description' ),
 			] );
 		}
 
@@ -34,11 +35,11 @@ class PageController {
 	 */
 	private function prepare_page_data( $post ) {
 		$data = [
-			'ID'         => $post->ID,
-			'date'       => date( 'd.m.Y', strtotime( $post->post_date ) ),
-			'title'      => $post->post_title,
-			'excerpt'    => $post->post_excerpt,
-			'content'    => apply_filters( 'the_content', $post->post_content ),
+			'ID'      => $post->ID,
+			'date'    => date( 'd.m.Y', strtotime( $post->post_date ) ),
+			'title'   => $post->post_title,
+			'excerpt' => $post->post_excerpt,
+			'content' => apply_filters( 'the_content', $post->post_content ),
 		];
 
 		return $data;

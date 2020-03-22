@@ -1,7 +1,8 @@
 {% extends "templates/layouts/base.twig" %}
 
 {% block head %}
-    <title>Журнал бегуна - {{ post.title }}</title>
+    <title>{{ post.title }}</title>
+	<meta name="description" content="{{ meta_description }}"/>
 {% endblock %}
 
 {% block content %}

@@ -20,9 +20,10 @@ class AboutController {
 			$goals = $this->get_goals( $post->ID );
 
 			return \WPEmerge\view( 'templates/about.twig' )->with( [
-				'statistics' => StatisticsController::get_statistics(),
-				'post'       => $data,
-				'goals'      => $goals,
+				'statistics'       => StatisticsController::get_statistics(),
+				'post'             => $data,
+				'goals'            => $goals,
+				'meta_description' => carbon_get_post_meta( $post->ID, 'crb_meta_description' ),
 			] );
 		}
 
