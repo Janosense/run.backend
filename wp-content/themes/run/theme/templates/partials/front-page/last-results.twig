@@ -5,7 +5,7 @@
 			<ul class="last-results__list">
 				{% for result in last_results %}
 					<li class="last-results__item">
-						<div class="last-results__event last-results__event--race-nation">
+						<a href="/history/#{{ result.ID }}" class="last-results__event">
 							<span class="last-results__event-date">{{ result.event_date }}</span>
 							<div class="last-results__event-title">{{ result.title }}
 								{% if result.category is not empty %}
@@ -13,7 +13,7 @@
 								{% endif %}
 							</div>
 							<div class="last-results__event-distance"><span>{{ result.distance }}</span> км</div>
-						</div>
+						</a>
 						<div class="last-results__result">
 							{% if result.place_overall is not empty and result.place_overall != '--/--' %}
 								<span class="last-results__place">{{ result.place_overall }} (абс)</span>

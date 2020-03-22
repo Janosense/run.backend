@@ -45,10 +45,18 @@
 }
 
 .last-results__event {
-  width: 48%;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 60%;
+}
 
-  &--race-nation {
-    width: 60%;
+.desktop .last-results__event {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
   }
 }
 
