@@ -16,7 +16,7 @@
 							<li class="time-line__year">{{ year }}</li>
 							{% for result in results %}
 								<li class="event event--{% if result.type == 'ocr' or result.type == 'trail' %}left{% else %}right{% endif %} time-line__item">
-									{% if result.is_pb == 1 %}
+									{% if result.is_pb %}
 										<span class="event__pb">PB</span>
 									{% endif %}
 									<div class="event__header">
