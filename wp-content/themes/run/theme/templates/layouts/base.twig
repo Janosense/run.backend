@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ru_RU">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% block head %}
@@ -9,6 +9,16 @@
 		<meta name="description" content="Персональный журнал для ведения статистики, хранения и отслеживания результатов в беге, записи впечатлений от забегов"/>
 	{% endblock %}
     <link rel="stylesheet" type="text/css" href="/wp-content/themes/run/theme/dist/styles/main.css?ver={{ global.theme_version }}" media="all"/>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118656330-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-118656330-2');
+	</script>
 
 </head>
 <body class="body">
