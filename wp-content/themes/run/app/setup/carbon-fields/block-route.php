@@ -25,17 +25,21 @@ Block::make( __( 'Route' ) )
 	     $meta_key   = 'route_' . $fields['crb_route_file_id'] . '_' . $post->ID;
 	     $route_data = get_post_meta( $post->ID, $meta_key, true );
 
-	     if ( empty( $route_data ) ) {
+	     if ( !empty( $route_data ) ) {
 
 		     $file_path = get_attached_file( $fields['crb_route_file_id'] );
 
 		     if ( ! empty( $file_path ) ) {
 
-			     $route                  = simplexml_load_file( $file_path );
-			     $route_data             = [];
-			     $kms                    = 1;
-			     $index                  = 0;
-			     $route_data['distance'] = 0;
+			     $route                   = simplexml_load_file( $file_path );
+			     $route_data              = [];
+			     $kms                     = 1;
+			     $index                   = 0;
+			     $route_data['distance']  = 0;
+			     $route_data['markers'][] = [
+				     'lat' => (float) $route->trk->trkseg->trkpt[0]['lat'],
+				     'lng' => (float) $route->trk->trkseg->trkpt[0]['lon'],
+			     ];
 
 			     foreach ( $route->trk->trkseg->trkpt as $point ) {
 				     $route_data['points'][] = [
@@ -58,6 +62,11 @@ Block::make( __( 'Route' ) )
 				     $index ++;
 			     }
 
+			     $route_data['markers'][] = [
+				     'lat' => (float) $point['lat'],
+				     'lng' => (float) $point['lon'],
+			     ];
+
 			     update_post_meta( $post->ID, $meta_key, $route_data );
 		     }
 	     } ?>
@@ -72,7 +81,8 @@ Block::make( __( 'Route' ) )
 			     </li>
 		     </ul>
 		     <div class="map__holder">
-			     <div class="map__content" data-meta-key="<?php echo $meta_key; ?>" data-post-id="<?php echo $post->ID; ?>"></div>
+			     <div class="map__content" data-meta-key="<?php echo $meta_key; ?>"
+			          data-post-id="<?php echo $post->ID; ?>"></div>
 		     </div>
 	     </div>
 
@@ -95,18 +105,8 @@ Block::make( __( 'Route' ) )
 					     path: route_data[0]['points'],
 					     geodesic: true,
 					     strokeColor: '#000000',
-					     strokeOpacity: 0.4,
+					     strokeOpacity: 1,
 					     strokeWeight: 4
-				     };
-				     const icon_settings = {
-					     path: 'M17 8.5C17 13.1944 13.1944 17 8.5 17C3.80558 17 0 13.1944 0 8.5C0 3.80558 3.80558 0 8.5 0C13.1944 0 17 3.80558 17 8.5Z',
-					     fillColor: 'black',
-					     fillOpacity: 1,
-					     scale: 1.2,
-					     strokeColor: 'white',
-					     strokeWeight: 2,
-					     anchor: new google.maps.Point(8, 8),
-					     labelOrigin: new google.maps.Point(9, 8),
 				     };
 
 				     const map = new google.maps.Map(map_container, map_settings);
@@ -115,19 +115,40 @@ Block::make( __( 'Route' ) )
 
 				     route_data[0]['markers'].forEach((marker, index) => {
 					     const position = new google.maps.LatLng(marker['lat'], marker['lng']);
+					     let marker_text = index + '';
+					     let marker_fill_color = 'black';
+
+					     if (index === 0) {
+						     marker_text = 'S';
+						     marker_fill_color = 'green';
+					     }
+
+					     if ((index + 1) === route_data[0]['markers'].length) {
+						     marker_text = 'F';
+						     marker_fill_color = 'red';
+					     }
 
 					     new google.maps.Marker({
 						     position: position,
 						     map: map,
 						     label: {
-							     text: index + 1 + "",
+							     text: marker_text,
 							     color: '#FFFFFF',
 							     fontSize: '12px',
 							     fontFamily: 'Source Sans Pro',
 							     fontWeight: '600',
 						     },
 						     zIndex: index,
-						     icon: icon_settings,
+						     icon: {
+							     path: 'M17 8.5C17 13.1944 13.1944 17 8.5 17C3.80558 17 0 13.1944 0 8.5C0 3.80558 3.80558 0 8.5 0C13.1944 0 17 3.80558 17 8.5Z',
+							     fillColor: marker_fill_color,
+							     fillOpacity: 1,
+							     scale: 1.2,
+							     strokeColor: 'white',
+							     strokeWeight: 2,
+							     anchor: new google.maps.Point(8, 8),
+							     labelOrigin: new google.maps.Point(9, 8),
+						     },
 					     });
 
 					     bounds.extend(position);
