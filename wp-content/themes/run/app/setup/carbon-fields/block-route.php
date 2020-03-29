@@ -83,7 +83,7 @@ Block::make( __( 'Route' ) )
 			     const meta_key = map_container.dataset.metaKey;
 
 			     if (post_id && meta_key) {
-				     const url = `http://dev.run.local/wp-json/run-app/v1/route/?post_id=${post_id}&meta_key=${meta_key}`;
+				     const url = `/wp-json/run-app/v1/route/?post_id=${post_id}&meta_key=${meta_key}`;
 				     const response = await fetch(url);
 				     const route_data = await response.json();
 
