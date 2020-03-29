@@ -10,6 +10,7 @@ function app_bootstrap_carbon_fields() {
  * Bootstrap Carbon Fields container definitions.
  */
 function app_bootstrap_carbon_fields_register_fields() {
+	// Fields
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'post-type-result.php';
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'post-type-event.php';
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'theme-option-personal-best.php';
@@ -17,4 +18,7 @@ function app_bootstrap_carbon_fields_register_fields() {
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'page-about.php';
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'post-type-post.php';
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'post-type-page.php';
+
+	// Blocks
+	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'block-route.php';
 }

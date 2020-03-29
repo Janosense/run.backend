@@ -1,0 +1,36 @@
+.map {
+  margin: 1em 0;
+}
+
+.map__holder {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 60%;
+  overflow: hidden;
+}
+
+.map__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.map__info {
+  list-style-type: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+
+.map__info-item {
+  font-size: 18px;
+  font-weight: 800;
+
+  span {
+    font-weight: 300;
+  }
+}
+

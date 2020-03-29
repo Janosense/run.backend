@@ -33,6 +33,8 @@ add_action( 'manage_result_posts_custom_column', 'app_fill_custom_columns_for_re
 add_action( 'restrict_manage_posts', 'app_add_filter_by_type_for_result_post_type', 10, 1 );
 add_action( 'pre_get_posts', 'app_add_filter_by_type_handler_for_result_post_type', 10, 1 );
 
+add_filter('upload_mimes', 'app_add_gpx_to_mime_types');
+
 /**
  * Custom actions
  */
@@ -61,3 +63,6 @@ add_action( 'cron_four_times_daily_event', [
 ] );
 
 add_action( 'cron_strava_refresh_tokens_event', 'app_strava_refresh_tokens' );
+
+
+add_action( 'rest_api_init', 'app_register_rest_routes' );

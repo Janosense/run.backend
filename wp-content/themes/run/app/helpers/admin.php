@@ -81,3 +81,22 @@ function app_switch_locale_for_admin_panel() {
 		switch_to_locale( 'en_US' );
 	}
 }
+
+/**
+ * @param array $mime_types
+ *
+ * @return array
+ */
+function app_add_gpx_to_mime_types($mime_types) {
+	$mime_types['gpx'] = 'application/gpx+xml';
+
+	return $mime_types;
+}
+
+/**
+ *
+ */
+function app_register_rest_routes() {
+	$route_rest_api_controller = new \App\Controllers\Rest\WPRestRouteController();
+	$route_rest_api_controller->register_routes();
+}
