@@ -35,7 +35,7 @@ class ServiceActionsController {
 			$url_base     = site_url();
 			$routes       = require APP_APP_SETUP_DIR . 'routes.php';
 			$sitemap_path = $_SERVER['DOCUMENT_ROOT'] . '/sitemap.xml';
-			$xml_template = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>';
+			$xml_template = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>';
 			$xml          = new SimpleXMLElement( $xml_template );
 			$urls         = [];
 			$posts        = get_posts( [
