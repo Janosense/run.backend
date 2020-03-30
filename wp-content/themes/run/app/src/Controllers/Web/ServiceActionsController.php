@@ -68,7 +68,7 @@ class ServiceActionsController {
 						'url'        => $url_base . '/articles/' . $post->post_name . '/',
 						'priority'   => 0.6,
 						'changefreq' => 'yearly',
-						'lastmod'    => date( 'Y-m-d', $post->post_modified ),
+						'lastmod'    => date( 'Y-m-d', strtotime($post->post_modified) ),
 					];
 				}
 			}
@@ -80,7 +80,7 @@ class ServiceActionsController {
 							'url'        => $url_base . '/' . $post->post_name . '/',
 							'priority'   => 0.6,
 							'changefreq' => 'yearly',
-							'lastmod'    => date( 'Y-m-d', $post->post_modified ),
+							'lastmod'    => date( 'Y-m-d', strtotime($post->post_modified) ),
 						];
 					}
 				}
