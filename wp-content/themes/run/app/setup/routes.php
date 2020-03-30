@@ -5,8 +5,8 @@ use App\Controllers\Web\ArticlesController;
 use App\Controllers\Web\CalendarController;
 use App\Controllers\Web\FrontPageController;
 use App\Controllers\Web\HistoryController;
-use App\Controllers\Web\PostController;
 use App\Controllers\Web\PageController;
+use App\Controllers\Web\PostController;
 use App\Controllers\Web\ResultsController;
 
 return [
@@ -18,6 +18,8 @@ return [
 			'menu_title'     => __( 'Home', 'run' ),
 			'include_in_nav' => true,
 			'is_active'      => $_SERVER['REQUEST_URI'] === '/' ? true : false,
+			'priority'       => 1,
+			'changefreq'     => 'weekly',
 		],
 		[
 			'condition'      => 'url',
@@ -26,6 +28,8 @@ return [
 			'menu_title'     => __( 'Calendar', 'run' ),
 			'include_in_nav' => true,
 			'is_active'      => $_SERVER['REQUEST_URI'] === '/calendar/' ? true : false,
+			'priority'       => 0.9,
+			'changefreq'     => 'monthly',
 		],
 		[
 			'condition'      => 'url',
@@ -34,6 +38,8 @@ return [
 			'menu_title'     => __( 'Results', 'run' ),
 			'include_in_nav' => true,
 			'is_active'      => $_SERVER['REQUEST_URI'] === '/results/' ? true : false,
+			'priority'       => 0.9,
+			'changefreq'     => 'monthly',
 		],
 		[
 			'condition'      => 'url',
@@ -42,6 +48,8 @@ return [
 			'menu_title'     => __( 'History', 'run' ),
 			'include_in_nav' => true,
 			'is_active'      => $_SERVER['REQUEST_URI'] === '/history/' ? true : false,
+			'priority'       => 0.9,
+			'changefreq'     => 'monthly',
 		],
 		[
 			'condition'      => 'url',
@@ -50,6 +58,8 @@ return [
 			'menu_title'     => __( 'Posts', 'run' ),
 			'include_in_nav' => true,
 			'is_active'      => ( strpos( $_SERVER['REQUEST_URI'], '/articles/' ) !== false ) ? true : false,
+			'priority'       => 0.9,
+			'changefreq'     => 'daily',
 		],
 		[
 			'condition'      => 'url',
@@ -84,6 +94,9 @@ return [
 			'menu_title'     => __( 'About me', 'run' ),
 			'include_in_nav' => true,
 			'is_active'      => $_SERVER['REQUEST_URI'] === '/about/' ? true : false,
+			'priority'       => 0.9,
+			'changefreq'     => 'yearly',
+
 		],
 		[
 			'condition'      => 'url',

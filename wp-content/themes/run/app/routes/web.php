@@ -10,6 +10,7 @@
 
 use App\Controllers\Web\FrontPageController;
 use App\Controllers\Web\StravaController;
+use App\Controllers\Web\ServiceActionsController;
 use WPEmerge\Facades\Route;
 
 /**
@@ -20,7 +21,10 @@ use WPEmerge\Facades\Route;
 Route::get()->url( '/update-strava-data/' )->handle( StravaController::class . '@manual_update_data' );
 
 // Route for flush twig cache
-Route::get()->url( '/flush-twig-cache/' )->handle( FrontPageController::class . '@flush_twig_cache' );
+Route::get()->url( '/flush-twig-cache/' )->handle( ServiceActionsController::class . '@flush_twig_cache' );
+
+// Route for generate sitemap
+Route::get()->url( '/generate-sitemap/' )->handle( ServiceActionsController::class . '@generate_xml_sitemap' );
 
 /**
  * Main routes

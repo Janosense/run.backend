@@ -1,5 +1,6 @@
 .idea/
 
+sitemap.xml
 wp-config.php
 wp-content/plugins/hello.php
 wp-content/uploads/
