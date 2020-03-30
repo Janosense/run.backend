@@ -29,3 +29,5 @@ Allow: /wp-*.svg
 Allow: /wp-*.woff
 Allow: /wp-*.woff2
 Allow: /*ajax
+
+Sitemap: https://iwanttorunlikea.pro/sitemap.xml
