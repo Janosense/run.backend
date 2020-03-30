@@ -1,15 +1,5 @@
 .shop-review {
   display: block;
-
-  @media (min-width: 767px) {
-    float: left;
-    padding-right: 32px;
-    box-sizing: border-box;
-  }
-
-  @media (min-width: 1919px) {
-    padding-right: 40px;
-  }
 }
 
 .shop-review__list {
@@ -18,9 +8,20 @@
   padding: 0;
   font-size: 16px;
 
+  @media (min-width: 767px) {
+    float: left;
+    padding-right: 32px;
+    box-sizing: border-box;
+  }
+
   @media (min-width: 1023px) {
     font-size: 18px;
   }
+
+  @media (min-width: 1919px) {
+    padding-right: 40px;
+  }
+
 }
 
 .shop-review__item {

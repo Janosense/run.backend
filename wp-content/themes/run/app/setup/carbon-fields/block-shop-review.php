@@ -9,7 +9,8 @@ Block::make( __( 'Shop review' ) )
 	     Field::make( 'text', 'crb_shop_review_type', __( 'Type', 'run' ) )
 	          ->set_help_text( 'May be one of: only online, only offline, online/offline' ),
 	     Field::make( 'text', 'crb_shop_review_url', __( 'URL', 'run' ) ),
-	     Field::make( 'text', 'crb_shop_review_country', __( 'country', 'run' ) ),
+	     Field::make( 'text', 'crb_shop_review_country', __( 'Country', 'run' ) ),
+	     Field::make( 'rich_text', 'crb_shop_review_content', __( 'Description', 'run' ) ),
      ] )
      ->set_icon( 'cart' )
      ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) { ?>
@@ -43,5 +44,8 @@ Block::make( __( 'Shop review' ) )
 				     <span class="shop-review__item-value"><?php echo $fields['crb_shop_review_country']; ?></span>
 			     </li>
 		     </ul>
+		     <div class="shop-review__description">
+			     <?php echo $fields['crb_shop_review_content']; ?>
+		     </div>
 	     </div>
      <?php } );

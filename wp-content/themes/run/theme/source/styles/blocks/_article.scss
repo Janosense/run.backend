@@ -101,6 +101,14 @@
     }
   }
 
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+  }
+
   @media (min-width: 374px) {
     figure {
       left: -24px;
@@ -125,6 +133,10 @@
 
   @media (min-width: 1023px) {
     font-size: 20px;
+
+    blockquote {
+      font-size: 18px;
+    }
   }
 }
 
