@@ -21,4 +21,5 @@ function app_bootstrap_carbon_fields_register_fields() {
 
 	// Blocks
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'block-route.php';
+	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'block-shop-review.php';
 }
