@@ -65,7 +65,7 @@ class ServiceActionsController {
 			if ( ! empty( $posts ) ) {
 				foreach ( $posts as $post ) {
 					$urls[ trim( $post->post_name, '/' ) ] = [
-						'url'        => $url_base . '/articles/' . $post->post_name,
+						'url'        => $url_base . '/articles/' . $post->post_name . '/',
 						'priority'   => 0.6,
 						'changefreq' => 'yearly',
 						'lastmod'    => $post->post_modified_gmt
@@ -77,7 +77,7 @@ class ServiceActionsController {
 				foreach ( $pages as $page ) {
 					if ( ! isset( $urls[ trim( $page->post_name, '/' ) ] ) ) {
 						$urls[ trim( $post->post_name, '/' ) ] = [
-							'url'        => $url_base . '/' . $post->post_name,
+							'url'        => $url_base . '/' . $post->post_name . '/',
 							'priority'   => 0.6,
 							'changefreq' => 'yearly',
 							'lastmod'    => $post->post_modified_gmt
