@@ -21,6 +21,14 @@ const isProd = process.env.NODE_ENV === 'production';
 const isTest = process.env.NODE_ENV === 'test';
 const isDev = !isProd && !isTest;
 
+const postcss_plugins = [
+  autoprefixer(),
+];
+
+if (isProd) {
+  postcss_plugins.push(cssnano());
+}
+
 function styles() {
   return src('theme/source/styles/*.scss')
     .pipe($.plumber())
@@ -30,9 +38,7 @@ function styles() {
       precision: 10,
       includePaths: ['.']
     }).on('error', $.sass.logError))
-    .pipe($.postcss([
-      autoprefixer()
-    ]))
+    .pipe($.postcss(postcss_plugins))
     .pipe($.if(!isProd, $.sourcemaps.write()))
     .pipe(dest('theme/dist/styles'))
     .pipe(server.reload({stream: true}));

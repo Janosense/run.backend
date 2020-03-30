@@ -1,15 +1,25 @@
 .shop-review {
   display: block;
+
+  @media (min-width: 1279px) {
+    display: flex;
+  }
+}
+
+.shop-review__description {
+  @media (min-width: 1279px) {
+    flex-grow: 1;
+  }
 }
 
 .shop-review__list {
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 1em;
   padding: 0;
   font-size: 16px;
 
-  @media (min-width: 767px) {
-    float: left;
+  @media (min-width: 1279px) {
+    margin-bottom: 0;
     padding-right: 32px;
     box-sizing: border-box;
   }
@@ -21,7 +31,6 @@
   @media (min-width: 1919px) {
     padding-right: 40px;
   }
-
 }
 
 .shop-review__item {
