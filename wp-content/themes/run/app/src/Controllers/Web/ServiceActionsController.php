@@ -56,7 +56,7 @@ class ServiceActionsController {
 							'url'        => $url_base . $route['url'],
 							'priority'   => isset( $route['priority'] ) ? $route['priority'] : 0.6,
 							'changefreq' => $route['changefreq'],
-							'lastmod'    => date( 'Y-m-d H:i:s', time() - 60 * 60 * 24 ),
+							'lastmod'    => date( 'Y-m-d', time() - 60 * 60 * 24 ),
 						];
 					}
 				}
@@ -68,7 +68,7 @@ class ServiceActionsController {
 						'url'        => $url_base . '/articles/' . $post->post_name . '/',
 						'priority'   => 0.6,
 						'changefreq' => 'yearly',
-						'lastmod'    => $post->post_modified_gmt
+						'lastmod'    => date( 'Y-m-d', $post->post_modified ),
 					];
 				}
 			}
@@ -80,7 +80,7 @@ class ServiceActionsController {
 							'url'        => $url_base . '/' . $post->post_name . '/',
 							'priority'   => 0.6,
 							'changefreq' => 'yearly',
-							'lastmod'    => $post->post_modified_gmt
+							'lastmod'    => date( 'Y-m-d', $post->post_modified ),
 						];
 					}
 				}
