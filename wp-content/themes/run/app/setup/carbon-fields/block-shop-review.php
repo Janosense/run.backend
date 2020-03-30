@@ -17,19 +17,30 @@ Block::make( __( 'Shop review' ) )
 		     <ul class="shop-review__list">
 			     <li class="shop-review__item">
 				     <span class="shop-review__item-title">Название:</span>
-				     <span  class="shop-review__item-value"><?php echo $fields['crb_shop_review_title']; ?></span>
+				     <span class="shop-review__item-value"><?php echo $fields['crb_shop_review_title']; ?></span>
 			     </li>
+			     <?php if ( isset( $fields['crb_shop_review_url'] ) && ! empty( $fields['crb_shop_review_url'] ) ) : ?>
+				     <li class="shop-review__item">
+					     <span class="shop-review__item-title">Сайт:</span>
+					     <span class="shop-review__item-value">
+						     <a href="<?php echo $fields['crb_shop_review_url']; ?>"
+						        target="_blank"
+						        rel="nofollow">
+							     <?php echo str_replace( [
+								     'http://',
+								     'https://'
+							     ], '', $fields['crb_shop_review_url'] ); ?>
+						     </a>
+					     </span>
+				     </li>
+			     <?php endif; ?>
 			     <li class="shop-review__item">
 				     <span class="shop-review__item-title"> Тип:</span>
-				     <span  class="shop-review__item-value"><?php echo $fields['crb_shop_review_type']; ?></span>
-			     </li>
-			     <li class="shop-review__item">
-				     <span class="shop-review__item-title">Сайт:</span>
-				     <span  class="shop-review__item-value"><a href="<?php echo $fields['crb_shop_review_url']; ?>" target="_blank" rel="nofollow"><?php echo $fields['crb_shop_review_url']; ?></a></span>
+				     <span class="shop-review__item-value"><?php echo $fields['crb_shop_review_type']; ?></span>
 			     </li>
 			     <li class="shop-review__item">
 				     <span class="shop-review__item-title"> Страна:</span>
-				     <span  class="shop-review__item-value"><?php echo $fields['crb_shop_review_country']; ?></span>
+				     <span class="shop-review__item-value"><?php echo $fields['crb_shop_review_country']; ?></span>
 			     </li>
 		     </ul>
 	     </div>

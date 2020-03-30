@@ -3914,6 +3914,21 @@
   display: block;
 }
 
+@media (min-width: 767px) {
+  .shop-review {
+    float: left;
+    padding-right: 32px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1919px) {
+  .shop-review {
+    padding-right: 40px;
+  }
+}
+
 .shop-review__list {
   list-style-type: none;
   margin: 0;
