@@ -1,0 +1,36 @@
+.disclaimer {
+  position: relative;
+  left: -16px;
+  width: calc(100% + 32px);
+  margin: 1em 0;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+
+  @media (min-width: 374px) {
+    left: -24px;
+    width: calc(100% + 48px);
+    padding: 24px;
+  }
+
+  @media (min-width: 768px) {
+    left: 0;
+    width: 100%;
+    padding: 32px;
+  }
+
+  @media (min-width: 1919px) {
+    padding: 40px;
+  }
+}
+
+.disclaimer__content {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
