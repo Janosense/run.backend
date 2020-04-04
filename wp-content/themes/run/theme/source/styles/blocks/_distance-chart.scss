@@ -1,0 +1,34 @@
+.distance-chart {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    width: 100%;
+    background-color: $color-white;
+  }
+}
+
+.distance-chart__wrapper {
+  position: relative;
+}
+
+.distance-chart__holder {
+  position: relative;
+  width: 100%;
+}
+
+.distance-chart__content {
+  display: block;
+  width: 100%;
+}
+
+.distance-chart__heading {
+  margin: 0 0 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: right;
+  color: #000000;
+}

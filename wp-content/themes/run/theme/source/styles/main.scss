@@ -3,6 +3,7 @@
 
 @import "blocks/body";
 @import "blocks/wrapper";
+@import "blocks/layout";
 @import "blocks/front-page-wrapper";
 @import "blocks/heading";
 @import "blocks/header";
@@ -42,22 +43,7 @@
 @import "blocks/admin-options";
 @import "blocks/map";
 @import "blocks/shop-review";
-
-
-.layout {
-  position: relative;
-  z-index: 10;
-  padding-top: 60px;
-  margin-bottom: 50px;
-  background-color: #fff;
-
-  @media (min-width: 767px) {
-    padding-top: 0;
-  }
-
-  @media (min-width: 1023px) {
-    margin-bottom: 82px;
-  }
-}
+//@import "blocks/distance-chart";
+//@import "blocks/chart-legend";
 
 

@@ -1,0 +1,37 @@
+.chart-legend {
+  position: absolute;
+  top: 4px;
+  left: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.chart-legend__item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.chart-legend__box {
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin-right: 8px;
+
+  &--black {
+    background-color: #000000;
+  }
+
+  &--grey {
+    background-color: #a0a0a0;
+  }
+}
+
+.chart-legend__title {
+  font-size: 16px;
+  font-weight: 300;
+}

@@ -1,0 +1,15 @@
+.layout {
+  position: relative;
+  z-index: 10;
+  padding-top: 60px;
+  margin-bottom: 50px;
+  background-color: #fff;
+
+  @media (min-width: 767px) {
+    padding-top: 0;
+  }
+
+  @media (min-width: 1023px) {
+    margin-bottom: 82px;
+  }
+}
