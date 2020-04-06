@@ -1,0 +1,13 @@
+{% if similar_posts is not empty %}
+	<section class="aside__section similar-news">
+		<h3 class="aside__section-heading">Похожие записи</h3>
+		<ul class="similar-news__list">
+			{% for post in similar_posts %}
+				<li class="similar-news__item">
+					<span class="similar-news__date">{{ post.date }}</span>
+					<a href="{{ post.permalink }}" class="similar-news__title">{{ post.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endif %}

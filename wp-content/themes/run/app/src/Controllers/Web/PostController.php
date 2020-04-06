@@ -5,6 +5,8 @@ namespace App\Controllers\Web;
 
 
 class PostController {
+	static $post_categories;
+
 	/**
 	 * @param \WPEmerge\Requests\Request $request
 	 * @param string $view
@@ -16,12 +18,14 @@ class PostController {
 		global $post;
 
 		if ( ! empty( $post ) && $post_slug == $post->post_name ) {
-			$data             = $this->prepare_post_data( $post );
+			$data          = $this->prepare_post_data( $post );
+			$similar_posts = $this->get_similar_posts( $post );
 
 			return \WPEmerge\view( 'templates/post.twig' )->with( [
 				'post'             => $data,
 				'statistics'       => StatisticsController::get_statistics(),
 				'meta_description' => carbon_get_post_meta( $post->ID, 'crb_meta_description' ),
+				'similar_posts'    => $similar_posts,
 			] );
 		}
 
@@ -35,7 +39,7 @@ class PostController {
 	 */
 	private function prepare_post_data( $post ) {
 		$categories      = [];
-		$categories_data = wp_get_post_categories( $post->ID, [ 'fields' => 'all' ] );
+		$categories_data = $this->get_post_categories( $post );
 		if ( ! empty( $categories_data ) && ! is_wp_error( $categories_data ) ) {
 			foreach ( $categories_data as $category ) {
 				if ( $category->term_id != 1 ) {
@@ -76,5 +80,64 @@ class PostController {
 		}
 
 		return null;
+	}
+
+	/**
+	 * @param $post
+	 *
+	 * @return array|\WP_Error
+	 */
+	private function get_post_categories( $post ) {
+		if ( empty( self::$post_categories ) ) {
+			$data = wp_get_post_categories( $post->ID, [ 'fields' => 'all' ] );
+			if ( ! empty( $data ) && ! is_wp_error( $data ) ) {
+				self::$post_categories = $data;
+
+				return $data;
+			}
+
+			return [];
+		}
+
+		return self::$post_categories;
+	}
+
+
+	/**
+	 * @param \WP_Post $post
+	 *
+	 * @return array
+	 */
+	private function get_similar_posts( $post ) {
+		$data            = [];
+		$categories_ids  = [];
+		$categories_data = $this->get_post_categories( $post );
+
+		if ( ! empty( $categories_data ) && ! is_wp_error( $categories_data ) ) {
+			foreach ( $categories_data as $category ) {
+				if ( $category->term_id != 1 ) {
+					$categories_ids[] = $category->term_id;
+				}
+			}
+		}
+
+		$similar_posts = get_posts( [
+			'numberposts' => 5,
+			'category'    => $categories_ids,
+			'exclude'     => $post->ID,
+			'post_type'   => 'post'
+		] );
+
+		if ( ! empty( $similar_posts ) ) {
+			foreach ( $similar_posts as $similar_post ) {
+				$data[] = [
+					'title'     => $similar_post->post_title,
+					'date'      => date( 'd.m.Y', strtotime( $similar_post->post_date ) ),
+					'permalink' => '/articles/' . $similar_post->post_name,
+				];
+			}
+		}
+
+		return $data;
 	}
 }
