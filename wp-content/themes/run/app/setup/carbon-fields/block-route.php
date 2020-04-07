@@ -25,7 +25,7 @@ Block::make( __( 'Route' ) )
 	     $meta_key   = 'route_' . $fields['crb_route_file_id'] . '_' . $post->ID;
 	     $route_data = get_post_meta( $post->ID, $meta_key, true );
 
-	     if ( !empty( $route_data ) ) {
+	     if ( empty( $route_data ) ) {
 
 		     $file_path = get_attached_file( $fields['crb_route_file_id'] );
 
@@ -96,6 +96,7 @@ Block::make( __( 'Route' ) )
 				     const url = `/wp-json/run-app/v1/route/?post_id=${post_id}&meta_key=${meta_key}`;
 				     const response = await fetch(url);
 				     const route_data = await response.json();
+				     console.log(route_data);
 
 				     const map_settings = {
 					     zoom: 14,
