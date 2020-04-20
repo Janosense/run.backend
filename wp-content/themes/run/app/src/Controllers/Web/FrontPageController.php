@@ -13,7 +13,7 @@ class FrontPageController {
 	 */
 	public function index( $request, $view ) {
 		$articles_data = [];
-		$articles      = $this->get_articles();
+		$articles      = $this->get_articles( 7 );
 
 		if ( ! empty( $articles ) ) {
 			$articles_controller = new ArticlesController();
@@ -24,7 +24,8 @@ class FrontPageController {
 		$events  = new CalendarController();
 
 		return \WPEmerge\view( 'templates/front-page.twig' )->with( [
-			'articles'     => $articles_data,
+			'latest_posts' => array_slice( $articles_data, 0, 3 ),
+			'more_posts'   => array_slice( $articles_data, 3 ),
 			'statistics'   => StatisticsController::get_statistics(),
 			'activities'   => TrainingsController::get_activities_list(),
 			'last_results' => $results->get_last_results( 5 ),
@@ -35,9 +36,9 @@ class FrontPageController {
 	/**
 	 * @return int[]|\WP_Post[]
 	 */
-	private function get_articles() {
+	private function get_articles( $numberposts = 3 ) {
 		return get_posts( [
-			'numberposts' => 3,
+			'numberposts' => $numberposts,
 			'post_type'   => 'post',
 		] );
 	}

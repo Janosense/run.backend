@@ -1,0 +1,13 @@
+{% if more_posts is defined and more_posts is not empty %}
+	<section class="popular-posts">
+		<h3 class="popular-posts__heading">Другие записи</h3>
+		<ul class="popular-posts__list">
+			{% for article in more_posts %}
+				<li class="popular-posts__item">
+					<span class="popular-posts__date">{{ article.date }}</span>
+					<a href="{{ article.permalink }}" class="popular-posts__title">{{ article.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endif %}
