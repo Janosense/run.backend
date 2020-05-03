@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-03-24 17:05:08+0000\n"
+"PO-Revision-Date: 2020-05-03 11:25:10+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: ru\n"
 "Project-Id-Version: WordPress - 5.4.x - Development - Administration\n"
 
@@ -27,11 +27,11 @@ msgstr "1"
 msgid "Continue"
 msgstr "Продолжить"
 
-#: wp-admin/about.php:130
+#: wp-admin/about.php:163
 msgid "See progress as you process export and erasure requests through the privacy tools."
 msgstr "Следите за прогрессом исполнения запросов экспорта и стирания в инструментах работы с персональными данными."
 
-#: wp-admin/about.php:129
+#: wp-admin/about.php:162
 msgid "Now personal data exports include users session information and users location data from the community events widget. Plus, a table of contents!"
 msgstr "Новый формат экспорта персональных данных включает информацию о сессиях пользователя и данные о местонахождении из виджета мероприятий сообщества. А ещё оглавление!"
 
@@ -49,146 +49,146 @@ msgid "Unable to write to %s file."
 msgstr "Невозможно записать в файл %s."
 
 #. translators: %s: WordPress 5.4 Field Guide link.
-#: wp-admin/about.php:201
+#: wp-admin/about.php:234
 msgid "There&#8217;s lots more for developers to love in WordPress 5.4. To discover more and learn how to make these changes shine on your sites, themes, plugins and more, check the <a href=\"%s\">WordPress 5.4 Field Guide</a>."
 msgstr "Гораздо больше вкусностей для разработчиков в WordPress 5.4. Узнать больше и научиться использовать эти изменения во всей красе на ваших сайтах, в темах, плагинах, и не только, вы сможете прочитав <a href=\"%s\">WordPress 5.4 Field Guide</a>."
 
-#: wp-admin/about.php:188
+#: wp-admin/about.php:221
 msgid "In embeds, now the block editor supports TikTok—and CollegeHumor is gone."
 msgstr "В встраиваемом содержимом редактора блоков мы добавили TikTok, но убрали CollegeHumor."
 
-#: wp-admin/about.php:187
+#: wp-admin/about.php:220
 msgid "Let users do more with two new APIs: block variations and gradients."
 msgstr "Больше возможностей с двумя новыми API: вариации блоков и градиенты."
 
-#: wp-admin/about.php:186
+#: wp-admin/about.php:219
 msgid "If you build plugins, now you can register collections of your blocks by namespace across categories—a great way to get more brand visibility."
 msgstr "Если вы создаете плагины, теперь вы можете зарегистрировать коллекции блоков используя пространства имен по категориям, это отличная возможность \"раскрутки\" бренда."
 
-#: wp-admin/about.php:185
+#: wp-admin/about.php:218
 msgid "<strong>Radically</strong> simpler block styling. Negative margins and default padding are gone! Now you can style blocks the way you need them. And, a refactor got rid of four redundant wrapper divs."
 msgstr "<strong>Радикально</strong> упрощённая стилизация блоков. Убраны отрицательные отступы и границы по умолчанию. Теперь можно стилизовать блоки так, как вам нужно. И мы избавились от четырёх лишних div врапперов."
 
-#: wp-admin/about.php:183
+#: wp-admin/about.php:216
 msgid "Blocks! Simpler styling, new APIs and embeds"
 msgstr "Блоки! Упрощение стилей, новые API и встраивание содержимого"
 
-#: wp-admin/about.php:179
+#: wp-admin/about.php:212
 msgid "Check your code and see where these new actions can replace your custom code, and if you&#8217;re concerned about duplication, add a check for the WordPress version."
 msgstr "Пересмотрите свой код и возможно эти новые действия смогут заменить ваш пользовательский код, тем не менее, используя их, стоит осуществлять проверку версии WordPress."
 
 #. translators: %s: 'wp_nav_menu_item_custom_fields_customize_template' action
 #. name.
-#: wp-admin/about.php:173
+#: wp-admin/about.php:206
 msgid "In the Customizer, %s fires at the end of the menu-items form-fields template."
-msgstr "В интерфейса настройки %s запускается в конце элементов меню шаблона полей формы."
+msgstr "В интерфейсе настройки %s запускается в конце элементов меню шаблона полей формы."
 
 #. translators: %s: 'wp_nav_menu_item_custom_fields' action name.
-#: wp-admin/about.php:164
+#: wp-admin/about.php:197
 msgid "On the Menus admin screen, %s fires just before the move buttons of a nav menu item in the menu editor."
 msgstr "На экране настройки меню %s запускается перед перемещением элементов навигационного меню в редакторе."
 
-#: wp-admin/about.php:158
+#: wp-admin/about.php:191
 msgid "Two new actions let you add custom fields to menu items&mdash;without a plugin and without writing custom walkers."
 msgstr "Два новых действия позволяют вам добавить пользовательские поля к элементам меню, без плагинов и пользовательского кода."
 
-#: wp-admin/about.php:156
+#: wp-admin/about.php:189
 msgid "Add custom fields to menu items—natively"
 msgstr "Нативно добавляйте поля к элементам меню."
 
-#: wp-admin/about.php:140
+#: wp-admin/about.php:173
 msgid "Just for developers"
 msgstr "Только для разработчиков"
 
-#: wp-admin/about.php:131
+#: wp-admin/about.php:164
 msgid "Plus, little enhancements throughout give the privacy tools a little cleaner look. Your eyes will thank you!"
 msgstr "А ещё, небольшие улучшения придают более чистый вид инструментам конфиденциальности. Ваши глаза порадуются!"
 
-#: wp-admin/about.php:127
+#: wp-admin/about.php:160
 msgid "Take a look:"
 msgstr "Посмотрите:"
 
-#: wp-admin/about.php:126
+#: wp-admin/about.php:159
 msgid "5.4 helps with a variety of privacy issues around the world. So when users and stakeholders ask about regulatory compliance, or how your team handles user data, the answers should be a lot easier to get right."
 msgstr "Версия 5.4 продолжает улучшать обработку конфиденциальных данных. Когда вас спрашивают о следовании инструкциям регуляторов или как вы обрабатываете пользовательские данные, вам будет гораздо проще правильно ответить."
 
-#: wp-admin/about.php:125
+#: wp-admin/about.php:158
 msgid "Your fundamental right: privacy"
 msgstr "Ваше фундаментальное право: конфиденциальность"
 
-#: wp-admin/about.php:109
+#: wp-admin/about.php:142
 msgid "Of course, if you want to work with the very latest tools and features, install the <a href=\"https://wordpress.org/plugins/gutenberg/\">Gutenberg plugin</a>. You&#8217;ll get to be the first to use new and exciting features in the block editor, before anyone else has seen them!"
 msgstr "Разумеется, если вы хотите работать с самыми последними инструментами и возможностями, то вы можете установить плагин <a href=\"https://ru.wordpress.org/plugins/gutenberg/\">Gutenberg</a>. И вы будете в числе первых, кто станет использовать новые и захватывающие возможности редактора блоков, ещё до того, как их увидят другие!"
 
-#: wp-admin/about.php:107
+#: wp-admin/about.php:140
 msgid "Know at a glance whether you&#8217;re in a block&#8217;s Edit or Navigation mode. Or, if you have restricted vision, your screen reader will tell you which mode you&#8217;re in."
 msgstr "Узнайте сразу о нахождении в режиме редактирования или навигации. А если у вас  снижено зрение, то программа чтения с экрана может подсказать вам об этом."
 
-#: wp-admin/about.php:106
+#: wp-admin/about.php:139
 msgid "Tips are gone. In their place, a Welcome Guide window you can bring up when you need it&mdash;and only when you need it&mdash;again and again."
 msgstr "Мы убрали советы. Вместо них есть инструкция для начинающих, вы сможете открывать ее тогда, когда она вам потребуется, снова и снова."
 
-#: wp-admin/about.php:105
+#: wp-admin/about.php:138
 msgid "Speed! 14% faster loading of the editor, 51% faster time-to-type!"
 msgstr "Скорость! Редактор загружается на 14% быстрее, на 51% быстрее доступность для ввода!"
 
-#: wp-admin/about.php:104
+#: wp-admin/about.php:137
 msgid "For when you need to navigate with the keyboard, better tabbing and focus. Plus, you can tab over to the sidebar of nearly any block."
 msgstr "При навигации с клавиатуры лучшая фокусировка и переходы. А еще вы можете перейти на боковую панель практически любого блока."
 
-#: wp-admin/about.php:103
+#: wp-admin/about.php:136
 msgid "Clearer block navigation with block breadcrumbs. And easier selection once you get there."
 msgstr "Более понятная навигация по блокам с \"хлебными крошками\" блоков. И более простой выбор с их помощью."
 
-#: wp-admin/about.php:101
+#: wp-admin/about.php:134
 msgid "Cleaner UI, clearer navigation—and easier tabbing!"
 msgstr "Чистый интерфейс, понятная навигация, простые переходы!"
 
-#: wp-admin/about.php:94
+#: wp-admin/about.php:127
 msgid "And if you&#8217;ve ever thought your image in the Media+Text block should link to something else&mdash;perhaps a picture of a brochure should download that brochure as a document? Well, now it can."
 msgstr "А если вдруг вы захотите, чтобы блок Медиа+Текст стал ссылкой на что-либо еще, к примеру изображение брошюры стало ссылкой на её файл, то теперь вы сможете это сделать!"
 
-#: wp-admin/about.php:93
+#: wp-admin/about.php:126
 msgid "Guess a whole lot less! Version 5.4 streamlines the whole process for placing and replacing multimedia in every block. Now it works the same way in almost every block!"
 msgstr "Меньше гаданий! В версии 5.4 процесс размещения и замены мультимедиа в блоках стал проще и работает одинаково почти во всех блоках!"
 
-#: wp-admin/about.php:92
+#: wp-admin/about.php:125
 msgid "New ways with color: Gradients in the Buttons and Cover block, toolbar access to color options in Rich Text blocks, and for the first time, color options in the Group and Columns blocks."
 msgstr "Новые способы работы с цветом: градиенты в блоках Кнопки и Обложка, доступ к панели инструментов для параметров цвета в блоках Rich Text и впервые - параметры цвета в блоках Группа и Столбцы."
 
-#: wp-admin/about.php:91
+#: wp-admin/about.php:124
 msgid "Two brand-new blocks: Social Icons and Buttons make adding interactive features fast and easy."
 msgstr "Два новых блока: социальные ссылки и кнопки сделают возможности взаимодействия проще и быстрее."
 
-#: wp-admin/about.php:89
+#: wp-admin/about.php:122
 msgid "Two new blocks. And better blocks overall."
 msgstr "Два новых блока. И в целом лучшие блоки."
 
-#: wp-admin/about.php:75
+#: wp-admin/about.php:108
 msgid "And more speed everywhere, so as you build sections or galleries, or just type in a line of prose, you can feel how much faster your work flows."
 msgstr "И больше скорости везде, так что, когда вы создаете разделы или галереи или просто пишете строки прозы, вы можете почувствовать, насколько быстрее вы это делаете."
 
-#: wp-admin/about.php:72
+#: wp-admin/about.php:105
 msgid "More ways to make your vision real, and put blocks in the perfect place&mdash;even if a particular kind of block is new to you. More efficient processes."
 msgstr "Больше способов воплотить свое видение в реальность и поставить блоки в идеальное место, даже если еще не знакомы с определенным типом блоков. Ещё более эффективная работа."
 
-#: wp-admin/about.php:67
+#: wp-admin/about.php:100
 msgid "More ways to bring your visitors in, and keep them engaged, with the richness of embedded media from the web&#8217;s top services."
 msgstr "Больше способов привлекать и вовлекать посетителей с богатством встроенного мультимедиа содержимого лучших вебсервисов."
 
-#: wp-admin/about.php:66
+#: wp-admin/about.php:99
 msgid "More ways to make posts and pages come alive with your best images."
 msgstr "Больше способов оживить страницы и записи вашими лучшими изображениями."
 
-#: wp-admin/about.php:63
+#: wp-admin/about.php:96
 msgid "Every major release adds more to the block editor."
 msgstr "Каждый значимый выпуск добавляет ещё больше к редактору блоков."
 
-#: wp-admin/about.php:46
+#: wp-admin/about.php:79
 msgid "More ways to make your pages come alive. With easier ways to get it all done and looking better than ever&mdash;and boosts in speed you can feel."
 msgstr "Больше способов оживить ваши страницы. Теперь это гораздо проще сделать, выглядеть они будут как никогда лучше, и вы прочувствуете скорость."
 
-#: wp-admin/about.php:44
+#: wp-admin/about.php:77
 msgid "Say hello to more and better."
 msgstr "Поприветствуйте большее и лучшее."
 
@@ -764,9 +764,9 @@ msgid ""
 "dynamically generated, and should only be modified via WordPress filters.\n"
 "Any changes to the directives between these markers will be overwritten."
 msgstr ""
-"Строки между `BEGIN %1$s` и `END %1$s` были созданы автоматически.\n"
-"Они могут быть изменены только фильтрами WordPress.\n"
-"Все изменения между этими отметками будут перезаписаны."
+"Директивы (строки) между `BEGIN %1$s` и `END %1$s`\n"
+"созданы автоматически и подлежат изменению только через фильтры WordPress.\n"
+"Сделанные вручную изменения между этими маркерами будут перезаписаны."
 
 #: wp-admin/includes/image-edit.php:214
 msgid "Rotate right"
@@ -2561,8 +2561,9 @@ msgid "Cannot Install"
 msgstr "Установка невозможна"
 
 #. translators: %s: WordPress version.
+#. translators: %s: WordPress version
 #: wp-admin/includes/update.php:300 wp-admin/install.php:239
-#: wp-admin/update-core.php:82 wp-admin/upgrade.php:83
+#: wp-admin/update-core.php:82 wp-admin/upgrade.php:83 wp-admin/about.php:65
 msgid "https://wordpress.org/support/wordpress-version/version-%s/"
 msgstr "https://wordpress.org/support/wordpress-version/version-%s/"
 
@@ -5075,7 +5076,7 @@ msgid "(Currently set to: %s)"
 msgstr "(Сейчас отображает меню «%s»)"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:237
+#: wp-admin/about.php:270
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "В <strong>версии %s</strong> решена проблема с безопасностью."
 
@@ -5087,15 +5088,15 @@ msgstr "https://ru.gravatar.com/"
 msgid "Profile Picture"
 msgstr "Аватар"
 
-#: wp-admin/about.php:234
+#: wp-admin/about.php:45 wp-admin/about.php:267
 msgid "Maintenance and Security Releases"
 msgstr "Технические обновления безопасности"
 
-#: wp-admin/about.php:231
+#: wp-admin/about.php:264
 msgid "Security Releases"
 msgstr "Обновления безопасности"
 
-#: wp-admin/about.php:228
+#: wp-admin/about.php:261
 msgid "Maintenance Releases"
 msgstr "Технические обновления"
 
@@ -8634,30 +8635,33 @@ msgid "Show Toolbar when viewing site"
 msgstr "Показывать верхнюю панель при просмотре сайта"
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs.
-#: wp-admin/about.php:242
+#: wp-admin/about.php:275
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "В <strong>версии %1$s</strong> исправлена %2$s ошибка."
 msgstr[1] "В <strong>версии %1$s</strong> исправлены %2$s ошибки."
 msgstr[2] "В <strong>версии %1$s</strong> исправлены %2$s ошибок."
 
+#. translators: 1: WordPress version number, 2: plural number of bugs. More
+#. than one security issue.
 #. translators: 1: WordPress version number, 2: Plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:254
+#: wp-admin/about.php:50 wp-admin/about.php:287
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "В <strong>версии %1$s</strong> решены несколько проблем с безопасностью и исправлена %2$s ошибка."
 msgstr[1] "В <strong>версии %1$s</strong> решены несколько проблем с безопасностью и исправлены %2$s ошибки."
 msgstr[2] "В <strong>версии %1$s</strong> решены несколько проблем с безопасностью и исправлены %2$s ошибок."
 
+#. translators: %s: HelpHub URL
 #. translators: %s: Documentation URL.
-#: wp-admin/about.php:260
+#: wp-admin/about.php:62 wp-admin/about.php:293
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "Дополнительную информацию можно найти в <a href=\"%s\">заметке о выпуске</a>."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:248
+#: wp-admin/about.php:281
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "В <strong>версии %1$s</strong> решена проблема с безопасностью и исправлена %2$s ошибка."
@@ -8669,15 +8673,15 @@ msgid "Welcome to your WordPress Dashboard! This is the screen you will see when
 msgstr "Добро пожаловать в консоль WordPress! Этот экран вы будете видеть после авторизации. Он даёт доступ ко всем функциям управления сайтом. Можно получить помощь по каждому экрану, нажав на вкладку &laquo;Помощь&raquo; над заголовком экрана."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:239
+#: wp-admin/about.php:272
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "В <strong>версии %s</strong> решены несколько проблем с безопасностью."
 
-#: wp-admin/about.php:227
+#: wp-admin/about.php:260
 msgid "Maintenance Release"
 msgstr "Техническое обновление"
 
-#: wp-admin/about.php:230
+#: wp-admin/about.php:263
 msgid "Security Release"
 msgstr "Обновление безопасности"
 
@@ -8686,7 +8690,7 @@ msgstr "Обновление безопасности"
 msgid "What&#8217;s New"
 msgstr "Что нового"
 
-#: wp-admin/about.php:233
+#: wp-admin/about.php:266
 msgid "Maintenance and Security Release"
 msgstr "Техническое обновление безопасности"
 
@@ -8699,7 +8703,7 @@ msgstr "На этом экране можно выбрать структуру 
 msgid "Welcome to WordPress %1$s. <a href=\"%2$s\">Learn more</a>."
 msgstr "Добро пожаловать в WordPress %1$s. <a href=\"%2$s\">Узнать больше</a>."
 
-#: wp-admin/about.php:214
+#: wp-admin/about.php:247
 msgid "Return to Updates"
 msgstr "Вернуться на страницу &laquo;Обновления&raquo;"
 
@@ -8971,15 +8975,15 @@ msgid "Because this is a multisite installation, you may add accounts that alrea
 msgstr "Поскольку это сеть сайтов, можно добавлять существующие в ней учётные записи, указав имя пользователя или e-mail и выбрав роль. Чтобы иметь больше возможностей &#8212; например, назначать пароль &#8212; нужно быть администратором сети и использовать ссылку для редактирования профиля пользователя, которая появляется под его именем в разделе &laquo;Управление сетью&raquo; &rarr; &laquo;Все пользователи&raquo;."
 
 #. translators: %s: The current WordPress version number.
-#: wp-admin/about.php:56
+#: wp-admin/about.php:89
 msgid "Welcome to WordPress %s."
 msgstr "Добро пожаловать в WordPress %s"
 
-#: wp-admin/about.php:214
+#: wp-admin/about.php:247
 msgid "Return to Dashboard &rarr; Updates"
 msgstr "Вернуться на страницу &laquo;Консоль&raquo; &rarr; &laquo;Обновления&raquo;"
 
-#: wp-admin/about.php:217
+#: wp-admin/about.php:250
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Перейти на страницу &laquo;Консоль&raquo; &rarr; &laquo;Главная&raquo;"
 
@@ -10832,7 +10836,7 @@ msgstr "Элемент меню"
 msgid "Please enter a valid menu name."
 msgstr "Пожалуйста, введите корректное название меню."
 
-#: wp-admin/about.php:217
+#: wp-admin/about.php:250
 msgid "Go to Dashboard"
 msgstr "Перейти на страницу &laquo;Консоль&raquo;"
 
