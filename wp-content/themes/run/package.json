@@ -8,6 +8,7 @@
     "chart.js": "^2.9.3",
     "chartjs-plugin-datalabels": "^0.7.0",
     "current-device": "^0.9.1",
+    "glightbox": "^2.0.6",
     "imask": "^6.0.1"
   },
   "devDependencies": {

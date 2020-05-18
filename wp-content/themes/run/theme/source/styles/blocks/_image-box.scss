@@ -1,0 +1,24 @@
+.image-box {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.image-box__link {
+  display: block;
+  width: 100%;
+}
+
+.image-box__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

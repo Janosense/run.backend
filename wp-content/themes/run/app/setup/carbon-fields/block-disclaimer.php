@@ -3,9 +3,9 @@
 use Carbon_Fields\Block;
 use Carbon_Fields\Field;
 
-Block::make( __( 'Disclaimer' ) )
+Block::make( __( 'Disclaimer', 'run' ) )
      ->add_fields( [
-	     Field::make( 'rich_text', 'crb_disclaimer_content', __( 'Disclaimer content' ) )
+	     Field::make( 'rich_text', 'crb_disclaimer_content', __( 'Disclaimer content', 'run' ) )
      ] )
      ->set_icon( 'visibility' )
      ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) { ?>
