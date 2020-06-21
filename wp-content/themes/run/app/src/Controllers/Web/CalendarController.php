@@ -172,7 +172,7 @@ class CalendarController {
 		foreach ( $data as $state => $state_data ) {
 			$data[ $state ]['events'] = array_slice( $state_data['events'], 0, $items_count );
 
-			foreach ( $state_data['events'] as $key => $event ) {
+			foreach ( $data[ $state ]['events'] as $key => $event ) {
 				$data[ $state ]['events'][ $key ]['date'] = substr( $event['date'], 0, - 5 );
 			}
 		}
