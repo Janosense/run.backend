@@ -5,19 +5,19 @@
   margin-bottom: 56px;
 
   @media (min-width: 767px) {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0;
+    display: none;
   }
 
   @media (min-width: 1023px) {
     display: block;
-    width: 320px;
+    width: 400px;
     margin-bottom: 0;
+    padding-left: 40px;
+    box-sizing: border-box;
   }
 
   @media (min-width: 1919px) {
-    width: 348px;
+    width: 440px;
   }
 }
 

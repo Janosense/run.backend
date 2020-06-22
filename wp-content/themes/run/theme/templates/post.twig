@@ -1,38 +1,40 @@
 {% extends "templates/layouts/base.twig" %}
 
 {% block head %}
-    <title>{{ post.title }}</title>
+	<title>{{ post.title }}</title>
 	<meta name="description" content="{{ meta_description }}"/>
 {% endblock %}
 
 {% block content %}
-    <div class="wrapper article-wrapper">
-        <article class="article article--post">
-            <header class="article__header">
-                <span class="article__date">{{ post.date }}</span>
-                <h1 class="heading article__heading">{{ post.title }}</h1>
-                <p class="article__excerpt">
+	<div class="wrapper wrapper--two-columns">
+		<article class="article article--post">
+			<header class="article__header">
+				<span class="article__date">{{ post.date }}</span>
+				<h1 class="heading article__heading">{{ post.title }}</h1>
+				<p class="article__excerpt">
 					{{ post.excerpt }}
 				</p>
-            </header>
-            <div class="article__content">
+			</header>
+			<div class="article__content">
 				{{ post.content | raw }}
-            </div>
+			</div>
 			{% if post.categories is not empty %}
-			<ul class="categories article__categories">
-				{% for category in post.categories %}
-				<li class="categories__item">
-					<a href="{{ category.permalink }}" class="categories__link">{{ category.title }}</a>
-				</li>
-				{% endfor %}
-			</ul>
+				<ul class="categories article__categories">
+					{% for category in post.categories %}
+						<li class="categories__item">
+							<a href="{{ category.permalink }}" class="categories__link">{{ category.title }}</a>
+						</li>
+					{% endfor %}
+				</ul>
 			{% endif %}
-        </article>
+		</article>
 
 		<aside class="aside">
 			{% include "templates/partials/post/similar-news.twig" %}
 			{% include "templates/partials/common/statistics.twig" %}
+			{% include "templates/partials/front-page/starts.twig" %}
+			{% include "templates/partials/front-page/last-results.twig" %}
 			{% include "templates/partials/common/shoes.twig" %}
 		</aside>
-    </div>
+	</div>
 {% endblock %}

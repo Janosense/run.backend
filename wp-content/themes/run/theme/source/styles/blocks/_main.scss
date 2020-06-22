@@ -1,16 +1,2 @@
 .main {
-
-  @media (min-width: 767px) {
-    display: flex;
-    flex-grow: 1;
-    align-items: flex-start;
-  }
-
-  &__layout {
-
-    @media (min-width: 767px) {
-      flex-shrink: 0;
-      width: 48%;
-    }
-  }
 }

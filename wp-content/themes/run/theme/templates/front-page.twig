@@ -1,20 +1,34 @@
 {% extends "templates/layouts/base.twig" %}
 
 {% block content %}
-	{% include "templates/partials/front-page/latest-posts.twig" %}
 
-	<div class="wrapper front-page-wrapper">
-		<main class="main">
-			<div class="main__layout">
-				{% include "templates/partials/front-page/last-results.twig" %}
-				{% include "templates/partials/front-page/starts.twig" %}
-			</div>
-			{% include "templates/partials/front-page/training.twig" %}
+	<div class="wrapper wrapper--two-columns">
+		<main class="main main--front-page">
+			{% include "templates/partials/front-page/latest-posts.twig" %}
 		</main>
 		<aside class="aside">
 			{% include "templates/partials/common/statistics.twig" %}
 			{% include "templates/partials/common/shoes.twig" %}
-			{% include "templates/partials/front-page/accessories.twig" %}
+{#			{% include "templates/partials/front-page/starts.twig" %}#}
+			{% include "templates/partials/front-page/last-results.twig" %}
+
 		</aside>
 	</div>
+
+{#	{% include "templates/partials/front-page/latest-posts.twig" %}#}
+
+{#	<div class="wrapper front-page-wrapper">#}
+{#		<main class="main">#}
+{#			<div class="main__layout">#}
+{#				{% include "templates/partials/front-page/last-results.twig" %}#}
+{#				{% include "templates/partials/front-page/starts.twig" %}#}
+{#			</div>#}
+{#			{% include "templates/partials/front-page/training.twig" %}#}
+{#		</main>#}
+{#		<aside class="aside">#}
+{#			{% include "templates/partials/common/statistics.twig" %}#}
+{#			{% include "templates/partials/common/shoes.twig" %}#}
+{#			{% include "templates/partials/front-page/accessories.twig" %}#}
+{#		</aside>#}
+{#	</div>#}
 {% endblock %}

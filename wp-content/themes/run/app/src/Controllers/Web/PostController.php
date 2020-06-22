@@ -20,12 +20,16 @@ class PostController {
 		if ( ! empty( $post ) && $post_slug == $post->post_name ) {
 			$data          = $this->prepare_post_data( $post );
 			$similar_posts = $this->get_similar_posts( $post );
+			$events        = new CalendarController();
+			$results       = new ResultsController();
 
 			return \WPEmerge\view( 'templates/post.twig' )->with( [
 				'post'             => $data,
 				'statistics'       => StatisticsController::get_statistics(),
 				'meta_description' => carbon_get_post_meta( $post->ID, 'crb_meta_description' ),
 				'similar_posts'    => $similar_posts,
+				'last_results'     => $results->get_last_results( 5 ),
+				'last_events'      => $events->get_upcoming_events( 3 ),
 			] );
 		}
 
