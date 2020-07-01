@@ -7,17 +7,47 @@
 
 {% block content %}
 	<main>
-		<div class="posts-preview posts-preview--inner">
-			<div class="wrapper posts-preview__wrapper">
-				<h2 class="heading posts-preview__heading">{{ title }}</h2>
-				<ul class="posts-preview__list">
+		<div class="latest-posts latest-posts--inner">
+			<div class="wrapper latest-posts__wrapper">
+				<h2 class="heading latest-posts__heading">{{ title }}</h2>
+				<ul class="latest-posts__list">
 					{% for id, article in articles %}
-						{% include "templates/partials/articles/post-preview.twig" %}
+						<li class="latest-posts__item">
+							<span class="latest-posts__date">{{ article.date }}</span>
+							<h3 class="latest-posts__title"><a href="{{ article.permalink }}">{{ article.title }}</a></h3>
+							<p class="latest-posts__excerpt">{{ article.excerpt }}</p>
+							{% if article.categories is not empty %}
+								<ul class="latest-posts__categories">
+									{% for category in article.categories %}
+										<li class="latest-posts__categories-item">
+											<a href="{{ category.permalink }}"
+											   class="latest-posts__categories-link">{{ category.title }}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							{% endif %}
+						</li>
 					{% endfor %}
 				</ul>
 				{% include "templates/partials/articles/pagination.twig" %}
 			</div>
 		</div>
-
 	</main>
+
+
+{#	<main>#}
+{#		<div class="posts-preview posts-preview--inner">#}
+{#			<div class="wrapper posts-preview__wrapper">#}
+{#				<h2 class="heading posts-preview__heading">{{ title }}</h2>#}
+{#				<ul class="posts-preview__list">#}
+{#					{% for id, article in articles %}#}
+{#						{% include "templates/partials/articles/post-preview.twig" %}#}
+{#					{% endfor %}#}
+{#				</ul>#}
+{#				{% include "templates/partials/articles/pagination.twig" %}#}
+{#			</div>#}
+{#		</div>#}
+
+{#	</main>#}
 {% endblock %}
+{#{% include "templates/partials/articles/pagination.twig" %}#}

@@ -45,7 +45,7 @@ class ArticlesController {
 
 			return \WPEmerge\view( 'templates/articles.twig' )->with( [
 				'articles'   => $data,
-				'title'      => sprintf( __( 'Category: %s', 'text_domain' ), $category->cat_name ),
+				'title'      => sprintf( __( 'Category: %s', 'run' ), $category->cat_name ),
 				'pagination' => $this->get_pagination( $total_count_posts, $page_number, $pagination_base ),
 			] );
 		}
