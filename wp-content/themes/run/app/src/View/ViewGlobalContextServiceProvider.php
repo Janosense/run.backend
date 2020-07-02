@@ -16,6 +16,7 @@ class ViewGlobalContextServiceProvider implements ServiceProviderInterface {
 	 * {@inheritDoc}
 	 */
 	public function bootstrap( $container ) {
+		$url_base      = home_url();
 		$routes        = require APP_APP_SETUP_DIR . 'routes.php';
 		$theme_version = wp_get_theme()->get( 'Version' );
 		$is_admin      = current_user_can( 'manage_options' );
@@ -23,6 +24,7 @@ class ViewGlobalContextServiceProvider implements ServiceProviderInterface {
 		$canonical     = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? "https" : "http" ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 		View::addGlobals( [
+			'url_base'      => $url_base,
 			'routes'        => $routes,
 			'theme_version' => $theme_version,
 			'is_admin'      => $is_admin,
