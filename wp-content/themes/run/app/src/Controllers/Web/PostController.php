@@ -24,6 +24,7 @@ class PostController {
 			$results       = new ResultsController();
 
 			return \WPEmerge\view( 'templates/post.twig' )->with( [
+				'url'              => $request->getUrl(),
 				'post'             => $data,
 				'statistics'       => StatisticsController::get_statistics(),
 				'meta_description' => carbon_get_post_meta( $post->ID, 'crb_meta_description' ),
