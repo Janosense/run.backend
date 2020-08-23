@@ -104,9 +104,17 @@
   blockquote {
     margin-left: 0;
     margin-right: 0;
-    font-style: italic;
-    font-weight: 300;
+    padding-left: 20px;
+    font-weight: 400;
     font-size: 16px;
+    border-left: 4px solid #000000;
+
+    cite {
+      display: block;
+      font-size: 14px;
+      font-weight: 300;
+      font-style: normal;
+    }
   }
 
   @media (min-width: 374px) {
@@ -136,6 +144,10 @@
 
     blockquote {
       font-size: 18px;
+
+      cite {
+        font-size: 16px;
+      }
     }
   }
 
