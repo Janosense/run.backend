@@ -24,4 +24,5 @@ function app_bootstrap_carbon_fields_register_fields() {
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'block-shop-review.php';
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'block-disclaimer.php';
 	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'block-image-box.php';
+	require_once APP_APP_SETUP_DIR . 'carbon-fields' . DIRECTORY_SEPARATOR . 'block-apportionment-pace.php';
 }

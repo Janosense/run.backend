@@ -28,6 +28,7 @@ class PostController {
 				'post'             => $data,
 				'statistics'       => StatisticsController::get_statistics(),
 				'meta_description' => carbon_get_post_meta( $post->ID, 'crb_meta_description' ),
+				'meta_image'       => carbon_get_post_meta( $post->ID, 'crb_meta_image' ),
 				'similar_posts'    => $similar_posts,
 				'last_results'     => $results->get_last_results( 5 ),
 				'last_events'      => $events->get_upcoming_events( 3 ),

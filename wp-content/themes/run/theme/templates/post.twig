@@ -7,7 +7,7 @@
 	<meta property="og:type"               content="article" />
 	<meta property="og:title"              content="{{ post.title }}" />
 	<meta property="og:description"        content="{{ meta_description }}" />
-	<meta property="og:image"              content="{{ global.url_base }}/wp-content/themes/run/theme/source/images/og-image.jpg" />
+	<meta property="og:image"              content="{% if meta_image is not empty %}{{ meta_image }}{% else %}{{ global.url_base }}/wp-content/themes/run/theme/source/images/og-image.jpg"{% endif %} />
 {% endblock %}
 
 {% block content %}
