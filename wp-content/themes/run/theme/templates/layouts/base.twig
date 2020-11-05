@@ -8,8 +8,21 @@
         <title>{{ global.site_title }}</title>
 		<meta name="description" content="Персональный журнал для ведения статистики, хранения и отслеживания результатов в беге, записи впечатлений от забегов"/>
 	{% endblock %}
+
+	<!-- Preload start -->
+	<link rel="preload" href="/wp-content/themes/run/theme/dist/styles/main.css?ver={{ global.theme_version }}" as="style" crossorigin>
+	<link rel="preload" href="/wp-content/themes/run/theme/dist/scripts/main.js?ver={{ global.theme_version }}" as="script" crossorigin>
+	<link rel="preload" href="/wp-content/themes/run/theme/dist/fonts/subset-Montserrat-Black.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/wp-content/themes/run/theme/dist/fonts/subset-Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/wp-content/themes/run/theme/dist/fonts/subset-Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/wp-content/themes/run/theme/dist/fonts/subset-Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/wp-content/themes/run/theme/dist/fonts/subset-SourceSansPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/wp-content/themes/run/theme/dist/fonts/subset-SourceSansPro-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+	<!-- Preload end -->
+
 	<link rel="canonical" href="{{ global.canonical }}" />
     <link rel="stylesheet" type="text/css" href="/wp-content/themes/run/theme/dist/styles/main.css?ver={{ global.theme_version }}" media="all"/>
+
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118656330-2"></script>
