@@ -13,9 +13,10 @@ class WPRestRouteController extends WP_REST_Controller {
 	public function register_routes() {
 		register_rest_route( $this->namespace, "/$this->rest_base", [
 			[
-				'methods'  => 'GET',
-				'callback' => [ $this, 'get_route_data' ],
-				'args'     => [
+				'methods'             => 'GET',
+				'callback'            => [ $this, 'get_route_data' ],
+				'permission_callback' => '__return_true',
+				'args'                => [
 					'post_id'  => [
 						'type'     => 'integer',
 						'required' => true,

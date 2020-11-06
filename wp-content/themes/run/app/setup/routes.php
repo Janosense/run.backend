@@ -98,6 +98,17 @@ return [
 			'changefreq'     => 'yearly',
 
 		],
+//		[
+//			'condition'      => 'url',
+//			'url'            => '/trainings/',
+//			'handle'         => AboutController::class . '@index',
+//			'menu_title'     => __( 'About me', 'run' ),
+//			'include_in_nav' => true,
+//			'is_active'      => $_SERVER['REQUEST_URI'] === '/about/' ? true : false,
+//			'priority'       => 0.9,
+//			'changefreq'     => 'yearly',
+//
+//		],
 		[
 			'condition'      => 'url',
 			'url'            => '/{page_slug}',
