@@ -1,0 +1,62 @@
+.general-stat {
+  padding: 20px;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    padding: 32px;
+  }
+}
+
+.general-stat__heading {
+  display: block;
+  margin: 0;
+  //font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1;
+  color: #000000;
+}
+
+.general-stat__layout {
+  position: relative;
+  margin-bottom: 28px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    width: 120px;
+    margin-bottom: 0;
+  }
+}
+
+.general-stat__value {
+  position: relative;
+  margin-right: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+}
+
+.general-stat__km {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.general-stat__trainings {
+  //position: absolute;
+  //top: calc(100% + 4px);
+  //left: 0;
+  font-size: 12px;
+  font-weight: 300;
+
+  span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+}

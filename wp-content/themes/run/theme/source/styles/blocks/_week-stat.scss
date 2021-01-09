@@ -1,0 +1,115 @@
+.week-stat {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+
+  @media (min-width: 768px) {
+    flex-shrink: 0;
+    width: 348px;
+    padding: 32px;
+  }
+}
+
+.week-stat__heading {
+  margin: 0 0 32px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1;
+  color: #000000;
+}
+
+.week-stat__layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.week-stat__chart {
+  flex-shrink: 0;
+  display: flex;
+  //width: 60%;
+  height: 92px;
+}
+
+.week-stat__chart-row {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 16px;
+  margin-right: 4px;
+  padding-bottom: 22px;
+  box-sizing: border-box;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (min-width: 375px) {
+    margin-right: 8px;
+  }
+
+  div {
+    flex-shrink: 0;
+    margin-top: auto;
+    width: 100%;
+    background-color: #cfcfcf;
+    font-size: 12px;
+  }
+
+  span {
+    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    padding-top: 4px;
+    border-top: 2px solid #cfcfcf;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+
+.week-stat__current {
+
+}
+
+.week-stat__current-value {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+}
+
+.week-stat__current-title {
+  display: block;
+  margin: 0;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1;
+  color: #000000;
+}
+
+.week-stat__current-km {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.week-stat__trainings {
+  //position: absolute;
+  //top: calc(100% + 4px);
+  //left: 0;
+  font-size: 12px;
+  font-weight: 300;
+
+  span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+}

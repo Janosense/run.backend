@@ -1,0 +1,137 @@
+{% extends "templates/layouts/base.twig" %}
+
+{% block head %}
+	<title>Тренировки - {{ global.site_title }}</title>
+	<meta name="description" content="{{ meta_description }}"/>
+{% endblock %}
+
+{% block content %}
+	<div class="trainings">
+		<div class="wrapper trainings__wrapper">
+			<h1 class="heading trainings__heading">Тренировки</h1>
+			<h3 class="trainings__subheading">Текущие показатели:</h3>
+			<div class="trainings__layout">
+				<div class="week-stat">
+{#					<h2 class="week-stat__heading">Неделя</h2>#}
+					<div class="week-stat__layout">
+						<div class="week-stat__chart">
+							<div class="week-stat__chart-row">
+								<div style="height: 40%"></div>
+								<span>пн</span>
+							</div>
+							<div class="week-stat__chart-row">
+								<div style="height: 10%"></div>
+								<span>вт</span>
+							</div>
+							<div class="week-stat__chart-row">
+								<div style="height: 60%"></div>
+								<span>ср</span>
+							</div>
+							<div class="week-stat__chart-row">
+								<div style="height: 50%"></div>
+								<span>чт</span>
+							</div>
+							<div class="week-stat__chart-row">
+								<div style="height: 90%"></div>
+								<span>пт</span>
+							</div>
+							<div class="week-stat__chart-row">
+								<div style="height: 10%"></div>
+								<span>сб</span>
+							</div>
+							<div class="week-stat__chart-row">
+								<div style="height: 100%"></div>
+								<span>вс</span>
+							</div>
+						</div>
+						<div class="week-stat__current">
+							<span class="week-stat__current-title">Неделя</span>
+							<span class="week-stat__current-value">78.5</span><span class="week-stat__current-km">км</span>
+							<div class="week-stat__trainings">
+								<span>7</span> тренировок
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="general-stat">
+					<div class="general-stat__layout">
+						<span class="general-stat__heading">Месяц</span>
+						<span class="general-stat__value">327</span><span class="general-stat__km">км</span>
+						<div class="general-stat__trainings">
+							<span>20</span> тренировок
+						</div>
+					</div>
+					<div class="general-stat__layout">
+						<span class="general-stat__heading">Год</span>
+						<span class="general-stat__value">4022</span><span class="general-stat__km">км</span>
+						<div class="general-stat__trainings">
+							<span>131</span> тренировок
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="months-list">
+				<div class="months-list__header">
+					<div class="months-list__header-layout">
+						<h3 class="trainings__subheading trainings__subheading--month-list">Год:</h3>
+						<div class="months-list__year-holder">
+							<select name="" id="" class="months-list__year">
+								<option value="2018">2018</option>
+								<option value="2019">2019</option>
+								<option value="2020">2020</option>
+								<option value="2021" selected>2021</option>
+							</select>
+						</div>
+					</div>
+					<div class="months-list__header-layout">
+
+					</div>
+				</div>
+				<ul class="months-list__list">
+					<li class="months-list__item months-list__item--active">
+						<span class="months-list__month-title">Январь</span>
+						<div class="months-list__stats">
+							<div class="months-list__stats-item">
+								<span class="months-list__stats-value">410</span> <span class="months-list__stats-value">км</span>
+							</div>
+						</div>
+					</li>
+					<li class="months-list__item months-list__item--active">
+						<span class="months-list__month-title">Февраль</span>
+					</li>
+					<li class="months-list__item">
+						<span class="months-list__month-title">Март</span>
+					</li>
+					<li class="months-list__item">
+						<span class="months-list__month-title">Апрель</span>
+					</li>
+					<li class="months-list__item">
+						<span class="months-list__month-title">Май</span>
+					</li>
+					<li class="months-list__item">
+						<span class="months-list__month-title">Июнь</span>
+					</li>
+					<li class="months-list__item">
+						<span class="months-list__month-title">Июль</span>
+					</li>
+					<li class="months-list__item">
+						<span class="months-list__month-title">Август</span>
+					</li>
+					<li class="months-list__item">
+						<span class="months-list__month-title">Сентябрь</span>
+					</li>
+					<li class="months-list__item">
+						<span class="months-list__month-title">Октябрь</span>
+					</li>
+					<li class="months-list__item">
+						<span class="months-list__month-title">Ноябрь</span>
+					</li>
+					<li class="months-list__item">
+						<span class="months-list__month-title">Декабрь</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+{% endblock %}

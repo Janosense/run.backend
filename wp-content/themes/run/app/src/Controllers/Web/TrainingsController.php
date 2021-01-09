@@ -8,6 +8,19 @@ class TrainingsController {
 
 
 	/**
+	 * @param $request
+	 * @param $view
+	 *
+	 * @return \Psr\Http\Message\ResponseInterface|\WPEmerge\View\ViewInterface
+	 */
+	public function index( $request, $view ) {
+		global $post;
+
+		return \WPEmerge\view( 'templates/trainings.twig' )->with( [] );
+	}
+
+
+	/**
 	 * @return mixed|void
 	 */
 	public static function get_activities_list() {

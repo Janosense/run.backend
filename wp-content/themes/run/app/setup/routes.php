@@ -8,6 +8,7 @@ use App\Controllers\Web\HistoryController;
 use App\Controllers\Web\PageController;
 use App\Controllers\Web\PostController;
 use App\Controllers\Web\ResultsController;
+use App\Controllers\Web\TrainingsController;
 
 return [
 	'web' => [
@@ -20,6 +21,17 @@ return [
 			'is_active'      => $_SERVER['REQUEST_URI'] === '/' ? true : false,
 			'priority'       => 1,
 			'changefreq'     => 'weekly',
+		],
+		[
+			'condition'      => 'url',
+			'url'            => '/trainings/',
+			'handle'         => TrainingsController::class . '@index',
+			'menu_title'     => __( 'Trainings', 'run' ),
+			'include_in_nav' => true,
+			'is_active'      => $_SERVER['REQUEST_URI'] === '/trainings/' ? true : false,
+			'priority'       => 0.9,
+			'changefreq'     => 'yearly',
+
 		],
 		[
 			'condition'      => 'url',
@@ -98,17 +110,6 @@ return [
 			'changefreq'     => 'yearly',
 
 		],
-//		[
-//			'condition'      => 'url',
-//			'url'            => '/trainings/',
-//			'handle'         => AboutController::class . '@index',
-//			'menu_title'     => __( 'About me', 'run' ),
-//			'include_in_nav' => true,
-//			'is_active'      => $_SERVER['REQUEST_URI'] === '/about/' ? true : false,
-//			'priority'       => 0.9,
-//			'changefreq'     => 'yearly',
-//
-//		],
 		[
 			'condition'      => 'url',
 			'url'            => '/{page_slug}',

@@ -1,7 +1,7 @@
 .heading {
   position: relative;
   left: -2px;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 32px;
@@ -13,11 +13,12 @@
   }
 
   @media (min-width: 1439px) {
+    margin-bottom: 20px;
     font-size: 52px;
   }
 
   @media (min-width: 1919px) {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     font-size: 60px;
   }
 }
