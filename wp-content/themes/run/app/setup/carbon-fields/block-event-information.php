@@ -16,7 +16,7 @@ Block::make( __( 'Event information', 'run' ) )
 	     <div class="event-info-block">
 		     <div class="event-info-block__header">
 			     <span class="event-info-block__date"><?php echo $fields['crb_event_info_date']; ?></span>
-			     <a href="<?php echo $fields['crb_event_info_url']; ?>" class="event-info-block__title"><?php echo $fields['crb_event_info_title']; ?></a>
+			     <a href="<?php echo $fields['crb_event_info_url']; ?>" target="_blank" class="event-info-block__title"><?php echo $fields['crb_event_info_title']; ?></a>
 		     </div>
 		     <span class="event-info-block__place"><?php echo $fields['crb_event_info_place']; ?></span>
 		     <?php if ( ! empty( $fields['crb_event_info_organizer'] ) ) : ?>
