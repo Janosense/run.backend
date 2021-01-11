@@ -1,0 +1,36 @@
+.event-info-block {
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.event-info-block__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.event-info-block__date {
+  display: block;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.event-info-block__place {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.event-info-block__organizer {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+}
