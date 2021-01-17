@@ -20,9 +20,9 @@ Block::make( __( 'Event information', 'run' ) )
 					 href="<?php echo $fields['crb_event_info_url']; ?>" target="_blank"
 					 class="event-info-block__title"><?php echo $fields['crb_event_info_title']; ?></a>
 			 </div>
-			 <?php if ( ! empty( $fields['crb_event_info_date'] ) ) : ?>
+			 <?php if ( ! empty( $fields['crb_event_info_distances'] ) ) : ?>
 				 <div class="event-info-block__distances">
-					 <span>Дистанции: </span><?php echo $fields['crb_event_info_date']; ?> <span>км</span></div>
+					 <span>Дистанции: </span><?php echo $fields['crb_event_info_distances']; ?> <span>км</span></div>
 			 <?php endif; ?>
 			 <span class="event-info-block__place"><?php echo $fields['crb_event_info_place']; ?></span>
 			 <?php if ( ! empty( $fields['crb_event_info_organizer'] ) ) : ?>
