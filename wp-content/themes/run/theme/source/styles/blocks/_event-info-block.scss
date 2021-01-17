@@ -14,17 +14,32 @@
     margin-bottom: 0;
   }
 }
+.event-info-block__date {
+  display: block;
+  margin-bottom: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
 
 .event-info-block__title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 18px;
+  font-size: 19px;
+  line-height: 1;
 }
 
-.event-info-block__date {
-  display: block;
-  font-weight: 300;
+.event-info-block__distances {
+  margin-bottom: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
   font-size: 16px;
+
+  span {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+  }
 }
 
 .event-info-block__place {
