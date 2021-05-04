@@ -19,10 +19,10 @@ function app_cron_add_four_times_daily_schedule( $schedules ) {
  * @return mixed
  */
 function app_cron_add_every_two_hours_daily_schedule( $schedules ) {
-	$schedules['everytwohoursdaily'] = array(
+	$schedules['everytwohoursdaily'] = [
 		'interval' => HOUR_IN_SECONDS * 2,
 		'display'  => __( 'Twelve times a day', 'run' ),
-	);
+	];
 
 	return $schedules;
 }
