@@ -154,12 +154,16 @@ class StravaController {
 	 * Updated all Strava data
 	 */
 	static public function update_data() {
+
+		// Refresh tokens
+		self::refresh_tokens();
+
+		// Get last activities
+		self::get_last_activities();
+
 		// Statistics
 		StatisticsController::update_shoes_data();
 		StatisticsController::update_athlete_stats_data();
-
-		// Trainings
-		TrainingsController::update_activities_list_data();
 	}
 
 	/**
@@ -176,6 +180,169 @@ class StravaController {
 		} else {
 
 			return \WPEmerge\output( 'Access denied.' );
+		}
+	}
+
+	/**
+	 * Getting all activities
+	 *
+	 * @param $request
+	 * @param $view
+	 */
+	static public function get_all_activities( $request, $view ) {
+		$access_token = get_option( 'strava_access_token' );
+		$url          = self::$api_base . self::$api_endpoints['athlete_activities'] . '?per_page=100&page=' . $request->get( 'api_page' );
+		$args         = [
+			'timeout'     => 45,
+			'redirection' => 5,
+			'headers'     => [
+				'Authorization' => 'Bearer ' . $access_token,
+			],
+		];
+
+		$response = wp_remote_get( $url, $args );
+		$data     = [];
+		if ( ! is_wp_error( $response ) && $response['response']['code'] == 200 ) {
+			$data = json_decode( $response['body'], true );
+
+			foreach ( $data as $activity ) {
+				if ( isset( $activity['type'] ) && $activity['type'] == 'Run' ) {
+					$activity_date = date_create( $activity['start_date_local'] );
+					$post_date     = date_format( $activity_date, 'Y-m-d H:i:s' );
+
+					$post_data = [
+						'post_title'  => $activity['name'],
+						'post_type'   => 'training',
+						'post_status' => 'publish',
+						'post_date'   => $post_date,
+					];
+
+					$post_id = wp_insert_post( wp_slash( $post_data ) );
+
+					add_post_meta( $post_id, 'id', $activity['id'], true );
+					add_post_meta( $post_id, 'start_date_local', $activity['start_date_local'], true );
+					add_post_meta( $post_id, 'start_date_timestamp', date_timestamp_get( $activity_date ), true );
+					add_post_meta( $post_id, 'distance', $activity['distance'], true );
+					add_post_meta( $post_id, 'moving_time', $activity['moving_time'], true );
+					add_post_meta( $post_id, 'elapsed_time', $activity['elapsed_time'], true );
+					add_post_meta( $post_id, 'total_elevation_gain', $activity['total_elevation_gain'], true );
+					add_post_meta( $post_id, 'average_heartrate', $activity['average_heartrate'], true );
+					add_post_meta( $post_id, 'average_cadence', $activity['average_cadence'], true );
+					add_post_meta( $post_id, 'gear_id', $activity['gear_id'], true );
+
+					$pace = $activity['moving_time'] / $activity['distance'] * 1000;
+					$pace = ( ( $pace / 60 ) % 60 ) . ':' . str_pad( round( ( ( $pace / 60 ) - ( $pace / 60 ) % 60 ) * 0.6, 2 ) * 100, 2, "0", STR_PAD_LEFT );
+					add_post_meta( $post_id, 'pace', $pace, true );
+				}
+			}
+		}
+
+		return \WPEmerge\output( count( $data ) );
+	}
+
+	/**
+	 *
+	 */
+	static public function refresh_tokens() {
+		$url  = 'https://www.strava.com/oauth/token';
+		$args = [
+			'timeout'     => 45,
+			'redirection' => 5,
+			'blocking'    => true,
+			'headers'     => [],
+			'body'        => [
+				'client_id'     => get_option( 'strava_client_id' ),
+				'client_secret' => get_option( 'strava_client_secret' ),
+				'grant_type'    => 'refresh_token',
+				'refresh_token' => get_option( 'strava_refresh_token' ),
+			],
+			'cookies'     => []
+		];
+
+		$response = wp_remote_post( $url, $args );
+
+		if ( ! is_wp_error( $response ) && $response['response']['code'] == 200 ) {
+			$response_body = json_decode( $response['body'], true );
+
+			if ( isset( $response_body['access_token'] ) ) {
+				update_option( 'strava_access_token', $response_body['access_token'] );
+			}
+
+			if ( isset( $response_body['refresh_token'] ) ) {
+				update_option( 'strava_refresh_token', $response_body['refresh_token'] );
+			}
+
+			if ( isset( $response_body['expires_at'] ) ) {
+				update_option( 'strava_access_token_expires_at', $response_body['expires_at'] );
+			}
+		} else {
+			if ( ! wp_next_scheduled( 'cron_strava_refresh_tokens_event' ) ) {
+				wp_schedule_single_event( time() + 600, 'cron_strava_refresh_tokens_event' );
+			}
+		}
+	}
+
+
+	/**
+	 * @param $request
+	 * @param $view
+	 */
+	static public function get_last_activities() {
+		$last_trainings = get_posts( [
+			'numberposts' => 1,
+			'post_type'   => 'training'
+		] );
+
+		if ( ! empty( $last_trainings ) ) {
+			$last_training_timestamp = get_post_meta( $last_trainings[0]->ID, 'start_date_timestamp', true );
+			$access_token            = get_option( 'strava_access_token' );
+			$url                     = self::$api_base . self::$api_endpoints['athlete_activities'] . '?after=' . $last_training_timestamp;
+			$args                    = [
+				'timeout'     => 45,
+				'redirection' => 5,
+				'headers'     => [
+					'Authorization' => 'Bearer ' . $access_token,
+				],
+			];
+
+			$response = wp_remote_get( $url, $args );
+
+			if ( ! is_wp_error( $response ) && $response['response']['code'] == 200 ) {
+				$data = json_decode( $response['body'], true );
+
+				if ( ! empty( $data ) ) {
+					foreach ( $data as $activity ) {
+						if ( isset( $activity['type'] ) && $activity['type'] == 'Run' ) {
+							$activity_date = date_create( $activity['start_date_local'] );
+							$post_date     = date_format( $activity_date, 'Y-m-d H:i:s' );
+
+							$post_data = [
+								'post_title'  => $activity['name'],
+								'post_type'   => 'training',
+								'post_status' => 'publish',
+								'post_date'   => $post_date,
+							];
+
+							$post_id = wp_insert_post( wp_slash( $post_data ) );
+
+							add_post_meta( $post_id, 'id', $activity['id'], true );
+							add_post_meta( $post_id, 'start_date_local', $activity['start_date_local'], true );
+							add_post_meta( $post_id, 'start_date_timestamp', date_timestamp_get( $activity_date ), true );
+							add_post_meta( $post_id, 'distance', $activity['distance'], true );
+							add_post_meta( $post_id, 'moving_time', $activity['moving_time'], true );
+							add_post_meta( $post_id, 'elapsed_time', $activity['elapsed_time'], true );
+							add_post_meta( $post_id, 'total_elevation_gain', $activity['total_elevation_gain'], true );
+							add_post_meta( $post_id, 'average_heartrate', $activity['average_heartrate'], true );
+							add_post_meta( $post_id, 'average_cadence', $activity['average_cadence'], true );
+							add_post_meta( $post_id, 'gear_id', $activity['gear_id'], true );
+
+							$pace = $activity['moving_time'] / $activity['distance'] * 1000;
+							$pace = ( ( $pace / 60 ) % 60 ) . ':' . str_pad( round( ( ( $pace / 60 ) - ( $pace / 60 ) % 60 ) * 0.6, 2 ) * 100, 2, "0", STR_PAD_LEFT );
+							add_post_meta( $post_id, 'pace', $pace, true );
+						}
+					}
+				}
+			}
 		}
 	}
 }

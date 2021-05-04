@@ -13,7 +13,7 @@ class FrontPageController {
 	 */
 	public function index( $request, $view ) {
 		$articles_data = [];
-		$articles      = $this->get_articles( 10 );
+		$articles      = $this->get_articles( 12 );
 
 		if ( ! empty( $articles ) ) {
 			$articles_controller = new ArticlesController();
@@ -26,9 +26,7 @@ class FrontPageController {
 		return \WPEmerge\view( 'templates/front-page.twig' )->with( [
 			'latest_posts' => $articles_data,
 			'statistics'   => StatisticsController::get_statistics(),
-//			'activities'   => TrainingsController::get_activities_list(),
 			'last_results' => $results->get_last_results( 5 ),
-//			'last_events'  => $events->get_upcoming_events( 3 ),
 		] );
 	}
 
