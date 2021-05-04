@@ -26,6 +26,9 @@ Route::get()->url( '/flush-twig-cache/' )->handle( ServiceActionsController::cla
 // Route for generate sitemap
 Route::get()->url( '/generate-sitemap/' )->handle( ServiceActionsController::class . '@generate_xml_sitemap' );
 
+// Route for manual strava statistics update
+Route::get()->url( '/get-all-activities/' )->handle( StravaController::class . '@get_all_activities' );
+
 /**
  * Main routes
  */

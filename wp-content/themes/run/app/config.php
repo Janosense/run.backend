@@ -18,6 +18,7 @@ return [
 	'twig' => [
 		'options' => [
 			'cache' => get_stylesheet_directory() . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR . 'twig',
+//			'cache' => false,
 		],
 	],
 ];
