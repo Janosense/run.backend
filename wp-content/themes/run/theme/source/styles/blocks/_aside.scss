@@ -58,3 +58,32 @@
   text-align: right;
   color: #000000;
 }
+
+.aside__sneakers-toggle {
+  -webkit-appearance: none;
+  display: block;
+  margin: 0 0 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px dashed #000;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  opacity: 1;
+}
+
+.desktop .aside__sneakers-toggle {
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

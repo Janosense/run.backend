@@ -2,6 +2,23 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--current {
+    margin-bottom: 28px;
+  }
+
+  &--not-used {
+    display: none;
+    padding-top: 12px;
+  }
+
+  &--active {
+    display: block;
+  }
 }
 
 .sneakers__item {
