@@ -29,25 +29,10 @@
   width: 100%;
 }
 
-.desktop .image-box__link {
-  &:hover {
-    cursor: zoom-in;
-
-    .image-box__image {
-      opacity: 0.85;
-    }
-  }
-}
-
 .image-box__image {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.desktop .image-box__image {
-  will-change: opacity;
-  transition: opacity 0.4s ease;
 }
 
 .image-box__caption {
