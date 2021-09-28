@@ -19,7 +19,7 @@
 			<h3 class="calendar-event__title">
 				<a href="{{ event.url }}" title="Официальная страница мероприятия">{{ event.title }}</a> <span>({{ event.organizer }})</span>
 			</h3>
-			<div class="calendar-event__distance">{{ event.distance }}</div>
+			<div class="calendar-event__distance">{{ event.distance }} км</div>
 			<div class="calendar-event__place">{{ event.place }}</div>
 			{% if state.type == 'registered' %}
 				<span class="calendar-event__slot">{{ event.bib }}</span>
