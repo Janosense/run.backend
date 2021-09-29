@@ -7,7 +7,7 @@
   min-height: 88px;
   padding: 12px 0;
   font-size: 16px;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid $color-black;
   box-sizing: border-box;
 
   &:last-child {
@@ -60,9 +60,9 @@
   font-weight: 700;
 
   a {
-    color: #000;
+    color: $color-black;
     text-decoration: none;
-    border-bottom: 1px dotted #000;
+    border-bottom: 1px dotted $color-black;
   }
 
   span {

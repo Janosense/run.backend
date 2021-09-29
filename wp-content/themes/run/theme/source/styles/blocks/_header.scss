@@ -6,16 +6,7 @@
   display: block;
   width: 100%;
   padding: 16px 0;
-  background-color: #fff;
-
-  &--black {
-    background-color: #000;
-
-    .header__heading,
-    .header__caption {
-      color: #ffffff;
-    }
-  }
+  background-color: $color-white;
 
   @media (min-width: 767px) {
     position: relative;
@@ -45,12 +36,7 @@
   font-weight: 900;
   font-size: 28px;
   line-height: 1;
-  color: #000;
-  transition: color 0.3s linear;
-
-  &--active {
-    color: #fff;
-  }
+  color: $color-black;
 
   @media (min-width: 413px) {
     font-size: 32px;
@@ -70,20 +56,5 @@
 
   @media (min-width: 1919px) {
     font-size: 84px;
-  }
-}
-
-.header__caption {
-  position: absolute;
-  bottom: 0;
-  right: 64px;
-  display: block;
-  margin: 0;
-  font-weight: 300;
-  font-size: 20px;
-  color: #000;
-
-  @media (min-width: 1919px) {
-    left: 200px;
   }
 }

@@ -6,7 +6,7 @@
   min-width: 320px;
   margin: 0;
   padding: 0;
-  color: #000000;
+  color: $color-black;
   background-color: #ffffff;
   text-size-adjust: 100%;
   font-family: 'Source Sans Pro', sans-serif;
@@ -20,7 +20,7 @@
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-  &--black {
-    background-color: #000;
+  &--dark {
+    background-color: $color-black;
   }
 }

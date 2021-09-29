@@ -23,7 +23,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background-color: #000000;
+    background-color: $color-black;
   }
 
   &:last-child {
@@ -44,7 +44,7 @@
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
-  color: #000000;
+  color: $color-black;
 }
 
 .breadcrumbs__current {
@@ -53,5 +53,5 @@
   line-height: 0;
   text-decoration: none;
   text-transform: uppercase;
-  color: #000000;
+  color: $color-black;
 }

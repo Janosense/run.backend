@@ -8,7 +8,7 @@
   align-items: center;
   width: 100%;
   max-height: calc(100vh - 52px);
-  background-color: #000;
+  background-color: $color-black;
   opacity: 0;
   transition: all 0.2s linear;
 
@@ -59,13 +59,13 @@
   }
 
   &--white {
-    background-color: #fff;
+    background-color: $color-white;
 
     .main-nav__link {
-      color: #000;
+      color: $color-black;
 
       &::after {
-        background-color: #000;
+        background-color: $color-black;
       }
     }
   }
@@ -116,7 +116,7 @@
   font-weight: 800;
   line-height: 1;
   text-decoration: none;
-  color: #fff;
+  color: $color-white;
 
   @media (min-width: 767px) {
     padding: 12px 0;
@@ -132,7 +132,7 @@
       display: block;
       width: 60%;
       height: 2px;
-      background-color: #fff;
+      background-color: $color-white;
       opacity: 0;
       transform: translate(0, 2px) scaleX(0.8);
       transition: all 0.3s ease
@@ -145,7 +145,7 @@
   }
 
   &--active {
-    border-bottom: 1px dashed #fff;
+    border-bottom: 1px dashed $color-white;
 
     @media (min-width: 767px) {
       border-bottom: none;

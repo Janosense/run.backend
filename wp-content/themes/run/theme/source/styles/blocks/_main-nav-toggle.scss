@@ -55,16 +55,16 @@
   &--active {
     &::before {
       top: 1px;
-      background-color: #fff;
+      background-color: $color-white;
     }
 
     &:after {
       bottom: 1px;
-      background-color: #fff;
+      background-color: $color-white;
     }
 
     span {
-      background-color: #fff;
+      background-color: $color-white;
     }
   }
 

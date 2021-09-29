@@ -1,0 +1,376 @@
+.dark-mode {
+  background-color: $color-black;
+
+  .header {
+    background-color: $color-black;
+  }
+
+  .header__heading {
+    color: $color-white;
+  }
+
+  .footer {
+    background-color: $color-grey-dark;
+  }
+
+  .main-nav {
+    background-color: $color-grey-dark;
+  }
+
+  .statistics {
+    background-color: $color-grey-dark;
+  }
+
+  .layout {
+    background-color: $color-black;
+  }
+
+  .latest-posts {
+    background-color: $color-black;
+  }
+
+  .latest-posts__date {
+    color: $color-white;
+  }
+
+  .latest-posts__title {
+    color: $color-white;
+  }
+
+  .latest-posts__excerpt {
+    color: $color-white;
+  }
+
+  .latest-posts__categories-link {
+    color: $color-white;
+    background-color: $color-grey-dark;
+  }
+
+  .last-results {
+    background-color: $color-black;
+  }
+
+  .last-results__heading {
+    color: $color-white;
+  }
+
+  .last-results__event-date {
+    color: $color-white;
+  }
+
+  .last-results__event-title {
+    color: $color-white;
+  }
+
+  .last-results__event-distance {
+    color: $color-white;
+  }
+
+  .last-results__result {
+    color: $color-white;
+  }
+
+  .aside__section-heading {
+    color: $color-white;
+  }
+
+  .aside__sneakers-toggle {
+    color: $color-white;
+    background-color: $color-black;
+    border-bottom: 1px dashed $color-white;
+  }
+
+  .sneakers__brand {
+    color: $color-white;
+  }
+
+  .sneakers__model {
+    color: $color-white;
+  }
+
+  .sneakers__distance {
+    color: $color-white;
+  }
+
+  .sneakers__item {
+
+    &--old {
+      .sneakers__brand {
+        opacity: 0.7;
+      }
+
+      .sneakers__model {
+        opacity: 0.5;
+      }
+
+      .sneakers__distance {
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .heading {
+    color: $color-white;
+  }
+
+  .calendar__caption {
+    color: $color-white;
+  }
+
+  .calendar__group-title {
+    color: $color-white;
+  }
+
+  .calendar__list {
+    color: $color-white;
+  }
+
+  .calendar-event,
+  .calendar-event--header {
+    border-bottom-color: $color-grey;
+  }
+
+  .calendar-event__type {
+    opacity: 0.3;
+  }
+
+  .calendar-event__title {
+    a {
+      color: $color-white;
+      border-bottom-color: $color-grey;
+    }
+  }
+
+  .results__caption {
+    color: $color-white;
+
+    a {
+      color: $color-white;
+      border-bottom-color: 1px dotted $color-white;
+    }
+  }
+
+  .results__group-title,
+  .results__group {
+    color: $color-white;
+  }
+
+  .results-table {
+
+    tr {
+      border-bottom-color: $color-grey;
+
+      &:hover:not(:first-child) {
+        background-color: $color-grey-dark
+      }
+    }
+
+    td,
+    th {
+      border-right-color: $color-grey;
+    }
+  }
+
+  .results-table__year {
+    color: $color-white;
+    background-color: $color-grey-dark;
+  }
+
+  .time-line__list {
+    @media (min-width: 767px) {
+
+      &::before {
+        background-color: $color-white;
+      }
+    }
+  }
+
+  .time-line__year {
+    background-color: $color-black;
+  }
+
+  .event__pb {
+    color: $color-black;
+    background-color: $color-white;
+  }
+
+  .event__header {
+    color: $color-white;
+    background-color: $color-black;
+  }
+
+  .event__title {
+    color: $color-white;
+    background-color: $color-black;
+  }
+
+  .event__distance {
+    span {
+      color: $color-white;
+    }
+  }
+
+  .event__description {
+    color: $color-white;
+  }
+
+  .event__result {
+    color: $color-white;
+  }
+
+  .event__result-places {
+    tr {
+      border-bottom-color: $color-grey;
+    }
+  }
+
+  .pagination__item {
+
+    .page-numbers {
+      color: $color-white;
+      background-color: $color-grey-dark;
+
+      &.current {
+        color: $color-white;
+        background-color: $color-black;
+      }
+
+      &.prev {
+        background-color: $color-black;
+
+        &::after {
+          border-top-color: $color-white;
+          border-left-color: $color-white;
+        }
+      }
+
+      &.next {
+        background-color: $color-black;
+
+        &::after {
+          border-top-color: $color-white;
+          border-right-color: $color-white;
+        }
+      }
+
+      &.dots {
+        color: $color-white;
+        background-color: $color-black;
+      }
+    }
+  }
+
+  .article__excerpt {
+    color: $color-white;
+  }
+
+  .article__content {
+    color: $color-white;
+
+    a {
+      border-bottom-color: $color-white;
+    }
+  }
+
+  .apportionment {
+    tr {
+      border-bottom-color: $color-grey;
+    }
+
+    td {
+      border-right-color: $color-grey;
+    }
+  }
+
+  .categories__link {
+    background-color: $color-grey-dark;
+  }
+
+  .similar-news {
+    background-color: $color-grey-dark;
+  }
+
+  .similar-news__date {
+    color: $color-white;
+  }
+
+  .similar-news__title {
+    color: $color-white;
+  }
+
+  .starts__place,
+  .starts__list-title,
+  .starts__heading {
+    color: $color-white;
+  }
+
+  .starts__link {
+    color: $color-white;
+    border-bottom-color: $color-white;
+  }
+
+  .starts__event-distance {
+    color: $color-white;
+  }
+
+  .about__caption {
+    color: $color-white;
+  }
+
+  .about__content {
+    color: $color-white;
+
+    a {
+      border-bottom-color: $color-white;
+    }
+  }
+
+  .track__item {
+    &::before {
+      background-color: $color-grey;
+    }
+
+    @media (min-width: 1023px) {
+      &::after {
+        background-color: $color-grey;
+      }
+    }
+
+    &--completed {
+      .goal__title {
+        color: $color-white;
+      }
+
+      .goal__number {
+        color: $color-white;
+        &::before {
+          background-color: $color-white;
+        }
+      }
+
+      .goal__description {
+        color: $color-white;
+      }
+    }
+  }
+
+  .goal__title {
+    color: $color-grey;
+  }
+
+  .goal__number {
+    color: $color-grey;
+    &::before {
+      background-color: $color-grey;
+    }
+  }
+
+  .goal__description {
+    color: $color-grey;
+  }
+
+  .goals__text {
+    color: $color-white;
+  }
+
+}

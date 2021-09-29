@@ -24,7 +24,7 @@
   line-height: 1;
   text-transform: uppercase;
   text-align: right;
-  color: #000000;
+  color: $color-black;
 }
 
 .popular-posts__list {
@@ -52,7 +52,7 @@
 
 
 .popular-posts__title {
-  color: #000000;
+  color: $color-black;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 700;

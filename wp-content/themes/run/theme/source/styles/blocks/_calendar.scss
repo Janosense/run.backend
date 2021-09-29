@@ -39,10 +39,10 @@
 
   a {
     display: inline-block;
-    color: #000;
+    color: $color-black;
     line-height: 1;
     text-decoration: none;
-    border-bottom: 1px dotted #000;
+    border-bottom: 1px dotted $color-black;
   }
 }
 
@@ -74,7 +74,7 @@
   font-weight: 800;
   font-size: 24px;
   line-height: 1;
-  color: #000000;
+  color: $color-black;
 
   @media (min-width: 10923px) {
     font-size: 32px;

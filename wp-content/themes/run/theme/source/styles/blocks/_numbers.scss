@@ -1,5 +1,5 @@
 .numbers {
-  background-color: #fff;
+  background-color: $color-white;
 }
 
 .numbers__list {
@@ -82,8 +82,8 @@
   padding: 4px 12px;
   font-size: 16px;
   font-weight: 300;
-  color: #fff;
-  background-color: #000;
+  color: $color-white;
+  background-color: $color-black;
 
   @media (min-width: 1919px) {
     font-size: 18px;
@@ -95,8 +95,8 @@
   font-weight: 700;
   font-size: 16px;
   padding: 4px 12px;
-  color: #fff;
-  background-color: #000;
+  color: $color-white;
+  background-color: $color-black;
 
 
   @media (min-width: 1919px) {

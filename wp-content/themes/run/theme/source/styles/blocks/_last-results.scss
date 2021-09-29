@@ -4,7 +4,7 @@
   margin-bottom: 32px;
   padding: 32px;
   box-sizing: border-box;
-  background-color: #f1f1f1;
+  background-color: $color-grey-light;
 
   @media (min-width: 1023px) {
     margin-bottom: 56px;
@@ -23,7 +23,7 @@
   line-height: 1;
   text-transform: uppercase;
   text-align: right;
-  color: #000000;
+  color: $color-black;
 }
 
 .last-results__list {
@@ -115,8 +115,8 @@
   padding: 4px;
   font-weight: 600;
   font-size: 12px;
-  color: #fff;
-  background-color: #000000;
+  color: $color-white;
+  background-color: $color-black;
 }
 
 .last-results__diff {
