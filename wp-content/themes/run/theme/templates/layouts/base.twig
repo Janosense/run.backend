@@ -20,8 +20,13 @@
 	<link rel="preload" href="/wp-content/themes/run/theme/dist/fonts/subset-SourceSansPro-Semibold.woff2" as="font" type="font/woff2" crossorigin>
 	<!-- Preload end -->
 
-	<link rel="canonical" href="{{ global.canonical }}" />
-    <link rel="stylesheet" type="text/css" href="/wp-content/themes/run/theme/dist/styles/main.css?ver={{ global.theme_version }}" media="all"/>
+	<meta name="color-scheme" content="dark">
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
+
+	<link rel="canonical" href="{{ global.canonical }}" >
+    <link rel="stylesheet" type="text/css" href="/wp-content/themes/run/theme/dist/styles/main.css?ver={{ global.theme_version }}" media="all">
+    <link rel="stylesheet" type="text/css" href="/wp-content/themes/run/theme/dist/styles/dark-theme.css?ver={{ global.theme_version }}" media="(prefers-color-scheme: dark)">
 
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
