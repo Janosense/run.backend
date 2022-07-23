@@ -2,14 +2,15 @@
   position: relative;
   z-index: 10;
   padding-top: 60px;
-  margin-bottom: 50px;
+  margin-bottom: 118px;
   background-color: $color-white;
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     padding-top: 0;
+    margin-bottom: 68px;
   }
 
-  @media (min-width: 1023px) {
-    margin-bottom: 82px;
+  @media (min-width: 1024px) {
+    margin-bottom: 83px;
   }
 }

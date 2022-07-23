@@ -58,18 +58,20 @@ function app_add_filter_by_type_handler_for_result_post_type( $query ) {
 		return;
 	}
 
-	$current_screen = get_current_screen();
-	if ( $current_screen->id != 'edit-result' || $current_screen->post_type != 'result' || empty( $current_screen->post_type ) ) {
-		return;
-	}
+	if ( function_exists( 'get_current_screen' ) ) {
+		$current_screen = get_current_screen();
+		if ( $current_screen->id !== 'edit-result' || $current_screen->post_type !== 'result' || empty( $current_screen->post_type ) ) {
+			return;
+		}
 
-	if ( isset( $_GET['result_type'] ) && $_GET['result_type'] != '-1' ) {
-		$query->set( 'meta_query', [
-			[
-				'key'   => '_crb_result_type',
-				'value' => $_GET['result_type']
-			],
-		] );
+		if ( isset( $_GET['result_type'] ) && $_GET['result_type'] != '-1' ) {
+			$query->set( 'meta_query', [
+				[
+					'key'   => '_crb_result_type',
+					'value' => $_GET['result_type']
+				],
+			] );
+		}
 	}
 }
 
@@ -87,7 +89,7 @@ function app_switch_locale_for_admin_panel() {
  *
  * @return array
  */
-function app_add_gpx_to_mime_types($mime_types) {
+function app_add_gpx_to_mime_types( $mime_types ) {
 	$mime_types['gpx'] = 'application/gpx+xml';
 
 	return $mime_types;
