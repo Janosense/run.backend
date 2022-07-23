@@ -1,6 +1,6 @@
 {% if last_results is defined and last_results is not empty %}
 	<section class="aside__section last-results last-results--main">
-		<h3 class="last-results__heading">Последние результаты</h3>
+		<h3 class="last-results__heading">Останні результати</h3>
 		<div class="last-results__content">
 			<ul class="last-results__list">
 				{% for result in last_results %}
@@ -21,7 +21,7 @@
 							<span class="last-results__time">{{ result.time }}</span>
 							{% if result.is_pb %}
 								<div class="last-results__info">
-									<span class="last-results__personal-best">ЛР</span>
+									<span class="last-results__personal-best">ОР</span>
 									<span class="last-results__diff">{{ result.diff }}</span>
 								</div>
 							{% endif %}

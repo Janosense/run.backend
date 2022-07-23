@@ -11,6 +11,7 @@ const nodeResolve = require('rollup-plugin-node-resolve');
 const optimizeJs = require('rollup-plugin-optimize-js');
 const { uglify } = require('rollup-plugin-uglify');
 const babelRollup = require('rollup-plugin-babel');
+const sass = require('gulp-sass')(require('sass'));
 
 const $ = gulpLoadPlugins();
 const server = browserSync.create();
@@ -33,11 +34,7 @@ function styles() {
   return src('theme/source/styles/*.scss')
     .pipe($.plumber())
     .pipe($.if(!isProd, $.sourcemaps.init()))
-    .pipe($.sass.sync({
-      outputStyle: 'expanded',
-      precision: 10,
-      includePaths: ['.']
-    }).on('error', $.sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe($.postcss(postcss_plugins))
     .pipe($.if(!isProd, $.sourcemaps.write()))
     .pipe(dest('theme/dist/styles'))

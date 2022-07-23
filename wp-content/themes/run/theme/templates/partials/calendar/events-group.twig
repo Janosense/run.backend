@@ -4,10 +4,10 @@
 		<li class="calendar__item calendar-event calendar-event--header">
 			<span class="calendar-event__date">Дата / тип</span>
 			<h3 class="calendar-event__title">
-				Название (организатор)
+				Назва (організатор)
 			</h3>
-			<div class="calendar-event__distance">Дистанция</div>
-			<div class="calendar-event__place">Место проведения</div>
+			<div class="calendar-event__distance">Дистанція</div>
+			<div class="calendar-event__place">Місце проведення</div>
 			{% if state.type == 'registered' %}
 				<span class="calendar-event__slot">Старт. номер</span>
 			{% endif %}
@@ -17,7 +17,7 @@
 			<span class="calendar-event__type">{{ event.type }}</span>
 			<span class="calendar-event__date">{{ event.date }}</span>
 			<h3 class="calendar-event__title">
-				<a href="{{ event.url }}" title="Официальная страница мероприятия">{{ event.title }}</a> <span>({{ event.organizer }})</span>
+				<a href="{{ event.url }}" title="Офіційна сторінка">{{ event.title }}</a> <span>({{ event.organizer }})</span>
 			</h3>
 			<div class="calendar-event__distance">{{ event.distance }} км</div>
 			<div class="calendar-event__place">{{ event.place }}</div>

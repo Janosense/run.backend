@@ -1,6 +1,6 @@
 {% if statistics.shoes is not empty %}
 	<div class="aside__section">
-		<h3 class="aside__section-heading">Мои кроссовки</h3>
+		<h3 class="aside__section-heading">Мої кросівки</h3>
 		<ul class="sneakers sneakers--current">
 			{% for pair in statistics.shoes %}
 				{% if pair.used %}
@@ -14,7 +14,7 @@
 				{% endif %}
 			{% endfor %}
 		</ul>
-		<button class="aside__sneakers-toggle" type="button">Неиспользуемые</button>
+		<button class="aside__sneakers-toggle" type="button">Невикористовувані</button>
 		<ul class="sneakers sneakers--not-used">
 			{% for pair in statistics.shoes %}
 				{% if not pair.used %}

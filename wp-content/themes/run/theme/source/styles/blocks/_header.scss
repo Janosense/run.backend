@@ -28,33 +28,73 @@
 .header__heading {
   position: relative;
   z-index: 3;
-  display: block;
+  display: inline-block;
   margin: 0;
   flex-shrink: 0;
-  width: 100%;
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  font-size: 28px;
+  font-size: 32px;
   line-height: 1;
   color: $color-black;
 
-  @media (min-width: 413px) {
-    font-size: 32px;
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: calc(100% - 6px);
+    z-index: 1;
+    display: block;
+    width: 24px;
+    height: 18px;
+    background-image: linear-gradient(to bottom, #0057b7 50%, #ffd700 50%);
   }
 
   @media (min-width: 767px) {
     font-size: 44px;
+
+    &::before {
+      bottom: 5px;
+      left: calc(100% - 9px);
+      width: 32px;
+      height: 24px;
+    }
   }
 
   @media (min-width: 1023px) {
     font-size: 52px;
+
+    &::before {
+      bottom: 6px;
+      left: calc(100% - 14px);
+      width: 40px;
+      height: 29px;
+    }
   }
 
   @media (min-width: 1439px) {
     font-size: 72px;
+
+    &::before {
+      bottom: 8.5px;
+      left: calc(100% - 18px);
+      width: 48px;
+      height: 40px;
+    }
   }
 
   @media (min-width: 1919px) {
     font-size: 84px;
+
+    &::before {
+      bottom: 9px;
+      left: calc(100% - 21px);
+      width: 60px;
+      height: 47px;
+    }
   }
 }

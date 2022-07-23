@@ -32,7 +32,6 @@ add_filter( 'manage_result_posts_columns', 'app_add_custom_columns_for_result_po
 add_action( 'manage_result_posts_custom_column', 'app_fill_custom_columns_for_result_post_type', 5, 2 );
 add_action( 'restrict_manage_posts', 'app_add_filter_by_type_for_result_post_type', 10, 1 );
 add_action( 'pre_get_posts', 'app_add_filter_by_type_handler_for_result_post_type', 10, 1 );
-
 add_filter( 'upload_mimes', 'app_add_gpx_to_mime_types' );
 
 /**

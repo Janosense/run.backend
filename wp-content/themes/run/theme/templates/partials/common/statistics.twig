@@ -5,19 +5,19 @@
 		</div>
 		<div class="statistics__content">
 			<div class="statistics__row">
-				<div class="statistics__row-title">пробежал</div>
+				<div class="statistics__row-title">пробіг</div>
 			</div>
 			<div class="statistics__row statistics__row--distance">
-				<span class="statistics__row-subtitle">всего</span>
+				<span class="statistics__row-subtitle">всього</span>
 				<span class="statistics__total-distance">{{ statistics.athlete_stats.all.distance }}</span> км
 			</div>
 			<div class="statistics__row statistics__row--distance">
-				<span class="statistics__row-subtitle">в 2021 году</span>
+				<span class="statistics__row-subtitle">в {{ "now"|date("Y") }} році</span>
 				<span class="statistics__total-distance">{{ statistics.athlete_stats.year.distance }}</span> км
 			</div>
 			{% if statistics.pb_results is not empty %}
 				<div class="statistics__row statistics__row--pb">
-					<div class="statistics__row-title">лучшее время</div>
+					<div class="statistics__row-title">кращий час</div>
 				</div>
 				{% for result in statistics.pb_results %}
 					<div class="statistics__row">
@@ -35,14 +35,14 @@
 				</div>
 			{% endif %}
 			<div class="statistics__row statistics__row--count">
-				<div class="statistics__row-title">забегов</div>
+				<div class="statistics__row-title">забігів</div>
 				<span class="statistics__big-number">{{ statistics.athlete_stats.all.count }}</span>
 			</div>
 			<div class="statistics__row">
-				<div class="statistics__row-title">стартов</div>
+				<div class="statistics__row-title">офіційних стартів</div>
 				<span class="statistics__big-number">{{ statistics.total_starts }}</span>
 			</div>
 		</div>
-		<span class="statistics__date">ведется с 5.05.2019</span>
+		<span class="statistics__date">ведеться з 5.05.2019</span>
 	</div>
 {% endif %}

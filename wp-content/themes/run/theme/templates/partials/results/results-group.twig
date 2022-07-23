@@ -2,35 +2,35 @@
 	<h2 class="results__group-title">{{ type.title }}</h2>
 
 	<div class="results__statistics">
-		<p>Всего забегов: <span>{{ type.count }}</span></p>
+		<p>Усього забігів: <span>{{ type.count }}</span></p>
 		{% if type.key != 'trail' and type.key != 'ocr' and type.key != 'other' %}
 			<p>
-				Лучший результат: <span>{{ type.pb.time }}</span> | {{ type.pb.event_title }} - {{ type.pb.event_date }}
+				Особистий рекорд: <span>{{ type.pb.time }}</span> | {{ type.pb.event_title }} - {{ type.pb.event_date }}
 			</p>
 		{% endif %}
 	</div>
 	<div class="results__table-holder">
 		<table class="results-table">
 			<tr>
-				<th>п/п</th>
+				<th>#</th>
 				<th>дата</th>
 				{% if type.key == 'trail' or type.key == 'other' %}
-					<th>дистанция</th>
+					<th>дистанція</th>
 				{% endif %}
 				{% if type.key == 'ocr' %}
-					<th>категория</th>
+					<th>категорія</th>
 				{% endif %}
 				<th>результат
 					{% if type.key != 'trail' and type.key != 'ocr' and type.key != 'other' %}
-						<br> <span>разница с ЛР</span>
+						<br> <span>різниця з ОР</span>
 					{% endif %}
 				</th>
 				{% if type.key != 'ocr' %}
 					<th>темп</th>
 				{% endif %}
-				<th>мероприятие</th>
-				<th colspan="3">место<br> <span>абс / муж / возр</span></th>
-				<th>организатор</th>
+				<th>захід</th>
+				<th colspan="3">місце<br> <span>абс / чол / вік</span></th>
+				<th>організатор</th>
 			</tr>
 			{% for year, results in type.years %}
 				<tr>

@@ -10,8 +10,8 @@
 		<div class="history">
 			<div class="wrapper history__wrapper">
 				<div class="time-line">
-					<span class="time-line__designation time-line__designation--left">OCR, трейлы</span>
-					<span class="time-line__designation time-line__designation--right">Шоссе</span>
+					<span class="time-line__designation time-line__designation--left">OCR, трейл</span>
+					<span class="time-line__designation time-line__designation--right">Шосе</span>
 					<ul class="time-line__list">
 						{% for year, results  in data %}
 							<li class="time-line__year">{{ year }}</li>
@@ -19,7 +19,7 @@
 								<li class="event event--{% if result.type == 'ocr' or result.type == 'trail' %}left{% else %}right{% endif %} time-line__item"
 									id="{{ result.ID }}">
 									{% if result.is_pb %}
-										<span class="event__pb">PB</span>
+										<span class="event__pb">ОР</span>
 									{% endif %}
 									<div class="event__header">
 										<span class="event__date">{{ result.event_date }}</span>

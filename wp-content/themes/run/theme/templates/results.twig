@@ -1,8 +1,8 @@
 {% extends "templates/layouts/base.twig" %}
 
 {% block head %}
-	<title>Результаты - {{ global.site_title }}</title>
-	<meta name="description" content="Все результаты официальных забегов в которых я принимал участие"/>
+	<title>Результати - {{ global.site_title }}</title>
+	<meta name="description" content="Усі результати офіційних забігів у яких я брав участь - {{ global.site_title }}"/>
 {% endblock %}
 
 {% block content %}
@@ -10,10 +10,10 @@
 		<div class="results">
 			<div class="wrapper results__wrapper">
 				<header class="results__header">
-					<h1 class="heading results__heading">Мои результаты</h1>
+					<h1 class="heading results__heading">Мої результати</h1>
 					<p class="results__caption">
-						Тут собраны результаты всех официальных забегов и тренировок (с фиксацией результата), в которых
-						я принимал участие. Результаты я резделил на группы:<br>
+						Тут зібрані результати всіх офіційних забігів та тренувань (з фіксацією результату), у яких я
+						брав участь. Результати я поділив на групи:<br>
 						{% for type in results %}
 							<a href="{{ '#' ~ type.key }}">{{ type.title }}</a><br>
 						{% endfor %}
