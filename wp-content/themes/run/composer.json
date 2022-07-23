@@ -1,12 +1,12 @@
 {
-    "require": {
-        "htmlburger/wpemerge": "^0.15.0",
-        "htmlburger/wpemerge-twig": "^0.15.0",
-        "htmlburger/carbon-fields": "^3.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "app/src/"
-        }
+  "require": {
+    "htmlburger/wpemerge": "^0.15.0",
+    "htmlburger/wpemerge-twig": "^0.15.0",
+    "htmlburger/carbon-fields": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/src/"
     }
+  }
 }
