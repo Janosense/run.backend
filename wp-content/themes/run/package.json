@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "bricks.js": "^1.8.0",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "chartjs-plugin-datalabels": "^0.7.0",
     "current-device": "^0.9.1",
     "glightbox": "^2.0.6",
