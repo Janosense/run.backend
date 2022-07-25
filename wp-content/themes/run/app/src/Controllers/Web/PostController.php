@@ -116,7 +116,7 @@ class PostController {
 	 */
 	private function get_similar_posts( $post ) {
 		$data            = [];
-		$categories_ids  = [];
+		$categories_ids  = [ 19 ];
 		$categories_data = $this->get_post_categories( $post );
 
 		if ( ! empty( $categories_data ) && ! is_wp_error( $categories_data ) ) {
